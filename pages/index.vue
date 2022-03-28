@@ -1,3 +1,3 @@
 <template>
-  <div class="pokeda">Покеда</div>
+  <div class="pokeda">соси хуй</div>
 </template>
