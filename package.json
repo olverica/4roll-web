@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "icons": "oslllo-svg-fixer -s ./assets/icons/4R_RAW -d ./assets/icons/4R && fantasticon"
   },
   "devDependencies": {
     "nuxt3": "latest",

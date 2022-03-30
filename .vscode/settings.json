@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+      ".vscode": true,
+      ".gitignore": true,
+      ".fantasticonrc.js": true,
+      ".nuxt": true,
+      "node_modules": true,
+      "yarn.lock": true,      
+      "assets/icons/4R_RAW": true,
+    }
+  }  
