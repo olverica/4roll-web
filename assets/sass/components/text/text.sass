@@ -1,20 +1,32 @@
-.text-16
+@mixin text-16
   font-size: 16px
   line-height: 140%
   font-weight: $med
 
-.text-14
+@mixin text-14
   font-size: 14px
   line-height: 140%
   font-weight: $med
 
-.text-12
+@mixin text-12
   font-size: 12px
   line-height: 140%
   font-weight: $med
 
-.text-12-i
+@mixin text-12-i
   font-size: 12px
   line-height: 140%
   font-weight: $med
   font-style: italic
+
+.text-16
+  @include text-16
+
+.text-14
+  @include text-14
+
+.text-12
+  @include text-12
+
+.text-12-i
+  @include text-12-i

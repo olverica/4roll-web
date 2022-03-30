@@ -1,0 +1,31 @@
+.counter
+  width: max-content
+  // flex
+  display: flex
+  gap: 5px
+
+.counter_button
+  width: 20px
+  height: 20px
+  border-radius: 5px
+  font-family: "4R-icons"
+  font-size: 10px
+  // flex
+  display: flex
+  align-items: center
+  justify-content: center
+  &-minus
+    color: $red
+    background: transparentize($red, .8)
+  &-plus
+    color: $green
+    background: transparentize($green, .8)
+
+.counter_input
+  width: 40px
+  height: 20px
+  border-radius: 5px
+  color: $gray-60
+  background: $dark-15
+  text-align: center
+  @extend .semi-12

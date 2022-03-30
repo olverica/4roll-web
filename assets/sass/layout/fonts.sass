@@ -24,6 +24,10 @@
   font-family: "4R-icons"
   src: url("~/assets/fonts/4R-icons/4R-icons.ttf") format("truetype")
 
-.icon-4R
+@mixin icon-4R
   font-family: '4R-icons'
   font-style: normal
+  user-select: none
+
+.icon-4R
+  @include icon-4R

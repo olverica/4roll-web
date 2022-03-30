@@ -1,9 +1,15 @@
-.bold-22
+@mixin bold-22
   font-size: 22px
   line-height: 100%
   font-weight: $bold
 
-.bold-20
+@mixin bold-20
   font-size: 20px
   line-height: 100%
   font-weight: $bold
+
+.bold-22
+  @include bold-22
+
+.bold-20
+  @include bold-22
