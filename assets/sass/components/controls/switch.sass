@@ -1,5 +1,6 @@
 .switch
   width: 45px
+  min-width: 45px
   height: 25px
   border-radius: 25px
   background: $dark-15
@@ -9,9 +10,7 @@
   display: flex
   align-items: center
   // animation
-  transition-duration: .15s
-  transition-property: box-shadow
-  transition-timing-function: ease-in-out
+  @include transition((background, width), .15s)
   // switch thumb
   &::before
     content: ""
@@ -22,12 +21,10 @@
     position: relative
     left: 5px
     // animation
-    transition-duration: .15s
-    transition-property: left, background
-    transition-timing-function: ease-in-out
+    @include transition((background, left), .15s)
 
 .switch-active
-  box-shadow: inset 0 0 0 20px transparentize($green, .8)
+  background: transparentize($green, .8)
   &::before
     background: $green
     left: calc((100% + 5px) / 2)

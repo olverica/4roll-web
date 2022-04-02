@@ -8,9 +8,20 @@ body
   justify-content: center
 
 #__nuxt
-  background: $black-05
   height: 100vh
   width: 428px
-  padding: 50px 10px 0
-  // position
-  position: relative
+  overflow-y: overlay
+  // scrollbar
+  &::-webkit-scrollbar
+    width: 5px
+  &::-webkit-scrollbar-track
+    margin-block: 15px
+  &::-webkit-scrollbar-thumb
+    border-radius: 10px 0 0 10px
+    background-color: transparentize($black-10, .2)
+
+.page
+  width: 100%
+  min-height: 100vh
+  padding: 50px 10px 100px
+  background: $black-05
