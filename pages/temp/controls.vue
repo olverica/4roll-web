@@ -10,9 +10,7 @@
     <controls-switch/>
     <controls-counter/>
   
-    <button class="button">button</button>
-    <button class="button" disabled>disabled</button>
-    <!-- <div class="space" style="height: 1000px;"></div> -->
+    <button class="button" disabled>button</button>
     <button-google/>
 
   </section>
