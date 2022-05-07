@@ -1,0 +1,58 @@
+.cell-input
+  padding: 15px 5px 5px
+
+.cell_input
+  width: 100%
+  height: 100%
+  border-radius: 5px
+  color: $white-80
+  background: $dark-12
+  text-align: center
+  // 
+  &::placeholder
+    color: $dark-50
+
+// TABLE
+
+.cell-table
+  padding: 15px 5px 5px
+  height: max-content
+  // text
+  .cell_title
+    @include semi-12
+
+.cell_table
+  width: 100%
+  height: 100%
+  border-radius: 5px
+  overflow: hidden
+  // flex
+  gap: 3px
+  display: flex
+  flex-direction: column
+
+.cell_table_group,
+.cell_table_modifier
+  padding: 10px
+  border-radius: 3px
+  background: $dark-12
+  // flex
+  gap: 10px
+  flex-grow: 1
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+.cell_table_row
+  // flex
+  gap: 10px
+  display: flex
+  align-items: center
+
+.cell_table_value
+  color: $light-70
+  @include semi-14
+
+.cell_table_text
+  color: $gray-60
+  @include med-12
