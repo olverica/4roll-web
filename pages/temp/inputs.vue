@@ -1,13 +1,25 @@
 <template>
 
   <section class="page">
+    <input-field
+      title="sheeeeesh"
+      hint="B)"/>
 
-    <div class="input">
-      <label class="input_title">input</label>
-      <input class="input_entry" placeholder="input" type="text">
-      <span class="input_hint">hint</span>
-    </div>
+    <textarea-field
+      title="sheeeeesh"
+      hint="B)"
+      :max-length="12"/>
 
   </section>
 
 </template>
+
+<script lang="ts">
+import InputField from '~/components/fields/InputField.vue'
+import TextareaField from '~/components/fields/TextareaField.vue'
+import {defineComponent, PropType} from 'vue'
+
+export default defineComponent({
+  components: { InputField, TextareaField },
+});
+</script>
