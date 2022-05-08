@@ -1,62 +1,33 @@
 <template>
-
   <div class="page">
+    <attribute-section/>
+    
+    <ability-section/>
 
-    <section class="attributes">
-      <h1>Attributes</h1>
-      <div class="cells cells-4x">
-        <div class="cell cell-temp cell-column">
-          <p class="cell_title">title <i class="cell_icon">placeholder</i></p>
-          <div class="cell_value">
-            <span class="cell_value_primary">0</span>
-            <span class="cell_value_secondary">0</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <saving-throw-section/>
 
-    <section class="abilities">
-      <h1>Abilities</h1>
-      <div class="cells cells-3x">
-        <div class="cell cell-temp cell-column">
-          <p class="cell_title">title <i class="cell_icon">placeholder</i></p>
-          <div class="cell_value">
-            <span class="cell_value_primary">+0</span>
-            <span class="cell_value_secondary">(00)</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="savingThrows">
-      <h1>Saving throws</h1>
-      <div class="cells cells-6x">
-        <div class="cell cell-temp cell-column">
-          <p class="cell_title">title <i class="cell_icon">placeholder</i></p>
-          <div class="cell_value cell_value-marked">
-            <span class="cell_value_primary">+0</span>
-            <i class="cell_mark"></i>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="skills">
-      <h1>Skills</h1>
-      <div class="cells cells-2x">
-        <div class="cell cell-row">
-          <p class="cell_title"><i class="cell_icon">placeholder</i> title</p>
-          <div class="cell_value cell_value-marked">
-            <span class="cell_value_primary">+00</span>
-            <i class="cell_mark"></i>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <skill-section/>
   </div>
-
 </template>
+
+
+<script lang="ts">
+import {defineComponent} from 'vue'
+import SavingThrowSection from '~/components/Charsheet/SavingThrow/SavingThrowSection.vue';
+import AttributeSection from '~/components/Charsheet/Attribute/AttributeSection.vue';
+import AbilitySection from '~/components/Charsheet/Ability/AbilitySection.vue';
+import SkillSection from '~/components/Charsheet/Skill/SkillSection.vue';
+
+
+export default defineComponent({
+  components: { 
+    AttributeSection, 
+    SavingThrowSection, 
+    AbilitySection, 
+    SkillSection
+  },
+});
+</script>
 
 <style lang="sass">
 
