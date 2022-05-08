@@ -1,53 +1,35 @@
 .cell
-  background: $dark-15
   border-radius: 10px
-  // flex
-  gap: 10px
-  display: flex
-  align-items: center
-  justify-content: center 
-  flex-direction: column
+  background: $dark-15
 
+// CELL STYLE MIXIN
 
-.cell_title
-  color: $light-70
-  // flex
-  gap: 5px
-  display: flex
-  align-items: center
-  // icon
-  &::after
-    color: $white-80
-    @include icon-4R
-
-
-.cell_value
-  // flex
-  display: flex
-  align-items: end
+@mixin cellStyles($cellHeight: 60px, $cellGap: 10px, $titleSize: 12px, $iconSize: 12px, $primarySize: 22px, $primaryWeight: $bold, $secondarySize: 14px, $secondaryHeight: 115%, $markGap: 5px)
+  height: $cellHeight
+  gap: $cellGap
   // 
-  &_primary
-    color: $white-80
+  .cell_title
+    font-size: $titleSize
   // 
-  &_secondary
-    color: $gray-60
-    line-height: 115% !important
+  .cell_icon
+    font-size: $iconSize
+  // 
+  .cell_input
+    font-size: $primarySize
+  // 
+  .cell_value_primary
+    font-size: $primarySize
+    font-weight: $primaryWeight
+  //
+  .cell_value_secondary
+    font-size: $secondarySize
+    line-height: $secondaryHeight
+  // 
+  .cell_value-marked
+    gap: $markGap
 
 
-.cell_value-indicator
-  // flex
-  gap: 5px
-  align-items: center
 
 
-.cell_indicator::before
-  content: "star-alt"
-  color: $dark-12
-  font-size: 10px
-  @include icon-4R
 
-.cell_indicator-proficiency::before
-  color: $white-80
 
-.cell_indicator-expertise::before
-  content: "crown"

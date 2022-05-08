@@ -1,47 +1,45 @@
-.cell-input
-  padding: 15px 5px 5px
-
-.cell_input
-  width: 100%
-  height: 100%
-  border-radius: 5px
-  color: $white-80
-  background: $dark-12
-  text-align: center
-  // 
-  &::placeholder
-    color: $dark-50
-
-// TABLE
-
 .cell-table
   padding: 15px 5px 5px
-  height: max-content
-  // text
+  // flex
+  gap: 10px
+  display: flex
+  flex-direction: column
+  align-items: center
+  // styles
   .cell_title
-    @include semi-12
+    font-size: 12px
+  .cell_icon
+    font-size: 12px
 
 .cell_table
   width: 100%
-  height: 100%
-  border-radius: 5px
-  overflow: hidden
   // flex
   gap: 3px
   display: flex
   flex-direction: column
 
+// TABLE GROUP
+
 .cell_table_group,
 .cell_table_modifier
+  gap: 10px
   padding: 10px
-  border-radius: 3px
   background: $dark-12
   // flex
-  gap: 10px
-  flex-grow: 1
   display: flex
+
+.cell_table_group
+  border-radius: 5px 5px 3px 3px
+  // flex
   flex-direction: column
-  justify-content: center
+
+.cell_table_modifier
+  height: 30px
+  border-radius: 3px 3px 5px 5px
+  // flex
+  align-items: center
+
+// TABLE ROW
 
 .cell_table_row
   // flex
@@ -50,7 +48,7 @@
   align-items: center
 
 .cell_table_value
-  color: $light-70
+  color: $white-80
   @include semi-14
 
 .cell_table_text

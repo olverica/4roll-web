@@ -7,7 +7,6 @@
 
     <textarea-field
       title="sheeeeesh"
-      hint="B)"
       :max-length="12"/>
 
   </section>

@@ -1,0 +1,33 @@
+.cells
+  // grid
+  gap: 5px
+  display: grid
+  grid-auto-rows: max-content
+
+  
+.cells-2x
+  grid-template-columns: repeat(2, 1fr)
+  // 
+  .cell-column
+    @include cellStyles($cellHeight: 90px, $titleSize: 14px, $iconSize: 14px)
+
+
+.cells-3x
+  grid-template-columns: repeat(3, 1fr)
+  // 
+  .cell-column
+    @include cellStyles($cellHeight: 80px)
+
+
+.cells-4x
+  grid-template-columns: repeat(4, 1fr)
+  // 
+  .cell-column
+    @include cellStyles($cellHeight: 70px, $primarySize: 20px)
+
+
+.cells-6x
+  grid-template-columns: repeat(6, 1fr)
+  // 
+  .cell-column
+    @include cellStyles($cellHeight: 60px, $cellGap: 5px, $titleSize: 10px, $iconSize: 10px, $primarySize: 20px, $markGap: 2px)
