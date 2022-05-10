@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="charsheet">
     <attribute-section/>
     
     <ability-section/>
@@ -31,7 +31,7 @@ export default defineComponent({
 
 <style lang="sass">
 
-  .page
+  .charsheet
     gap: 20px !important
 
   section
