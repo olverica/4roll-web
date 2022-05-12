@@ -1,11 +1,5 @@
 <template>
-  <div class="page">
-
-    <section class="header">
-      <h1 class="header_name">Charecter sheet</h1>
-      <button class="header_button">placeholder</button>
-    </section>
-
+  <div class="charsheet">
     <attribute-section/>
     
     <ability-section/>
@@ -37,7 +31,7 @@ export default defineComponent({
 
 <style lang="sass">
 
-  .page
+  .charsheet
     gap: 20px !important
 
   section
