@@ -1,6 +1,6 @@
 <template>
   <section class="abilities">
-    <h1>Abilities</h1>
+    <h1 class="title-18">Abilities</h1>
 
     <div class="cells cells-3x">
       <ability v-for="model in abilities"
@@ -21,12 +21,12 @@ export default defineComponent({
   data() {
     return {
       abilities: [
-        { name: 'asd', score: 123, modifier: 123},
-        { name: 'asd', score: 123, modifier: 123},
-        { name: 'asd', score: 123, modifier: 123},
-        { name: 'asd', score: 123, modifier: 123},
-        { name: 'asd', score: 123, modifier: 123},
-        { name: 'asd', score: 123, modifier: 123},
+        { name: 'Strength', score: 123, modifier: 123},
+        { name: 'Dexterity', score: 123, modifier: 123},
+        { name: 'Constitution', score: 123, modifier: 123},
+        { name: 'Intelligence', score: 123, modifier: 123},
+        { name: 'Wisdom', score: 123, modifier: 123},
+        { name: 'Charisma', score: 123, modifier: 123},
       ]
     }
   }

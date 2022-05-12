@@ -1,6 +1,6 @@
 <template>
   <section class="savingThrows">
-    <h1>Saving throws</h1>
+    <button class="divider">Saving throws</button>
 
     <div class="cells cells-6x">
       <saving-throw
@@ -21,12 +21,12 @@ export default defineComponent({
   data() {
     return {
       savingThrows: [
-        { name: 'throw', value: 123 },
-        { name: 'throw', value: 123 },
-        { name: 'throw', value: 123 },
-        { name: 'throw', value: 123 },
-        { name: 'throw', value: 123 },
-        { name: 'throw', value: 123 }
+        { name: 'STR', value: 123 },
+        { name: 'DEX', value: 123 },
+        { name: 'CON', value: 123 },
+        { name: 'INT', value: 123 },
+        { name: 'WIS', value: 123 },
+        { name: 'CHA', value: 123 }
       ]
     }
   }

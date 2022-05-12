@@ -1,5 +1,11 @@
 <template>
   <div class="page">
+
+    <section class="header">
+      <h1 class="header_name">Charecter sheet</h1>
+      <button class="header_button">placeholder</button>
+    </section>
+
     <attribute-section/>
     
     <ability-section/>

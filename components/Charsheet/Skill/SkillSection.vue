@@ -1,6 +1,6 @@
 <template>
   <section class="skills">
-    <h1>Skills</h1>
+    <h1 class="title-18">Skills</h1>
 
     <div class="cells cells-2x">
       <skill 
@@ -22,14 +22,24 @@ export default defineComponent({
   data() {
     return {
       skills: [
-        { name: "asd", value: 1 },
-        { name: "asd", value: 1 },
-        { name: "asd", value: 1 },
-        { name: "asd", value: 1 },
-        { name: "asd", value: 1 },
-        { name: "asd", value: 1 },
-        { name: "asd", value: 1 },
-        { name: "asd", value: 1 },
+        { name: "Athletics", value: 1 },
+        { name: "Acrobatics", value: 2 },
+        { name: "Sleight of Hand", value: 3 },
+        { name: "Stealth", value: 4 },
+        { name: "Arcana", value: 5 },
+        { name: "History", value: 6 },
+        { name: "Investigation", value: 7 },
+        { name: "Nature", value: 8 },
+        { name: "Religion", value: 9 },
+        { name: "Deception", value: 1 },
+        { name: "Intimidation", value: 2 },
+        { name: "Performance", value: 3 },
+        { name: "Persuasion", value: 4 },
+        { name: "Animal Handling", value: 5 },
+        { name: "Insight", value: 6 },
+        { name: "Medicine", value: 7 },
+        { name: "Perception", value: 8 },
+        { name: "Survival", value: 9 },
       ]
     }
   }

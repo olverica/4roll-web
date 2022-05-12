@@ -3,20 +3,23 @@
 @import presets/reset
 @import presets/mixins
 
+// STYLES
+
+@import styles/variables
+@import styles/fonts
+@import styles/icons
+@import styles/colors
+
+@import styles/text/header
+@import styles/text/title
+@import styles/text/subtitle
+@import styles/text/text
+
 // LAYOUT
 
-@import layout/variables
-@import layout/fonts
-@import layout/icons
 @import layout/layout
 
 // COMPONENTS
-
-@import components/text/header
-@import components/text/title
-@import components/text/subtitle
-@import components/text/text
-@import components/text/colors
 
 @import components/controls/radioButton
 @import components/controls/checkBox
@@ -24,7 +27,7 @@
 @import components/controls/counter
 @import components/controls/button
 
-@import components/list/list_item
+@import components/list/item
 
 @import components/cell/cell
 @import components/cell/row
@@ -44,9 +47,18 @@
 @import components/textarea/title
 @import components/textarea/counter
 
+@import components/text/header
+@import components/text/title
+@import components/text/divider
+
 // SECTIONS
+
 @import sections/cells/cells
-@import components/sections/tabbar
+@import sections/cells/containers
+
+// modals
+
+@import modals/sheet/sheet
 
 // PAGES
 
