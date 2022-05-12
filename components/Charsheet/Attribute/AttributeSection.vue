@@ -1,11 +1,11 @@
 <template>
   <section class="attributes">
-    <h1>Attributes</h1>
+    <h1 class="title-18">Attributes</h1>
 
     <div class="cells cells-4x">
       <attribute v-for="model in attributes"
         :model="model"/>
-    </div>>
+    </div>
   </section>
 </template>
 
@@ -20,14 +20,14 @@ export default defineComponent({
   data() {
     return {
       attributes: [
-        { name: 'asd', value: '666px' },
-        { name: 'asd', value: '000ln' },
-        { name: 'asd', value: '000ln' },
-        { name: 'asd', value: '000ln' },
-        { name: 'asd', value: '000ln' },
-        { name: 'asd', value: '000ln' },
-        { name: 'asd', value: '000ln' },
-        { name: 'asd', value: '000ln' },
+        { name: 'XP', value: '00' },
+        { name: 'HP', value: '00' },
+        { name: 'AC', value: '00' },
+        { name: 'PB', value: '00' },
+        { name: 'Speed', value: '00' },
+        { name: 'Initiative', value: '00' },
+        { name: 'Perception', value: '00' },
+        { name: 'Inspiration', value: '00' },
       ]
     }
   }

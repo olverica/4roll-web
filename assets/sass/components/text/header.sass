@@ -1,15 +1,36 @@
-@mixin bold-22
-  font-size: 22px
-  line-height: 100%
-  font-weight: $bold
+.header
+  height: 30px
+  // grid
+  display: grid
+  align-items: center
+  grid-template-columns: 1fr max-content
 
-@mixin bold-20
-  font-size: 20px
-  line-height: 100%
-  font-weight: $bold
+.header-sheet
+  height: 25px
+  // 
+  .header_name
+    @include bold-20
+  // 
+  .header_button
+    height: 25px
+    font-size: 11px
+    background: $gray-18
 
-.bold-22
+// childs
+
+.header_name
+  color: $white-80
   @include bold-22
 
-.bold-20
-  @include bold-22
+.header_button
+  height: 30px
+  aspect-ratio: 1/1
+  border-radius: 100%
+  background: $dark-15
+  // grid
+  display: grid
+  place-items: center
+  // icon
+  font-size: 14px
+  color: $dark-50
+  @include icon-4R

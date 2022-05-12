@@ -1,0 +1,19 @@
+.divider
+  color: $dark-50
+  @include med-14
+  // flex
+  gap: 5px
+  display: flex
+  align-items: center
+  // icon
+  &::after
+    font-size: 10px
+    content: "chevron-up"
+    @include icon-4R
+    // animation
+    @include transition(transform)
+
+
+.divider-closed
+  &::after
+    transform: rotate(180deg)
