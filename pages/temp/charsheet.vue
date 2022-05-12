@@ -7,6 +7,11 @@
     <saving-throw-section/>
 
     <skill-section/>
+    <skill-section/>
+    <skill-section/>
+    <skill-section/>
+
+
   </div>
 </template>
 
@@ -25,7 +30,7 @@ export default defineComponent({
     SavingThrowSection, 
     AbilitySection, 
     SkillSection
-  },
+  }
 });
 </script>
 

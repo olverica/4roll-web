@@ -13,7 +13,7 @@
     </section>
 
     <section class="auth_footer">
-      <button-google/>
+      <!-- <wip-button-google/> -->
       <button class="auth_policyButton">Our <b>Terms of Use</b> and <b>Privacy Policy</b></button>
     </section>
 

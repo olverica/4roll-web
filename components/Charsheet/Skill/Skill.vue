@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import CellMarkedValue from '~/components/Cell/Value/CellMarkedValue.vue'
+import CellMarkedValue from '~/components/Cell/Values/CellMarkedValue.vue'
 import RowCell from '~/components/Cell/Types/RowCell.vue'
 import Skill from '~/services/Charsheet/Skill';
 

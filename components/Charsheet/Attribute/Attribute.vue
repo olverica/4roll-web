@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import CellMarkedValue from '~/components/Cell/Value/CellMarkedValue.vue'
+import CellMarkedValue from '~/components/Cell/Values/CellMarkedValue.vue'
 import ColumnCell from '~/components/Cell/Types/ColumnCell.vue'
 
 
