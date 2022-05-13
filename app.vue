@@ -1,24 +1,20 @@
 <template>
-  <viewport class="viewport">
+  <div class="viewport">
 
-    <div class="modals">
-    </div>
+    <nuxt-page class="page"/>
 
     <div class="navigation">
-
+      <div style="height: 100px; width: 100%; background: red;">
+      </div>
     </div>
-  </viewport>
-
-
-  <nuxt-page class="page"/>
+  </div>
 </template>
 
 <script lang="ts">
-import Viewport from '~/components/Layout/Viewport.vue'
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  components: { Viewport },
+
 });
 </script>
 
@@ -26,16 +22,13 @@ export default defineComponent({
 
 .viewport
   position: fixed
+  overflow-y: hidden
   width: 428px
-
-.modals
-  position: absolute
   height: 100%
-  width: 100%
-  z-index: 2
 
 .page
   overflow-y: scroll
+  height: 100%
   z-index: 0
 
 .navigation
@@ -47,10 +40,9 @@ export default defineComponent({
 .page::-webkit-scrollbar
   display: none
 
-
 #__nuxt
   width: auto
-  overflow-y: scroll
+  overflow-y: hidden
   height: auto
 
 </style>
