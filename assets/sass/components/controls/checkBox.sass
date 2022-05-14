@@ -5,10 +5,9 @@
   border-radius: 5px
   background: $dark-15
   cursor: pointer
-  // flex
-  display: flex
-  align-items: center
-  justify-content: center
+  // grid
+  display: grid
+  place-items: center
   // animation
   @include transition(background, .15s)
   // checkbox check
@@ -20,16 +19,17 @@
     // animation
     @include transition(font-size, .15s)
 
-.checkBox-active
-  background: transparentize($green, .8)
-  &::before
-    font-size: 10px
+// TYPES
 
 .checkBox-round
   border-radius: 100%
 
-.checkBox-dark
-  background: $dark-12
+// STATES
+
+.checkBox-active
+  background: transparentize($green, .8)
+  &::before
+    font-size: 10px
 
 .checkBox-fail
   &::before

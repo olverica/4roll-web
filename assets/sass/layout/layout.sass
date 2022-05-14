@@ -1,18 +1,9 @@
 // TEMP LAYOUT
 
-html
-  height: 100%
-  
 body
-  height: 100%
-  width: 428px
   background: #000
   font-family: 'Inter', sans-serif
-
-#__nuxt
-  width: 100%
-  height: 100%
-  // scrollbar
+  // scrollbar 
   &::-webkit-scrollbar
     width: 5px
   &::-webkit-scrollbar-track
@@ -21,8 +12,51 @@ body
     border-radius: 10px 0 0 10px
     background-color: transparentize($black-10, .2)
 
+
+.viewport
+  max-width: 450px
+  margin: 0 auto
+
+
 .page
-  width: 100%
-  min-height: 100%
-  padding: 50px 10px 100px
   background: $black-05
+  // position
+  position: static
+  z-index: 0
+
+  
+.tabbar
+  width: -webkit-fill-available
+  max-width: inherit
+  // position
+  position: fixed
+  z-index: 1
+  bottom: 0
+
+
+.sheet
+  width: -webkit-fill-available
+  max-width: inherit
+  // position
+  position: fixed
+  z-index: 2
+  bottom: 0
+
+
+// TEMPORARY
+
+
+.sheet_tempBlock
+  height: 100px
+  background: $gray-18
+  border-radius: 10px
+
+.charsheet
+  padding: 50px 10px 100px
+  gap: 20px
+  display: flex
+  flex-direction: column
+  section
+    gap: 15px
+    display: flex
+    flex-direction: column

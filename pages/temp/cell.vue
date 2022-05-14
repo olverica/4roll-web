@@ -78,12 +78,3 @@
 
 
 </template>
-
-<style lang="sass">
-
-  .page 
-    gap: 10px
-    display: flex
-    flex-direction: column
-
-</style>

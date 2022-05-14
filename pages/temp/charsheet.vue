@@ -36,17 +36,5 @@ export default defineComponent({
 
 <style lang="sass">
 
-  .charsheet
-    gap: 20px !important
-
-  section
-    gap: 15px
-    display: flex
-    flex-direction: column
-
-  h1
-    color: #b3b3b3
-    font-size: 18px
-    font-weight: 600
 
 </style>

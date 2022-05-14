@@ -9,12 +9,14 @@
   align-items: center
   justify-content: center
   // text
-  color: #000
+  color: black
   mix-blend-mode: screen
-  @extend .semi-16
+  @include semi-16
+  // disabled state
   &:disabled
     opacity: .4
     cursor: default
+
 
 .button-google
   gap: 10px

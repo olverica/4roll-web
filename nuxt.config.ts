@@ -6,10 +6,4 @@ export default defineNuxtConfig({
     css: [
         '~/assets/sass/style.sass'
     ],
-
-    vite: {
-        server: {
-            hmr: false,
-        }
-    }
 })
