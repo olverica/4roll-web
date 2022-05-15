@@ -1,27 +1,33 @@
 <template>
   <button 
-    class="tabbar_button" 
-    :disabled="disabled">
+    class="tabbar_button"
+    :class="{'tabbar_button-active': active}">
 
-    <i class="tabbar_button_icon">placeholder</i>
-    <p class="tabbar_button_text">{{ message }}</p>
+    <i>{{ icon }}</i>
+    <p>{{ caption }}</p>
   </button>
 </template>
 
 <script lang="ts">
 import {defineComponent, PropType} from 'vue'
 
+
 export default defineComponent({
   props: {
-    disabled:{
+    active:{
       default: false,
       type: Boolean as PropType<boolean>,
     },
 
-    message: {
-      default: '',
+    icon:{
+      default: 'placeholder',
       type: String as PropType<string>,
-    }    
-  } 
+    },
+
+    caption: {
+      default: 'O___O',
+      type: String as PropType<string>,
+    }
+  }
 });
 </script>

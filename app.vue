@@ -1,61 +1,30 @@
 <template>
+  <client-only>
+    <div class="viewport">
+      <for-dev/>
 
-  <div class="viewport">
+      <modals/>
+      
+      <tabbar/>
 
-    <!-- <section class="sheet">
-      <div class="sheet_body">
-        <div class="header">
-          <h1 class="header_name">Header</h1>
-          <button class="header_button">cross</button>
-        </div>
-        <div class="sheet_content">
-          <div class="sheet_tempBlock"></div>
-          <div class="sheet_tempBlock"></div>
-          <div class="sheet_tempBlock"></div>
-          <div class="sheet_tempBlock"></div>
-          <div class="sheet_tempBlock"></div>
-          <div class="sheet_tempBlock"></div>
-          <div class="sheet_tempBlock"></div>
-          <div class="sheet_tempBlock"></div>
-        </div>
-        <button class="button">button</button>
-      </div>
-    </section> -->
-
-    <section class="tabbar">
-      <div class="tabbar_body">
-        <button class="tabbar_button">
-          <i>placeholder</i>
-          <p>Button</p>
-        </button>
-        <button class="tabbar_button">
-          <i>placeholder</i>
-          <p>Button</p>
-        </button>
-        <button class="tabbar_button tabbar_button-active">
-          <i>placeholder</i>
-          <p>Counter</p>
-        </button>
-        <button class="tabbar_button">
-          <i>placeholder</i>
-          <p>button</p>
-        </button>
-        <button class="tabbar_button tabbar_button-toggler">
-          <i>hide</i>
-          <p>Hide</p>
-        </button>
-      </div>
-    </section>
-
-    <nuxt-page class="page"/>
-  </div>
-
+      <nuxt-page class="page"/>
+    </div>
+  </client-only>
 </template>
 
 <script lang="ts">
-  import {defineComponent} from 'vue'
+import {defineComponent, reactive, provide} from 'vue'
+import ModalService from '~/services/Modal/ModalService';
+import Modals from '~/components/Modal/Modals.vue';
+import Tabbar from '~/components/Navigation/Tabbar.vue'
+import ForDev from '~/components/Dev/ForDev.vue'
 
-  export default defineComponent({
 
-  });
+export default defineComponent({
+  components: { Modals, Tabbar, ForDev },
+
+  setup() {
+    provide('$modals', reactive(new ModalService()));
+  }
+});
 </script>
