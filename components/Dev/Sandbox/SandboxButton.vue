@@ -56,6 +56,7 @@ export default defineComponent({
 .sandbox_button
   position: fixed
   padding-left: 5px
+  z-index: 10
 
   background: #F7F7F7
   border-radius: 50%

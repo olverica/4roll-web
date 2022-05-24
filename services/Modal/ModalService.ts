@@ -6,7 +6,7 @@ export type ModalComponent = DefineComponent
 export interface ModalContainer
 {
     notifications: object[];
-    sheet?: {component: ModalComponent, descriptor: SheetDescription};
+    sheet?: {component: ModalComponent};
 }
 
 export interface SheetDescription
@@ -35,9 +35,9 @@ export default class ModalService
         //
     }
 
-    public showSheet(component: ModalComponent, descriptor: SheetDescription)
+    public showSheet(component: ModalComponent)
     {
-        this.container.sheet = { component, descriptor };
+        this.container.sheet = { component };
     }
 
     public hideSheet(): void

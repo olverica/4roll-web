@@ -36,7 +36,6 @@ export default defineComponent({
 
   methods: {
     onClick() {
-      console.log(123);
       this.closed = !!!this.closed;
     }
   }

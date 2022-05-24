@@ -13,10 +13,11 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
-import ExposeTransition from '~/components/Dev/ExposeTransition.vue';
-import SandboxButton from '~/components/Dev/SandboxButton.vue';
-import Sandbox from '~/components/Dev/Sandbox.vue';
+import {defineComponent, provide} from 'vue'
+import ConsoleService from '~/services/Dev/ConsoleService'
+import ExposeTransition from '~/components/Dev/Sandbox/ExposeTransition.vue';
+import SandboxButton from '~/components/Dev/Sandbox/SandboxButton.vue';
+import Sandbox from '~/components/Dev/Sandbox/Sandbox.vue';
 
 
 export default defineComponent({
@@ -34,6 +35,12 @@ export default defineComponent({
     buttonShown() {
       return !!!this.sandboShown && this.buttonLoaded;
     }
+  },
+
+  setup() {
+    let messages = reactive([]);
+
+    provide('$console', reactive(new ConsoleService(messages)));
   },
 
   mounted() {

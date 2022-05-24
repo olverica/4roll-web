@@ -1,0 +1,68 @@
+<template>
+  <div 
+    ref="thumb"
+    style="width: 100%; height: 20px; background: antiquewhite;"
+    @touchcancel="onTouchCancel"
+    @touchstart="onTouchStart"
+    @touchmove="onTouchMove"
+    @touchend="onTouchEnd">
+  </div>
+</template> 
+
+<script lang="ts">
+import SheetInteractionHandler from '~/services/Animation/Sheet/SheetInteractionHandler'
+import EventHandler from '~/services/Animation/Sheet/Behaviour/EventHandler'
+import {PropType, defineComponent} from 'vue'
+
+
+export default defineComponent({
+
+  props: {
+    margin: {
+      required: true,
+      type: Number as PropType<number>
+    },
+
+    interactionHandler: {
+      required: true,
+      type: Object
+    },
+
+    eventHandler: {
+      required: true,
+      type: Object
+    }
+  },
+
+  methods: {
+    onTouchCancel(event: TouchEvent) {
+      this.onTouchEnd(event);
+    },
+
+    onTouchEnd(rawEvent: TouchEvent) {
+      let fingerAt = this.computePosition(rawEvent);
+      let event = this.eventHandler.released(fingerAt);
+
+      this.interactionHandler.onTouchRelease(event);
+    },
+
+    onTouchMove(rawEvent: TouchEvent) {
+      let fingerAt = this.computePosition(rawEvent);
+      let event = this.eventHandler.moved(fingerAt);
+
+      this.interactionHandler.onTouchMove(event);
+    },
+
+    onTouchStart(rawEvent: TouchEvent) {
+      let fingerAt = this.computePosition(rawEvent);
+      let event = this.eventHandler.touched(fingerAt,this.margin);
+
+      this.interactionHandler.onTouchStart(event);
+    },
+
+    computePosition(event: TouchEvent): number {
+      return event.touches[0] ? event.touches[0].clientY : 0;
+    },
+  }
+});
+</script>

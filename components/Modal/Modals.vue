@@ -1,35 +1,44 @@
 <template>
   <sheet-container 
     v-if="sheet"
+    :body="sheet.component"
     @close="hideSheet"/>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import {ModalContainer} from '~/services/Modal/ModalService';
-import ModalService from '~/services/Modal/ModalService';
-import SheetContainer from '~/components/Modal/Sheet/SheetContainer.vue';
+import inject from '~/services/Support/Helpers/Inject';
+import ScrollService from '~/services/Modal/ModalService'
+import SheetContainer from '~/components/Modal/Sheet/SheetContainer.vue'
+import ModalService, {ModalComponent, ModalContainer} from '~/services/Modal/ModalService'
 
 
 export default defineComponent({
   components: { SheetContainer },
 
-  inject: ['$modals'],
+  inject: ['$modals', '$scroll'],
 
   computed: {
-    modals(): ModalService {
-      if (!!!this.$modals)  
-        throw Error('Dependency not injecteds');
+    scroll(): ScrollService {
+      return inject(this, 'scroll');
+    },
 
-      return this.$modals;
+    modals(): ModalService {
+      return inject(this, 'modals');
     },
 
     container(): ModalContainer {
       return this.modals.getContainer();
     },
 
-    sheet(): object {
+    sheet(): {component: ModalComponent} {
       return this.container.sheet;
+    }
+  },
+
+  watch: {
+    sheet(value: unknown) {
+      return value ? this.scroll.lock() : this.scroll.unlock();
     }
   },
 

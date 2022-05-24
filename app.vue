@@ -1,29 +1,31 @@
 <template>
   <client-only>
-    <div class="viewport">
+    <viewport>
       <for-dev/>
 
       <modals/>
-      
       <tabbar/>
 
       <nuxt-page class="page"/>
-    </div>
+    </viewport>
   </client-only>
 </template>
 
 <script lang="ts">
 import {defineComponent, reactive, provide} from 'vue'
-import ModalService from '~/services/Modal/ModalService';
-import Modals from '~/components/Modal/Modals.vue';
+import ScrollService from '~/services/Modal/ScrollService'
+import ModalService from '~/services/Modal/ModalService'
+import Viewport from '~/components/Layout/Viewport.vue'
 import Tabbar from '~/components/Navigation/Tabbar.vue'
+import Modals from '~/components/Modal/Modals.vue'
 import ForDev from '~/components/Dev/ForDev.vue'
 
 
 export default defineComponent({
-  components: { Modals, Tabbar, ForDev },
+  components: { Viewport, Modals, Tabbar, ForDev },
 
   setup() {
+    provide('$scroll', reactive(new ScrollService()));
     provide('$modals', reactive(new ModalService()));
   }
 });

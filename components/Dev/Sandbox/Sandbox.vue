@@ -4,10 +4,12 @@
     <vue-header @close="close">Sandbox</vue-header>
 
     <div class="sanbox_body">
-      <vue-button @click="showShit">
-        show shit
-      </vue-button>
+      <dev-console/>
     </div>
+
+    <vue-button @click="showShit">
+      show shit
+    </vue-button>
 
   </section>
 </template>
@@ -15,12 +17,14 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import ModalService from '~/services/Modal/ModalService';
+import DevConsole from '~/components/Dev/Console/DevConsole.vue'
 import VueButton from '~/components/Core/VueButton.vue'
 import VueHeader from '~/components/Core/VueHeader.vue'
+import TempSheet from '../../Wip/TempSheet.vue';
 
 
 export default defineComponent({
-  components: { VueHeader, VueButton},
+  components: { VueHeader, VueButton, DevConsole},
 
   inject: ['$modals'],
 
@@ -35,9 +39,10 @@ export default defineComponent({
 
   methods: {
     showShit() {
-      this.modals.showSheet({}, {});
+      this.modals.showSheet(TempSheet);
       this.close();
     },
+
 
     close() {
       this.$emit('close')
@@ -55,7 +60,7 @@ export default defineComponent({
   padding: 40px 20px
 
   position: fixed
-  z-index: 5
+  z-index: 10
 
   height: 100%
   max-width: 450px
@@ -75,10 +80,13 @@ export default defineComponent({
   mix-blend-mode: normal
 
 .sanbox_body
-  gap: 20px
-  flex-grow: 1
   display: flex
-  flex-direction: column-reverse
-    
+  gap: 20px
+
+  flex-grow: 1
+  flex-direction: column
+  align-items: flex-end
+  
+  overflow-y: overlay
     
 </style>
