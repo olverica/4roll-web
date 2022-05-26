@@ -1,9 +1,9 @@
 <template>
-  <div class="cell cell-row">
+  <button class="cell cell-row">
     <p class="cell_title"><i class="cell_icon">{{ icon }}</i>{{ title }}</p>
 
     <slot/>
-  </div>
+  </button>
 </template>
 
 <script lang="ts">

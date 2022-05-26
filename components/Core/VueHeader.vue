@@ -1,11 +1,15 @@
 <template>
-  <div class="header">
-    <h1 class="header_name">
-      <slot/>
-    </h1>
+  <header class="header">
+
+    <div class="header_content">
+      <h1 class="header_text">
+        <slot/>
+      </h1>
+      <!-- <i class="header_icon">placeholder</i> -->
+    </div>
 
     <button class="header_button" @click="onClick">cross</button>
-  </div>
+  </header>
 </template>
 
 <script lang="ts">

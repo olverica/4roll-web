@@ -2,16 +2,18 @@
   width: 100%
   min-height: 50px
   border-radius: 10px
-  background: $white-80
+  background: $light-80
   user-select: none
-  // flex
-  display: flex
-  align-items: center
-  justify-content: center
   // text
   color: black
   mix-blend-mode: screen
   @include semi-16
+  // grid
+  gap: 10px
+  display: grid
+  grid-auto-flow: column
+  align-items: center
+  justify-content: center
   // disabled state
   &:disabled
     opacity: .4
@@ -19,9 +21,9 @@
 
 
 .button-google
-  gap: 10px
   color: #fff
   background: #3b81ed
+  // google icon
   &::before
     content: ""
     background-size: 18px

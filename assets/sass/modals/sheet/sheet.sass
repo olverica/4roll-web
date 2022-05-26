@@ -1,52 +1,59 @@
 .sheet
   width: 100%
   height: 100%
-  background: $sheetBackground
+  background: $bg-sheet
   // flex
   display: flex
   flex-direction: column-reverse
 
 
 .sheet_body
-  background: $black-10
+  background: $dark-10
   margin-top: 40px
   padding: 40px 15px 20px
   border-radius: 20px 20px 0 0
   // sizing 
   height: max-content
-  max-height: -webkit-fill-available
-  // grid
-  gap: 20px
-  display: flex
-  flex-direction: column
+  max-height: stretch
   // position
   position: relative
-
-
-.sheet_body::before // thumb
-  content: ""
-  width: 80px
-  height: 4px
-  border-radius: 4px
-  background: $gray-18
-  // position
-  position: absolute
-  top: 20px
-  left: 50%
-  transform: translate(-50%)
+  // grid
+  gap: 20px
+  display: grid
+  grid-template-rows: max-content 1fr max-content
 
 
 .sheet_content
   padding: 10px 0
   overflow-y: overlay
-  // flex
+  // grid
   gap: 20px
-  display: flex
-  flex-direction: column
-  *
-    flex-shrink: 0
+  display: grid
+
+
+.sheet_thumb
+  width: 100%
+  height: 40px
+  // position
+  position: absolute
+  top: 0
+  left: 0
+  // icon
+  &::before 
+    content: ""
+    width: 80px
+    height: 4px
+    border-radius: 4px
+    background: $dark-18
+    // position
+    position: absolute
+    top: 20px
+    left: 50%
+    transform: translate(-50%)
+
 
 // MOZILLA FIX
+
 
 @-moz-document url-prefix()
 

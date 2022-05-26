@@ -2,7 +2,7 @@
   width: 100%
   min-height: 50px
   padding: 15px
-  background: $gray-18
+  background: $dark-18
   // flex
   display: flex
   flex-direction: column 
@@ -15,9 +15,9 @@
   background: $dark-15
 
 .list_item-selected
-  background: $gray-20
+  background: $dark-20
   &.list_item-dark
-    background: $gray-18
+    background: $dark-18
 
 .list_item-closed
   .list_item_header
@@ -30,7 +30,7 @@
       @include icon-4R
       content: "chevron-up"
       font-size: 12px
-      color: $dark-50
+      color: $light-50
       // animation
       @include transition(transform)
     
@@ -62,11 +62,11 @@
   align-items: center
 
 .list_item_info
-  color: $dark-50
+  color: $light-50
   @include med-12-i
 
 .list_item_hint
-  color: $dark-50
+  color: $light-50
   @include med-12
   // flex
   gap: 5px
@@ -80,7 +80,7 @@
 // CONTENT
 
 .list_item_description
-  color: $dark-50
+  color: $light-50
   @include text-14
 
 .list_item_column
@@ -99,8 +99,8 @@
     @include semi-12
   i
     font-size: 14px
-    color: $gray-60
+    color: $light-60
     @include icon-4R
   p
-    color: $gray-60
+    color: $light-60
     @include med-12

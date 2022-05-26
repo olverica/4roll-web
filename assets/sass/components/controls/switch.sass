@@ -17,14 +17,14 @@
     width: 15px
     height: 15px
     border-radius: 100%
-    background: $dark-50
+    background: $light-50
     position: relative
     left: 5px
     // animation
     @include transition((background, left), .15s)
 
 .switch-active
-  background: transparentize($green, .8)
+  background: transparentize($accent-green, .8)
   &::before
-    background: $green
+    background: $accent-green
     left: calc((100% + 5px) / 2)

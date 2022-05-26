@@ -1,18 +1,38 @@
 .header
-  height: 30px
+  max-width: 100%
+  overflow: hidden
   // grid
+  gap: 30px
   display: grid
   align-items: center
   grid-template-columns: 1fr max-content
 
 // childs
+  
+.header_content
+  color: $light-80
+  // grid
+  gap: 10px
+  display: grid
+  align-items: center
+  justify-content: start
+  grid-auto-flow: column
 
-.header_name
-  color: $white-80
-  @include bold-22
+
+.header_text
+  color: inherit
+  @include semi-20
+  @include text-overflow
+
+
+.header_icon
+  color: inherit
+  font-size: 18px
+  @include icon-4R
+
 
 .header_button
-  height: 30px
+  height: 25px
   aspect-ratio: 1/1
   border-radius: 100%
   background: $dark-15
@@ -20,6 +40,6 @@
   display: grid
   place-items: center
   // icon
-  font-size: 14px
-  color: $dark-50
+  font-size: 10px
+  color: $light-50
   @include icon-4R

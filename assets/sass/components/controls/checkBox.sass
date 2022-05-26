@@ -15,7 +15,7 @@
     font-family: "4R-icons"
     content: "check"
     font-size: 0
-    color: $green
+    color: $accent-green
     // animation
     @include transition(font-size, .15s)
 
@@ -27,14 +27,14 @@
 // STATES
 
 .checkBox-active
-  background: transparentize($green, .8)
+  background: transparentize($accent-green, .8)
   &::before
     font-size: 10px
 
 .checkBox-fail
   &::before
     content: "cross"
-    color: $red
+    color: $accent-red
   &.checkBox-active
-    background: transparentize($red, .8)
+    background: transparentize($accent-red, .8)
 

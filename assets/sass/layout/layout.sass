@@ -10,23 +10,31 @@ body
     margin-block: 15px
   &::-webkit-scrollbar-thumb
     border-radius: 10px 0 0 10px
-    background-color: transparentize($black-10, .2)
+    background-color: transparentize($dark-10, .2)
 
 
 .viewport
+  // sizing
   max-width: 450px
   margin: 0 auto
+  // styling
+  background: $dark-05
+  // grid
+  row-gap: 30px
+  display: grid
+  grid-auto-rows: max-content
 
 
 .page
-  background: $black-05
+  padding: 40px 10px 80px
   // position
   position: static
   z-index: 0
 
-  
+
 .tabbar
-  width: -webkit-fill-available
+  // sizing
+  width: stretch
   max-width: inherit
   // position
   position: fixed
@@ -35,7 +43,8 @@ body
 
 
 .sheet
-  width: -webkit-fill-available
+  // sizing
+  width: stretch
   max-width: inherit
   // position
   position: fixed
@@ -48,11 +57,10 @@ body
 
 .sheet_tempBlock
   height: 100px
-  background: $gray-18
+  background: $dark-18
   border-radius: 10px
 
 .charsheet
-  padding: 50px 10px 100px
   gap: 20px
   display: flex
   flex-direction: column

@@ -1,8 +1,8 @@
-.tabbar_body
+.tabbar
   height: 60px
   padding: 10px
-  background: $tabbarBackground
-  backdrop-filter: blur(40px)
+  background: $bg-tabbar
+  backdrop-filter: blur(30px)
   // grid
   gap: 10px
   display: grid
@@ -10,3 +10,12 @@
   grid-auto-columns: 1fr
   justify-content: end
   overflow: hidden
+
+
+// MOZILLA FIX
+
+
+@-moz-document url-prefix()
+
+  .tabbar 
+    background: $bg-tabbar-alt
