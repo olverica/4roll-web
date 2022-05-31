@@ -1,5 +1,5 @@
 <template>
-  <main 
+  <div 
     class="viewport" 
     ref="viewport"
     @touchmove="onScroll"
@@ -8,7 +8,7 @@
   >
 
     <slot/>
-  </main>
+  </div>
 </template>
 
 <script lang="ts">

@@ -1,5 +1,5 @@
 <template>
-  <div class="charsheet">
+  <main class="charsheet">
     
     <vue-header>Character name</vue-header>
     
@@ -7,8 +7,8 @@
       <picture class="avatar_picture">
         <img src="https://i.pinimg.com/736x/d7/3b/dd/d73bdd88df21a2210fadb0e5f9e865ae.jpg">
       </picture>
-      <h1 class="avatar_title">Title</h1>
-      <h2 class="avatar_subtitle">Subtitle</h2>
+      <h2 class="avatar_title">Title</h2>
+      <h3 class="avatar_subtitle">Subtitle</h3>
     </div>
 
     <attribute-section/>
@@ -26,7 +26,7 @@
     <skill-section/> 
     -->
 
-  </div>
+  </main>
 </template>
 
 

@@ -1,12 +1,12 @@
 <template>
-  <div 
-    class="checkBox"
+  <button 
+    class="checkbox"
     :class="{
-      'checkBox-active': checked,
-      'checkBox-fail': failled,
-      'checkBox-round': round}"
+      'checkbox-active': checked,
+      'checkbox-failed': failled,
+      'checkbox-rounded': round}"
     @click="onClick">
-  </div>
+  </button>
 </template>
 
 <script lang="ts">

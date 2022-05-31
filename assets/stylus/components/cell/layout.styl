@@ -1,0 +1,57 @@
+// CELL LAYOUT
+
+.cell
+  overflow: hidden
+  // flex
+  display: flex
+
+
+// HEADING
+
+.cell_heading
+  width: 100%
+  // flex
+  display: flex
+  align-items: center
+
+
+.cell_title
+  font-size: inherit
+  color: inherit
+  line-height: 1.2
+  text-overflow()
+
+
+.cell_icon
+  font-size: inherit
+  color: inherit
+  line-height: 1
+  icon-4R()
+
+  
+// VALUE 
+
+.cell_value
+  // flex
+  display: flex
+  align-items: flex-end
+
+  &-marked
+    align-items: center
+
+  // childs
+  &_primary
+    line-height: 1
+
+  &_secondary
+    line-height: 1.15
+
+// MARK
+
+.cell_mark
+  icon-4R()
+  
+  &::before
+    transition(color, ,2s)
+
+ 

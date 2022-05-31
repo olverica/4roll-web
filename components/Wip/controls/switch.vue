@@ -1,9 +1,9 @@
 <template>
-  <div 
+  <button 
     class="switch"
     :class="{'switch-active': active}"
     @click="onClick">
-  </div>
+  </button>
 </template>
 
 <script lang="ts">

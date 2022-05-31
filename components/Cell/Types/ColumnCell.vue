@@ -1,6 +1,10 @@
 <template>
   <button class="cell cell-column">
-    <p class="cell_title">{{ title }} <i class="cell_icon">{{ icon }}</i></p>
+
+    <div class="cell_heading">
+      <h3 class="cell_title"> {{ title }} </h3>
+      <i class="cell_icon">{{ icon }} </i>
+    </div>
 
     <slot/>
   </button>

@@ -1,8 +1,8 @@
 <template>
   <section class="attributes">
-    <h1 class="title-18">Attributes</h1>
+    <core-vue-title>Attributes</core-vue-title>
 
-    <div class="cells cells-4x">
+    <div class="cells cells-3x">
       <attribute v-for="model in attributes"
         :model="model"/>
     </div>
@@ -20,14 +20,12 @@ export default defineComponent({
   data() {
     return {
       attributes: [
-        { name: 'XP', value: '00' },
-        { name: 'HP', value: '00' },
-        { name: 'AC', value: '00' },
-        { name: 'PB', value: '00' },
-        { name: 'Speed', value: '00' },
-        { name: 'Initiative', value: '00' },
-        { name: 'Perception', value: '00' },
-        { name: 'Inspiration', value: '00' },
+        { name: 'XP', value: '00', icon: 'star' },
+        { name: 'HP', value: '00', icon: 'heart' },
+        { name: 'AC', value: '00', icon: 'shield' },
+        { name: 'Speed', value: '00', icon: 'steps' },
+        { name: 'Initiative', value: '00', icon: 'flag' },
+        { name: 'Proficiency', value: '00', icon: 'trophy' },
       ]
     }
   }

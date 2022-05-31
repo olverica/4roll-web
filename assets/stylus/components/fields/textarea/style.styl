@@ -1,0 +1,58 @@
+// TEXTAREA STYLE
+  
+.textarea
+  gap: 5px
+  padding: 15px
+  border-radius: 10px
+  background: $dark-15
+  box-shadow: $dark-15 0 0 0 1px inset 
+  overflow: hidden
+
+  // STATE: FOCUSED
+
+  &-focused
+    background: $dark-12
+
+  // STATE: CLOSED
+
+  &-closed
+    height: 50px
+
+
+// HEADING
+
+.textarea_heading
+  gap: 5px
+  height: 20px
+
+
+.textarea_title
+  color: $light-70
+  med-16()
+
+
+.textarea_hint
+  color: $light-50
+  med-12-i()
+
+
+.textarea_counter
+  color: $light-50
+  med-12()
+
+
+.textarea_button
+  margin-left: 10px
+  font-size: 12px
+  color: $light-50
+
+  
+// CONTENT
+
+.textarea_entry
+  color: $light-60
+  text-14()
+  
+  &::before // placeholder
+    color: $light-50
+    

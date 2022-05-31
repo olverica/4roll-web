@@ -1,0 +1,55 @@
+// TEXTAREA LAYOUT
+  
+.textarea
+  overflow: hidden
+  // grid
+  display: grid
+  grid-auto-rows: max-content
+  // animation
+  transition(background \, height, .2s)
+
+  &-closed
+
+    .textarea_entry
+      opacity: 0
+
+    .textarea_button
+      transform: rotate(180deg)
+
+
+// HEADING
+
+.textarea_heading
+  cursor: pointer
+  // flex
+  display: flex
+  align-items: center
+
+  .textarea_hint
+    flex-grow: 1
+
+
+.textarea_counter
+  opacity: 0
+  transition(opacity, .2s)
+
+  &-active
+    opacity: 1
+
+
+.textarea_button
+  icon-4R()
+  // animation
+  transition(transform, .2s)
+
+
+// CONTENT
+
+.textarea_entry
+  cursor: pointer
+  // animation
+  transition(opacity, .2s)
+
+  &:empty:before // placeholder 
+    content: attr(placeholder)
+    font-size: inherit
