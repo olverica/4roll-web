@@ -1,5 +1,5 @@
 <template>
-  <div class="counter">
+  <fieldset class="counter">
     <button class="counter_button counter_button-minus" @click="onMinus">
       minus
     </button>
@@ -9,7 +9,7 @@
     <button class="counter_button counter_button-plus" @click="onPlus">
       plus
     </button>
-  </div>
+  </fieldset>
 </template>
 
 <script lang="ts">

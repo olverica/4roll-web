@@ -1,0 +1,42 @@
+// TYPE: CONTAINED
+  
+.button-filled
+  width: 100%
+  height: 50px
+  gap: 10px
+  padding: 0 15px
+  border-radius: 10px
+  background: $light-80
+  semi-16()
+
+  // COLORED
+
+  &.button-red
+    med-16()
+    color: $accent-red
+    background: alpha(@color, .2)
+
+  &.button-blue
+    med-16()
+    color: $accent-blue
+    background: alpha(@color, .2)
+
+  &.button-green
+    med-16()
+    color: $accent-green
+    background: alpha(@color, .2)
+
+  // GOOGLE BUTTON
+
+  &.button-google
+    med-16()
+    color: #fff
+    background: #3b81ed
+
+    img // google icon
+      width: 30px
+      height: 30px
+      padding: 5px
+      border-radius: 5px
+      background-color: #fff
+    

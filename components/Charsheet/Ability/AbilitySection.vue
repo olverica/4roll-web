@@ -1,6 +1,6 @@
 <template>
   <section class="abilities">
-    <h1 class="title-18">Abilities</h1>
+    <core-vue-title>Abilities</core-vue-title>
 
     <div class="cells cells-3x">
       <ability v-for="model in abilities"

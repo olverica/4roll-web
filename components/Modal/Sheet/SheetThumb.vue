@@ -1,12 +1,12 @@
 <template>
-  <div 
+  <span 
     ref="thumb"
-    style="width: 100%; height: 20px; background: antiquewhite;"
+    class="sheet_thumb"
     @touchcancel="onTouchCancel"
     @touchstart="onTouchStart"
     @touchmove="onTouchMove"
     @touchend="onTouchEnd">
-  </div>
+  </span>
 </template> 
 
 <script lang="ts">

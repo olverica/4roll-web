@@ -1,7 +1,7 @@
 <template>
   <column-cell 
     :title="model.name" 
-    :icon="'star'">
+    :icon="model.icon">
 
     <cell-value :primary="model.value"/>
   </column-cell>
@@ -15,6 +15,7 @@ import ColumnCell from '~/components/Cell/Types/ColumnCell.vue'
 
 export interface AttributeModel {
   name: string,
+  icon: string,
   value: string|number
 }
 

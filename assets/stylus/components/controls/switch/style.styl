@@ -1,0 +1,25 @@
+// SWITCH STYLE
+  
+.switch
+  $activeColor = $accent-green
+
+  // STATE: DEFAULT
+
+  height: 25px
+  padding: 5px
+  width: @height * 2 - @padding
+  background: $dark-12
+
+  &::before // dot 
+    height: @height - @padding * 2 
+    background: $light-50
+
+  // STATE: ACTIVE
+
+  &-active
+    background: alpha($activeColor, .2)
+
+  &-active::before // dot 
+      background: $activeColor
+      // position
+      left: @height - @padding

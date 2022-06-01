@@ -1,6 +1,6 @@
 <template>
   <section class="savingThrows">
-    <button class="divider">Saving throws</button>
+    <vue-button class="button-texted">Saving Throw</vue-button>
 
     <div class="cells cells-6x">
       <saving-throw
@@ -13,10 +13,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import SavingThrow from '~/components/Charsheet/SavingThrow/SavingThrow.vue'
+import VueButton from '~~/components/Core/VueButton.vue';
 
 
 export default defineComponent({
-  components: { SavingThrow  },
+  components: { SavingThrow, VueButton },
 
   data() {
     return {

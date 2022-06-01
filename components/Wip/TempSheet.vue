@@ -9,7 +9,7 @@
     </template>
 
     <template  #footer>
-      <vue-button @click="close">button</vue-button>
+      <vue-button class="button-filled" @click="close">button</vue-button>
     </template>
 
   </sheet-layout>

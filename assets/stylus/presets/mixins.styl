@@ -1,0 +1,26 @@
+// TEXT OVERFLOW
+  
+text-overflow($lines = 1)
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+  // lines
+  if $lines > 1
+    white-space: normal
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: $lines
+ 
+// TRANSITION
+
+transition(
+  $property,
+  $duration = .2s, 
+  $function = ease-in-out,
+  $delay = 0s,
+)
+  transition-property: $property
+  transition-delay: $delay
+  transition-duration: $duration
+  transition-timing-function: $function
+

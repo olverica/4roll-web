@@ -60,11 +60,12 @@ export default defineComponent({
   padding: 40px 20px
 
   position: fixed
+  top: 0
   z-index: 10
 
   height: 100%
-  max-width: 450px
-  width: -webkit-fill-available
+  max-width: inherit
+  width: stretch
 
   background: #F7F7F7
   

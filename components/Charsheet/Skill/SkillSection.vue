@@ -1,6 +1,6 @@
 <template>
   <section class="skills">
-    <h1 class="title-18">Skills</h1>
+    <core-vue-title>Skills</core-vue-title>
 
     <div class="cells cells-2x">
       <skill 

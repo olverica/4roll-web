@@ -1,0 +1,33 @@
+// TABBAR LAYOUT
+
+.tabbar
+  overflow: hidden
+  // grid
+  display: grid
+  grid-auto-flow: column
+  grid-auto-columns: 1fr
+
+
+// BUTTONS
+
+.tabbar_button,
+.tabbar_counter
+  // grid
+  display: grid
+  justify-items: center
+
+  i // icon
+    // grid
+    display: grid
+    place-items: center
+
+
+.tabbar_button
+  i
+    aspect-ratio: 1/1
+    icon-4R()
+
+  
+.tabbar_counter
+  i
+    aspect-ratio: 9/5

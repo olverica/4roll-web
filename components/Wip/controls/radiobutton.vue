@@ -1,9 +1,9 @@
 <template>
-  <div 
-    class="radioButton"
-    :class="{'radioButton-active': active}"
+  <button 
+    class="radiobutton"
+    :class="{'radiobutton-active': active}"
     @click="onClick">
-  </div>
+  </button>
 </template>
 
 <script lang="ts">

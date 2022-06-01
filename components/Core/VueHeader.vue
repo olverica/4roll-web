@@ -1,11 +1,13 @@
 <template>
-  <div class="header">
-    <h1 class="header_name">
+  <header class="header">
+
+    <h1 class="header_text">
       <slot/>
     </h1>
+    <!-- <i class="header_icon">placeholder</i> -->
 
     <button class="header_button" @click="onClick">cross</button>
-  </div>
+  </header>
 </template>
 
 <script lang="ts">
