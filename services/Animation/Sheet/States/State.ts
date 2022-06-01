@@ -1,21 +1,25 @@
 import {MovedEvent, TouchedEvent, ReleasedEvent} from '~/services/Animation/Sheet/Behaviour/Events';
 import InteractionBoundaries from '~/services/Animation/Sheet/Info/InteractionBoundaries';
 import InteractionBehaviour from '~/services/Animation/Sheet/Info/InteractionBehaviour';
-import InteractionInfo from '~/services/Animation/Sheet/Info/InteractionInfo';
-
+import InteractionInfo from '~/services/Animation/Sheet/Info/InteractionInfo'
 
 
 export default interface SheetState
 {
-    onTouchMove(event: MovedEvent): void;
-    onTouchStart(event: TouchedEvent): void;
+    onTouchMove(event: MovedEvent): void
+    onTouchStart(event: TouchedEvent): void
     onTouchRelease(event: ReleasedEvent): void
+    onClose(): void
+    getName(): string
 }
 
 
 export abstract class StateBase implements SheetState
 {
     protected sheet: InteractionInfo;
+
+
+    public abstract getName(): string;
 
 
     public constructor(info: InteractionInfo)
@@ -40,6 +44,11 @@ export abstract class StateBase implements SheetState
     }
 
     public onStateAttached(): void
+    {
+        //
+    }
+
+    public onClose(): void
     {
         //
     }

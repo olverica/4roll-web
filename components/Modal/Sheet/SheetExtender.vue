@@ -1,8 +1,5 @@
 <template>
-  <div :style="{
-    width: '100%',
-    height: innerHeight,
-    transition: transition}">
+  <div :style="{ width: '100%', height: innerHeight}">
   </div>
 </template>
 
@@ -24,21 +21,8 @@ export default defineComponent({
     },
 
     position(): number {
-      return this.interactionHandler ?
-        this.interactionHandler.position() - this.interactionHandler.affectedTo(): 0;
-    },
-
-    transition(): string {
-      return this.smooth ? `height ${this.delay}ms`: '';
-    },
-
-    smooth(): boolean {
-      return this.interactionHandler && this.interactionHandler.smooth();
-    },
-    
-    delay(): number {
-      return this.interactionHandler ? this.interactionHandler.delay(): 0;
-    },
+      return this.interactionHandler ? this.interactionHandler.position() : 0;
+    }
   }
 });
 </script>

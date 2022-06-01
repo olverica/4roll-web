@@ -1,19 +1,26 @@
-import StaticState from '~/services/Animation/Sheet/States/StaticState'
 import {StateBase} from '~/services/Animation/Sheet/States/State'
-import sleep from '~/services/Support/Helpers/Sleep'
+import StaticState from '~/services/Animation/Sheet/States/StaticState'
+import CloseState from '~/services/Animation/Sheet/States/CloseState'
 
 
 export default class ReturnState extends StateBase
 {
+    public getName(): string
+    {
+        return 'return';
+    }
 
     public onStateAttached(): void {
         let boundaries = this.boundaries();
         let behaviour = this.behavior();
 
-        behaviour.smoothMoveTo(boundaries.affectedTo());
+        behaviour
+            .moveTo(boundaries.affectedTo())
+            .then(() => this.sheet.changeState(new StaticState(this.sheet)))
+    }
 
-        sleep(behaviour.getDelay()).then(() => {
-            this.sheet.changeState(new StaticState(this.sheet))
-        })
+    public onClose(): void
+    {
+        this.sheet.changeState(new CloseState(this.sheet));
     }
 }

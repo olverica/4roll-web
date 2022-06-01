@@ -16,13 +16,7 @@ import {PropType, defineComponent} from 'vue'
 
 
 export default defineComponent({
-
   props: {
-    margin: {
-      required: true,
-      type: Number as PropType<number>
-    },
-
     interactionHandler: {
       required: true,
       type: Object
@@ -54,8 +48,9 @@ export default defineComponent({
     },
 
     onTouchStart(rawEvent: TouchEvent) {
+      console.log(this.margin);
       let fingerAt = this.computePosition(rawEvent);
-      let event = this.eventHandler.touched(fingerAt,this.margin);
+      let event = this.eventHandler.touched(fingerAt);
 
       this.interactionHandler.onTouchStart(event);
     },

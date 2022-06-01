@@ -20,8 +20,8 @@ export default class EventHandler
         return event;
     }
 
-    public touched(fingerPosition: number, sheetPosition: number): TouchedEvent {
-        this.fingerOffset = fingerPosition - sheetPosition;
+    public touched(fingerPosition: number): TouchedEvent {
+        this.fingerOffset = fingerPosition;
 
         let event = { 
             fingerPosition,

@@ -70,6 +70,6 @@ export default defineComponent({
 <style lang="sass">
 
 .expose-enter-active, .expose-leave-active
-  transition: clip-path .8s ease-in
+  transition: clip-path .008s ease-in
 
 </style>

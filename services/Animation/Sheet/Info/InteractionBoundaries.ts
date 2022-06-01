@@ -18,7 +18,6 @@ export default class InteractionBoundaries
     private topBreak: number;
 
 
-
     public constructor(config: BoundariesConstructionConfig)
     {
         this.closePoint = config.closePoint;
@@ -27,11 +26,6 @@ export default class InteractionBoundaries
         this.affectionPoint = 0;
     }
 
-    public changeAffectionPoint(point: number): void
-    {
-        this.affectionPoint = point;
-    }
-    
     public affectedTo(): number
     {
         return this.affectionPoint;

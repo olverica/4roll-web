@@ -1,76 +1,50 @@
+import ActionHandler from '~/services/Animation/Sheet/Transition/ActionHandler'
+import BounceAction from '~/services/Animation/Sheet/Transition/Actions/BounceAction'
+import MoveAction from '~/services/Animation/Sheet/Transition/Actions/MoveAction'
 import MovingSpeed from '~/services/Animation/Sheet/Behaviour/MovingSpeed'
 
 
 export default class InteractionBehaviour
 {
-    private smoothSpeed: MovingSpeed
+    private speed: {acceleration: number, slowdown: number} = {acceleration: 0.002, slowdown: 0.001};
     
     private position: number;
     
-    private smooth: boolean;
-    
-    private closed: boolean;
-    
-    private delay: number;
+    private actions: ActionHandler;
 
 
-    public constructor(smoothSpeed: MovingSpeed)
+    public constructor(actions: ActionHandler)
     {
-        this.smoothSpeed = smoothSpeed;
+        this.actions = actions;
         this.position = 0;
-        this.delay = 0;
-        this.closed = false;
-        this.smooth= false;
     }
 
-    public smoothMoveTo(newPosition: number, speed?: MovingSpeed): void
+    public moveTo(to: number, speed?: MovingSpeed): Promise<void>
     {
-
-        let chosenSpeed = speed || this.smoothSpeed;
-        let distance = Math.abs(this.position - newPosition);
-
-        this.smooth = true;
-        this.delay = chosenSpeed.computeTime(distance);
-        this.position = newPosition;
+        return new Promise(resolve =>
+            this.actions.setAction(new MoveAction(to, this, resolve, speed))
+        );
     }
-    
+
+    public bounceTo(to: number): Promise<void>
+    {
+        return new Promise(resolve =>
+            this.actions.setAction(new BounceAction(to, this, resolve))
+        );
+    }
+
     public changePosition(value: number): void
     {
         this.position = value;
     }
 
+    public speedInfo()
+    {
+        return this.speed;
+    }
+
     public getPosition(): number
     {
         return this.position;
-    }
-
-    public makeSmooth(): void
-    {
-        this.smooth = true;
-    }
-
-    public makeRough(): void
-    {
-        this.smooth = false;
-    }
-
-    public markClosed(): void
-    {
-        this.closed = true;
-    }
-
-    public isClosed(): boolean
-    {
-        return this.closed;
-    }
-
-    public isSmooth(): boolean
-    {
-        return this.smooth;
-    }
-
-    public getDelay(): number
-    {
-        return this.delay;
     }
 }

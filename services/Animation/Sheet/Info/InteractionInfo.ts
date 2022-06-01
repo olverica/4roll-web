@@ -7,10 +7,12 @@ export default class InteractionInfo
 {
     private boundaries: InteractionBoundaries;
 
-    private state?: SheetState;
-    
     private behaviour: InteractionBehaviour;
     
+    private state?: SheetState;
+    
+    private closed: boolean;
+
 
     public constructor(boundaries: InteractionBoundaries, behaviour: InteractionBehaviour)
     {
@@ -27,6 +29,16 @@ export default class InteractionInfo
     public getBoundaries(): InteractionBoundaries
     {
         return this.boundaries;
+    }
+    
+    public markClosed(): void
+    {
+        this.closed = true;
+    }
+
+    public isClosed(): boolean
+    {
+        return this.closed;
     }
 
     public changeState(state: SheetState): void

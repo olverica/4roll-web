@@ -7,9 +7,14 @@ import CloseState from '~/services/Animation/Sheet/States/CloseState'
 
 export default class CaptureState extends StateBase
 {
-    public onStateAttached(): void
+    public getName(): string
     {
-        this.behavior().makeRough();
+        return 'capture';
+    }
+
+    public onClose(): void
+    {
+        this.sheet.changeState(new CloseState(this.sheet));
     }
 
     public onTouchMove(event: MovedEvent): void
@@ -38,7 +43,6 @@ export default class CaptureState extends StateBase
         let behaviour = this.behavior();
         let position = behaviour.getPosition();
 
-        console.log(event);
         if (GestureType.SwipeDown === event.gesture.type)
         {
             this.sheet.changeState(new CloseState(this.sheet, event.gesture.speed))

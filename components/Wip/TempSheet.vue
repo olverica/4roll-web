@@ -5,6 +5,7 @@
       <div class="sheet_tempBlock"></div>
       <div class="sheet_tempBlock"></div>
       <div class="sheet_tempBlock"></div>
+      <slot/>
     </template>
 
     <template  #footer>

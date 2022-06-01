@@ -7,4 +7,10 @@ export default defineNuxtConfig({
         '~/assets/sass/style.sass',
         '~/assets/stylus/style.styl',
     ],
+
+    vite: {
+        server: {
+            hmr: false
+        }
+    }
 })  

@@ -1,7 +1,5 @@
 <template>
-  <div 
-    class="sheet_body"
-    :style="{'top': top, 'transition': transition }">
+  <div class="sheet_body" :style="{top: top}">
 
     <slot/>
   </div>
@@ -25,21 +23,8 @@ export default defineComponent({
     },
 
     position(): number {
-      return this.interactionHandler ?
-        this.interactionHandler.position() - this.interactionHandler.affectedTo(): 0;
-    },
-
-    transition(): string {
-      return this.smooth ? `top ${this.delay}ms`: '';
-    },
-
-    smooth(): boolean {
-      return this.interactionHandler && this.interactionHandler.smooth();
-    },
-    
-    delay(): number {
-      return this.interactionHandler ? this.interactionHandler.delay(): 0;
-    },
+      return this.interactionHandler ? this.interactionHandler.position(): 0;
+    }
   }
 });
 </script>

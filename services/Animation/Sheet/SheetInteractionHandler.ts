@@ -2,18 +2,26 @@ import {MovedEvent, TouchedEvent, ReleasedEvent} from '~/services/Animation/Shee
 import InteractionBehaviour from '~/services/Animation/Sheet/Info/InteractionBehaviour'
 import InteractionBoundaries from '~/services/Animation/Sheet/Info/InteractionBoundaries'
 import InteractionInfo from '~/services/Animation/Sheet/Info/InteractionInfo'
-import MovingSpeed from '~/services/Animation/Sheet/Behaviour/MovingSpeed'
-import StaticState from '~/services/Animation/Sheet/States/StaticState'
+import ActionHandler from '~/services/Animation/Sheet/Transition/ActionHandler';
+import AppeareState from '~/services/Animation/Sheet/States/AppeareState'
+import Engine from '~/services/Animation/Sheet/Transition/Engine';
 
 
 export default class SheetInteractionHandler
 {
     private info: InteractionInfo;
 
+    private inited: boolean;
+
+    private transitionEngine: Engine;
+
 
     public constructor()
     {
-        let behaviour = new InteractionBehaviour(new MovingSpeed(1, 1));
+        let actions = new ActionHandler();
+        this.transitionEngine = new Engine(60, actions);
+
+        let behaviour = new InteractionBehaviour(actions);
         let boundaries = new InteractionBoundaries({
             closePoint: 844,
             bottomBreak: 200,
@@ -21,7 +29,21 @@ export default class SheetInteractionHandler
         });
 
         this.info = new InteractionInfo(boundaries, behaviour);
-        this.info.changeState(new StaticState(this.info));
+      
+        behaviour.changePosition(boundaries.closeAt());
+        // behaviour.changePosition(530);
+    }
+
+    public loaded(): boolean
+    {
+        return this.inited;
+    }
+
+    public init(): void
+    {
+        this.inited = true;
+        this.info.changeState(new AppeareState(this.info));
+        this.transitionEngine.fire();
     }
 
     public onTouchMove(event: MovedEvent): void
@@ -39,9 +61,14 @@ export default class SheetInteractionHandler
         this.info.getState().onTouchRelease(event);
     }
 
-    public affectedTo(): number
+    public onClose(): void
     {
-        return this.info.getBoundaries().affectedTo();
+        this.info.getState().onClose();
+    }
+
+    public stateName(): string
+    {
+        return this.info.getState().getName();
     }
     
     public position(): number
@@ -49,18 +76,8 @@ export default class SheetInteractionHandler
         return this.info.getBehaviour().getPosition();
     }
 
-    public smooth(): boolean
-    {
-        return this.info.getBehaviour().isSmooth();
-    }
-
-    public delay(): number
-    {
-        return this.info.getBehaviour().getDelay();
-    }
-
     public closed(): boolean
     {
-        return this.info.getBehaviour().isClosed();
+        return this.info.isClosed();
     }
 }
