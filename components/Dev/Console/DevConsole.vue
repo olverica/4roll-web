@@ -26,7 +26,7 @@ export default defineComponent({
     },
 
     messages(): ConsoleMessage[] {
-      return this.console.getMessages();
+      return this.console.getMessages().slice(-20);
     }
   },
 });

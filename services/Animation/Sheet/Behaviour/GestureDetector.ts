@@ -86,14 +86,14 @@ export default class GestureDetector
         let distance = this.distance(firstEvent, lastEvent)
         let time = lastEvent.timestamp - firstEvent.timestamp;
 
-        return new MovingSpeed(distance, time);
+        return new MovingSpeed({px: distance, ms: time});
     } 
 
     private createEmptyGesture()
     {
         return {
             type: GestureType.None,
-            speed: new MovingSpeed(0, 0)
+            speed: new MovingSpeed({px: 0, ms: 0})
         }
     }
 

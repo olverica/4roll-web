@@ -1,5 +1,8 @@
 <template>
-  <div class="sheet_body" :style="{top: top}">
+  <div 
+    class="sheet_body"
+    :class="{'sheet_body--hidden': hidden}"
+    :style="{top: top}">
 
     <slot/>
   </div>
@@ -11,19 +14,24 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
   props: {
-    interactionHandler: {
+    data: {
       required: true,
       type: Object
     },
   },
 
   computed: {
+    
     top(): string {
       return this.position > 0 ? this.position + 'px': '0';
     },
 
     position(): number {
-      return this.interactionHandler ? this.interactionHandler.position(): 0;
+      return this.data.getPosition()
+    },
+
+    hidden(): boolean {
+      return this.data.getState() === 'none';
     }
   }
 });

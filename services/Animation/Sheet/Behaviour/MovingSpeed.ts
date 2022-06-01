@@ -5,7 +5,7 @@ export default class MovingSpeed
     private value: number;
 
 
-    public constructor(px: number, ms: number)
+    public constructor({px, ms}: {px: number, ms: number})
     {
         this.value = ms !== 0 ? px/ms : 0;
     } 

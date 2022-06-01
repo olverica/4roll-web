@@ -1,6 +1,5 @@
 <template>
   <span 
-    ref="thumb"
     class="sheet_thumb"
     @touchcancel="onTouchCancel"
     @touchstart="onTouchStart"
@@ -10,19 +9,12 @@
 </template> 
 
 <script lang="ts">
-import SheetInteractionHandler from '~/services/Animation/Sheet/SheetInteractionHandler'
-import EventHandler from '~/services/Animation/Sheet/Behaviour/EventHandler'
-import {PropType, defineComponent} from 'vue'
+import {defineComponent} from 'vue'
 
 
 export default defineComponent({
   props: {
     interactionHandler: {
-      required: true,
-      type: Object
-    },
-
-    eventHandler: {
       required: true,
       type: Object
     }
@@ -35,24 +27,17 @@ export default defineComponent({
 
     onTouchEnd(rawEvent: TouchEvent) {
       let fingerAt = this.computePosition(rawEvent);
-      let event = this.eventHandler.released(fingerAt);
-
-      this.interactionHandler.onTouchRelease(event);
+      this.interactionHandler.onTouchRelease(fingerAt);
     },
 
     onTouchMove(rawEvent: TouchEvent) {
       let fingerAt = this.computePosition(rawEvent);
-      let event = this.eventHandler.moved(fingerAt);
-
-      this.interactionHandler.onTouchMove(event);
+      this.interactionHandler.onTouchMove(fingerAt);
     },
 
     onTouchStart(rawEvent: TouchEvent) {
-      console.log(this.margin);
       let fingerAt = this.computePosition(rawEvent);
-      let event = this.eventHandler.touched(fingerAt);
-
-      this.interactionHandler.onTouchStart(event);
+      this.interactionHandler.onTouchStart(fingerAt);
     },
 
     computePosition(event: TouchEvent): number {

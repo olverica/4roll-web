@@ -1,6 +1,7 @@
 import InteractionBoundaries from '~/services/Animation/Sheet/Info/InteractionBoundaries'
 import InteractionBehaviour from '~/services/Animation/Sheet/Info/InteractionBehaviour'
 import SheetState from '~/services/Animation/Sheet/States/State'
+import SheetDTO from '~/services/Animation/Sheet/SheetDTO';
 
 
 export default class InteractionInfo
@@ -11,14 +12,15 @@ export default class InteractionInfo
     
     private state?: SheetState;
     
-    private closed: boolean;
+    private dto: SheetDTO;
 
 
-    public constructor(boundaries: InteractionBoundaries, behaviour: InteractionBehaviour)
+    public constructor(boundaries: InteractionBoundaries, behaviour: InteractionBehaviour, dto: SheetDTO)
     {
         this.state = null;
         this.boundaries = boundaries;
         this.behaviour = behaviour;
+        this.dto = dto;
     }
 
     public getBehaviour(): InteractionBehaviour 
@@ -33,18 +35,14 @@ export default class InteractionInfo
     
     public markClosed(): void
     {
-        this.closed = true;
-    }
-
-    public isClosed(): boolean
-    {
-        return this.closed;
+        this.dto.changeClosed(true);
     }
 
     public changeState(state: SheetState): void
     {
         console.log('CHANGING TO', state.constructor.name);
         this.state = state;
+        this.dto.changeState(state.getName());
     }
 
     public getState(): SheetState

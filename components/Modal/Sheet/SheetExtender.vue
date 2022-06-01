@@ -9,7 +9,7 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
   props: {
-    interactionHandler: {
+    data: {
       required: true,
       type: Object
     },
@@ -21,7 +21,7 @@ export default defineComponent({
     },
 
     position(): number {
-      return this.interactionHandler ? this.interactionHandler.position() : 0;
+      return this.data.getPosition();
     }
   }
 });

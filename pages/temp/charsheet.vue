@@ -32,7 +32,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import VueHeader from '~/components/core/VueHeader.vue'
+import VueHeader from '~/components/Core/VueHeader.vue'
 import SavingThrowSection from '~/components/Charsheet/SavingThrow/SavingThrowSection.vue';
 import AttributeSection from '~/components/Charsheet/Attribute/AttributeSection.vue';
 import AbilitySection from '~/components/Charsheet/Ability/AbilitySection.vue';

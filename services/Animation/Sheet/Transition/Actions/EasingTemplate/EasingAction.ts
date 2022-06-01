@@ -29,8 +29,8 @@ export default abstract class EasingAction extends ResolvingAction
         this.path = new EasingPath(this.behaviour.getPosition(), to);
         this.time = speed.computeTime(this.path.distance());
         this.easing = easing;
-
-        console.log(this);
+        
+        this.behaviour.changeDelay(this.time);
     }   
 
     public update(tick: number): void
@@ -39,6 +39,7 @@ export default abstract class EasingAction extends ResolvingAction
 
         if (this.passed > this.time) {
             this.passed = this.time;
+            this.behaviour.changeDelay(0);
             this.stop();
         }
 

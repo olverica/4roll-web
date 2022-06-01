@@ -1,13 +1,13 @@
 <template>
-  <sheet-section :interaction-handler="interactionHandler">
-    <sheet :interaction-handler="interactionHandler">
+  <sheet-section :data="data">
+    <sheet ref="sheet" :data="data">
+
       <sheet-thumb
         :interaction-handler="interactionHandler"
-        :event-handler="eventHandler"
       />
 
       <component :is="body" @close="close">
-        <sheet-extender :interaction-handler="interactionHandler"/>
+        <sheet-extender :data="data"/>
       </component>
     </sheet>
   </sheet-section>
@@ -16,10 +16,11 @@
 <script lang="ts">
 import {PropType, defineComponent, DefineComponent} from 'vue'
 import SheetInteractionHandler from '~/services/Animation/Sheet/SheetInteractionHandler'
-import EventHandler from '~/services/Animation/Sheet/Behaviour/EventHandler'
-import SheetSection from '~/components/Modal/Sheet/SheetSection.vue'
+import InteractionBoundaries from '~/services/Animation/Sheet/Info/InteractionBoundaries'
 import SheetExtender from '~/components/Modal/Sheet/SheetExtender.vue'
+import SheetSection from '~/components/Modal/Sheet/SheetSection.vue'
 import SheetThumb from '~/components/Modal/Sheet/SheetThumb.vue'
+import SheetDTO from '~/services/Animation/Sheet/SheetDTO';
 import Sheet from '~/components/Modal/Sheet/Sheet.vue'
 
 
@@ -35,15 +36,27 @@ export default defineComponent({
 
   data() {
     return {
-      interactionHandler: new SheetInteractionHandler(),
-      eventHandler: new EventHandler(),
+      data: new SheetDTO(),
+      interactionHandler: null,
       detached: false
     }
   },
 
+  computed: {
+    closed(): boolean {
+      return this.data.isClosed();
+    }
+  },
+
   mounted() {
-    this.interactionHandler = new SheetInteractionHandler();
-    this.interactionHandler.init();
+    let boundaries = new InteractionBoundaries({
+      closePoint: window.innerHeight - this.offsetTop(),
+      bottomBreak: 200,
+      topBreak: 200,
+    });
+
+    this.data.changePosition(boundaries.closeAt());
+    this.interactionHandler = new SheetInteractionHandler(this.data, boundaries);
   },
 
   watch: {
@@ -56,6 +69,12 @@ export default defineComponent({
   methods: {
     close(): void {
       this.interactionHandler.onClose();
+      this.$emit('close');
+    },
+
+    offsetTop(): number {
+      let el = this.$refs.sheet.$el;
+      return el ? el.getBoundingClientRect().top : 0;
     }
   }
 });

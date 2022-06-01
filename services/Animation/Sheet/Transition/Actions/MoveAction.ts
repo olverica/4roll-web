@@ -12,7 +12,7 @@ export default class MoveAction extends EasingAction
         let easing = bezier(0, 0, .58, 1);
         
         if (speed == null)
-            speed = new MovingSpeed(10, 100);
+            speed = new MovingSpeed({px: 10, ms: 100});
 
         super(to, behaviour, resolve, easing, speed);
     } 

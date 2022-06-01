@@ -9,7 +9,7 @@ export default class BounceAction extends EasingAction
 {
     public constructor(to: number, behaviour: InteractionBehaviour, resolve: ResolveCallback)
     {
-        let speed = new MovingSpeed(12, 10);
+        let speed = new MovingSpeed({px: 12, ms: 10});
         let easing = bezier(.17, .67, .35, 1.28);
         
         super(to, behaviour, resolve, easing, speed);

@@ -2,7 +2,8 @@
   <section
     v-if="!!!closed" 
     class="sheet"
-    :class="{'shown': shown}"
+    :class="{'sheet--hidden': hidden}"
+    :style="{transitionDuration: delay}"
     @click.self="close"
   >
     <slot/>
@@ -15,28 +16,28 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
   props: {
-    interactionHandler: {
+    data: {
       required: true,
       type: Object
     },
   },
 
   computed: {
-    shown(): boolean {
-      return this.state === 'appear' || this.state === 'static';
+    hidden(): boolean {
+      return this.state === 'close' || this.state === 'none';
+    },
+    
+    delay(): string {
+      return this.data.getDelay()+ 'ms';
     },
 
     state(): string {
-      return this.loaded ? this.interactionHandler.stateName() : '';
+      return this.data.getState();
     },
     
     closed(): boolean {
-      return this.loaded && this.interactionHandler.closed();
+      return this.data.isClosed();
     },
-
-    loaded(): boolean {
-      return Boolean(this.interactionHandler && this.interactionHandler.loaded());
-    }
   },
 
   methods: {
@@ -52,10 +53,12 @@ export default defineComponent({
 
 .sheet
   transition: background .4s
+  background: rgba(0,0,0,.6) 
+
+.sheet--hidden
   background: #00000000
-  background: red
 
-.shown
-  background: #00000009
-
+.sheet_body--hidden
+  opacity: 0
+  
 </style>
