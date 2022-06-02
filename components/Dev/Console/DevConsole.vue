@@ -10,9 +10,9 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import DevConsoleMessage from '~/components/Dev/Console/DevConsoleMessage.vue'
-import ConsoleService, {ConsoleMessage} from '~/services/Dev/ConsoleService'
-import inject from '~/services/Support/Helpers/Inject';
+import DevConsoleMessage from 'Components/Dev/Console/DevConsoleMessage.vue'
+import ConsoleService, {ConsoleMessage} from 'Services/Dev/ConsoleService'
+import inject from 'Services/Support/Helpers/Inject';
 
 
 export default defineComponent({

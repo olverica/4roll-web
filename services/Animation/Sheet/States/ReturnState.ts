@@ -1,6 +1,6 @@
-import {StateBase} from '~/services/Animation/Sheet/States/State'
-import StaticState from '~/services/Animation/Sheet/States/StaticState'
-import CloseState from '~/services/Animation/Sheet/States/CloseState'
+import {StateBase} from 'Services/Animation/Sheet/States/State'
+import StaticState from 'Services/Animation/Sheet/States/StaticState'
+import CloseState from 'Services/Animation/Sheet/States/CloseState'
 
 
 export default class ReturnState extends StateBase

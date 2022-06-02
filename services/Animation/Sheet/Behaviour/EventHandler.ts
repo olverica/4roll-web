@@ -1,5 +1,5 @@
-import {FingerEvent, MovedEvent, TouchedEvent, ReleasedEvent} from '~/services/Animation/Sheet/Behaviour/Events'
-import GestureDetector from '~/services/Animation/Sheet/Behaviour/GestureDetector'
+import {FingerEvent, MovedEvent, TouchedEvent, ReleasedEvent} from 'Services/Animation/Sheet/Behaviour/Events'
+import GestureDetector from 'Services/Animation/Sheet/Behaviour/GestureDetector'
 
 
 export default class EventHandler

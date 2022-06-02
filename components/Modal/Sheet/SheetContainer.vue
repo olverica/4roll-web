@@ -15,13 +15,13 @@
 
 <script lang="ts">
 import {PropType, defineComponent, DefineComponent} from 'vue'
-import SheetInteractionHandler from '~/services/Animation/Sheet/SheetInteractionHandler'
-import InteractionBoundaries from '~/services/Animation/Sheet/Info/InteractionBoundaries'
-import SheetExtender from '~/components/Modal/Sheet/SheetExtender.vue'
-import SheetSection from '~/components/Modal/Sheet/SheetSection.vue'
-import SheetThumb from '~/components/Modal/Sheet/SheetThumb.vue'
-import SheetDTO from '~/services/Animation/Sheet/SheetDTO';
-import Sheet from '~/components/Modal/Sheet/Sheet.vue'
+import SheetInteractionHandler from 'Services/Animation/Sheet/SheetInteractionHandler'
+import InteractionBoundaries from 'Services/Animation/Sheet/Info/InteractionBoundaries'
+import SheetExtender from 'Components/Modal/Sheet/SheetExtender.vue'
+import SheetSection from 'Components/Modal/Sheet/SheetSection.vue'
+import SheetThumb from 'Components/Modal/Sheet/SheetThumb.vue'
+import SheetDTO from 'Services/Animation/Sheet/SheetDTO';
+import Sheet from 'Components/Modal/Sheet/Sheet.vue'
 
 
 export default defineComponent({

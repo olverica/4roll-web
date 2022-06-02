@@ -4,6 +4,12 @@
     <core-vue-header>Header text</core-vue-header>
     <core-vue-title>Title text</core-vue-title>
 
+
+    <entry-form>
+      <input-field hint="asd" placeholder="ssd" primary-icon="eye"/>
+      <textarea-field title="asd" hint="asd" />
+    </entry-form>
+
     <p class="paragraph">
       Ultrices consequat amet dignissim placerat egestas justo, tristique nibh et. Tristique est et dictum varius mitos vitae fringilla tellus risus, suspendisse.
     </p>
@@ -52,6 +58,7 @@
 
       <p class="listItem_description">description</p>
     </button>
+
 
     <div class="textarea">
       <div class="textarea_heading">
@@ -165,3 +172,16 @@
     
   </main>
 </template>
+
+<script lang="ts">
+import {defineComponent} from 'vue'
+import EntryForm from 'Components/Form/EntryForm.vue'
+import InputField from 'Components/Form/Input/InputField.vue'
+import TextareaField from 'Components/Form/Textarea/TextareaField.vue'
+
+
+export default defineComponent({
+  components: {EntryForm, InputField, TextareaField},
+
+});
+</script>

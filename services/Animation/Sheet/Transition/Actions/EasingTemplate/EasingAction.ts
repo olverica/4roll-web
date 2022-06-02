@@ -1,9 +1,9 @@
-import InteractionBehaviour from '~/services/Animation/Sheet/Info/InteractionBehaviour'
-import {ResolveCallback} from '~/services/Animation/Sheet/Transition/Actions/ResolvingAction'
+import InteractionBehaviour from 'Services/Animation/Sheet/Info/InteractionBehaviour'
+import {ResolveCallback} from 'Services/Animation/Sheet/Transition/Actions/ResolvingAction'
 import {EasingFunction} from 'bezier-easing'
-import ResolvingAction from '~/services/Animation/Sheet/Transition/Actions/ResolvingAction'
-import MovingSpeed from '~/services/Animation/Sheet/Behaviour/MovingSpeed'
-import EasingPath from '~/services/Animation/Sheet/Transition/Actions/EasingTemplate/EasingPath'
+import ResolvingAction from 'Services/Animation/Sheet/Transition/Actions/ResolvingAction'
+import MovingSpeed from 'Services/Animation/Sheet/Behaviour/MovingSpeed'
+import EasingPath from 'Services/Animation/Sheet/Transition/Actions/EasingTemplate/EasingPath'
 
 
 export default abstract class EasingAction extends ResolvingAction

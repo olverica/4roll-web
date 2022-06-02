@@ -1,11 +1,11 @@
-import InteractionBehaviour from '~/services/Animation/Sheet/Info/InteractionBehaviour'
-import InteractionBoundaries from '~/services/Animation/Sheet/Info/InteractionBoundaries'
-import InteractionInfo from '~/services/Animation/Sheet/Info/InteractionInfo'
-import ActionHandler from '~/services/Animation/Sheet/Transition/ActionHandler';
-import EventHandler from '~/services/Animation/Sheet/Behaviour/EventHandler'
-import AppeareState from '~/services/Animation/Sheet/States/AppeareState'
-import Engine from '~/services/Animation/Sheet/Transition/Engine';
-import SheetDTO from '~/services/Animation/Sheet/SheetDTO';
+import InteractionBehaviour from 'Services/Animation/Sheet/Info/InteractionBehaviour'
+import InteractionBoundaries from 'Services/Animation/Sheet/Info/InteractionBoundaries'
+import InteractionInfo from 'Services/Animation/Sheet/Info/InteractionInfo'
+import ActionHandler from 'Services/Animation/Sheet/Transition/ActionHandler';
+import EventHandler from 'Services/Animation/Sheet/Behaviour/EventHandler'
+import AppeareState from 'Services/Animation/Sheet/States/AppeareState'
+import Engine from 'Services/Animation/Sheet/Transition/Engine';
+import SheetDTO from 'Services/Animation/Sheet/SheetDTO';
 
 
 export default class SheetInteractionHandler

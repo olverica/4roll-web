@@ -1,8 +1,8 @@
-import {MovedEvent, ReleasedEvent} from '~/services/Animation/Sheet/Behaviour/Events'
-import {GestureType} from '~/services/Animation/Sheet/Behaviour/GestureDetector'
-import {StateBase} from '~/services/Animation/Sheet/States/State'
-import ReturnState from '~/services/Animation/Sheet/States/ReturnState'
-import CloseState from '~/services/Animation/Sheet/States/CloseState'
+import {MovedEvent, ReleasedEvent} from 'Services/Animation/Sheet/Behaviour/Events'
+import {GestureType} from 'Services/Animation/Sheet/Behaviour/GestureDetector'
+import {StateBase} from 'Services/Animation/Sheet/States/State'
+import ReturnState from 'Services/Animation/Sheet/States/ReturnState'
+import CloseState from 'Services/Animation/Sheet/States/CloseState'
 
 
 export default class CaptureState extends StateBase

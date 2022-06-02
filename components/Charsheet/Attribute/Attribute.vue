@@ -9,8 +9,8 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import CellMarkedValue from '~/components/Cell/Values/CellMarkedValue.vue'
-import ColumnCell from '~/components/Cell/Types/ColumnCell.vue'
+import CellMarkedValue from 'Components/Cell/Values/CellMarkedValue.vue'
+import ColumnCell from 'Components/Cell/Types/ColumnCell.vue'
 
 
 export interface AttributeModel {

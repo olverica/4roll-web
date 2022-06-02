@@ -9,9 +9,9 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import ColumnCell from '~/components/Cell/Types/ColumnCell.vue'
-import CellValue from '~/components/Cell/Values/CellValue.vue'
-import Ability from '~/services/Charsheet/Ability'
+import ColumnCell from 'Components/Cell/Types/ColumnCell.vue'
+import CellValue from 'Components/Cell/Values/CellValue.vue'
+import Ability from 'Services/Charsheet/Ability'
 
 
 export default defineComponent({

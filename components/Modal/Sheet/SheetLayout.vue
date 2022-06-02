@@ -10,8 +10,8 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import VueHeader from '~/components/Core/VueHeader.vue'
-import VueButton from '~/components/Core/VueButton.vue'
+import VueHeader from 'Components/Core/VueHeader.vue'
+import VueButton from 'Components/Core/VueButton.vue'
 
 
 export default defineComponent({

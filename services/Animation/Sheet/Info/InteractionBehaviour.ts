@@ -1,8 +1,8 @@
-import ActionHandler from '~/services/Animation/Sheet/Transition/ActionHandler'
-import BounceAction from '~/services/Animation/Sheet/Transition/Actions/BounceAction'
-import MoveAction from '~/services/Animation/Sheet/Transition/Actions/MoveAction'
-import MovingSpeed from '~/services/Animation/Sheet/Behaviour/MovingSpeed'
-import SheetDTO from '~/services/Animation/Sheet/SheetDTO';
+import ActionHandler from 'Services/Animation/Sheet/Transition/ActionHandler'
+import BounceAction from 'Services/Animation/Sheet/Transition/Actions/BounceAction'
+import MoveAction from 'Services/Animation/Sheet/Transition/Actions/MoveAction'
+import MovingSpeed from 'Services/Animation/Sheet/Behaviour/MovingSpeed'
+import SheetDTO from 'Services/Animation/Sheet/SheetDTO';
 
 
 export default class InteractionBehaviour

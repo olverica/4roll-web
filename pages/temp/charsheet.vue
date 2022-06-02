@@ -32,11 +32,11 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import VueHeader from '~/components/Core/VueHeader.vue'
-import SavingThrowSection from '~/components/Charsheet/SavingThrow/SavingThrowSection.vue';
-import AttributeSection from '~/components/Charsheet/Attribute/AttributeSection.vue';
-import AbilitySection from '~/components/Charsheet/Ability/AbilitySection.vue';
-import SkillSection from '~/components/Charsheet/Skill/SkillSection.vue';
+import VueHeader from 'Components/Core/VueHeader.vue'
+import SavingThrowSection from 'Components/Charsheet/SavingThrow/SavingThrowSection.vue';
+import AttributeSection from 'Components/Charsheet/Attribute/AttributeSection.vue';
+import AbilitySection from 'Components/Charsheet/Ability/AbilitySection.vue';
+import SkillSection from 'Components/Charsheet/Skill/SkillSection.vue';
 
 
 export default defineComponent({

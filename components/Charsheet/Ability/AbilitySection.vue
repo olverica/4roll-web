@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Ability from '~/components/Charsheet/Ability/Ability.vue'
+import Ability from 'Components/Charsheet/Ability/Ability.vue'
 
 
 export default defineComponent({

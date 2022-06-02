@@ -17,8 +17,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import SheetLayout from '~/components/Modal/Sheet/SheetLayout.vue'
-import VueButton from '~/components/Core/VueButton.vue'
+import SheetLayout from 'Components/Modal/Sheet/SheetLayout.vue'
+import VueButton from 'Components/Core/VueButton.vue'
 
 
 export default defineComponent({

@@ -1,4 +1,4 @@
-import Action from '~/services/Animation/Sheet/Transition/Actions/Action'
+import Action from 'Services/Animation/Sheet/Transition/Actions/Action'
 
 
 export type ResolveCallback = () => void;

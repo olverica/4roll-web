@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import ScrollService from '~/services/Modal/ModalService';
+import ScrollService from 'Services/Modal/ModalService';
 
 
 export default defineComponent({

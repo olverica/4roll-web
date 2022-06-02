@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Skill from '~/components/Charsheet/Skill/Skill.vue'
+import Skill from 'Components/Charsheet/Skill/Skill.vue'
 
 
 export default defineComponent({

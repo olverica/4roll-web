@@ -1,7 +1,7 @@
-import {TouchedEvent} from '~/services/Animation/Sheet/Behaviour/Events';
-import CaptureState from '~/services/Animation/Sheet/States/CaptureState'
-import CloseState from '~/services/Animation/Sheet/States/CloseState'
-import {StateBase} from '~/services/Animation/Sheet/States/State'
+import {TouchedEvent} from 'Services/Animation/Sheet/Behaviour/Events';
+import CaptureState from 'Services/Animation/Sheet/States/CaptureState'
+import CloseState from 'Services/Animation/Sheet/States/CloseState'
+import {StateBase} from 'Services/Animation/Sheet/States/State'
 
 
 export default class StaticState extends StateBase

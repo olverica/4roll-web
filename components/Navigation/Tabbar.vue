@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import TabbarButton from '~/components/Navigation/TabbarButton.vue';
+import TabbarButton from 'Components/Navigation/TabbarButton.vue';
 
 
 export default defineComponent({

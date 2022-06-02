@@ -13,12 +13,12 @@
 
 <script lang="ts">
 import {defineComponent, reactive, provide} from 'vue'
-import ScrollService from '~/services/Modal/ScrollService'
-import ModalService from '~/services/Modal/ModalService'
-import Viewport from '~/components/Layout/Viewport.vue'
-import Tabbar from '~/components/Navigation/Tabbar.vue'
-import Modals from '~/components/Modal/Modals.vue'
-import ForDev from '~/components/Dev/ForDev.vue'
+import ScrollService from 'Services/Modal/ScrollService'
+import ModalService from 'Services/Modal/ModalService'
+import Viewport from 'Components/Layout/Viewport.vue'
+import Tabbar from 'Components/Navigation/Tabbar.vue'
+import Modals from 'Components/Modal/Modals.vue'
+import ForDev from 'Components/Dev/ForDev.vue'
 
 
 export default defineComponent({

@@ -1,4 +1,4 @@
-import {Gesture} from '~/services/Animation/Sheet/Behaviour/GestureDetector'
+import {Gesture} from 'Services/Animation/Sheet/Behaviour/GestureDetector'
 
 
 export interface FingerEvent

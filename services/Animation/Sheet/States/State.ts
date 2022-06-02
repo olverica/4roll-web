@@ -1,7 +1,7 @@
-import {MovedEvent, TouchedEvent, ReleasedEvent} from '~/services/Animation/Sheet/Behaviour/Events';
-import InteractionBoundaries from '~/services/Animation/Sheet/Info/InteractionBoundaries';
-import InteractionBehaviour from '~/services/Animation/Sheet/Info/InteractionBehaviour';
-import InteractionInfo from '~/services/Animation/Sheet/Info/InteractionInfo'
+import {MovedEvent, TouchedEvent, ReleasedEvent} from 'Services/Animation/Sheet/Behaviour/Events';
+import InteractionBoundaries from 'Services/Animation/Sheet/Info/InteractionBoundaries';
+import InteractionBehaviour from 'Services/Animation/Sheet/Info/InteractionBehaviour';
+import InteractionInfo from 'Services/Animation/Sheet/Info/InteractionInfo'
 
 
 export default interface SheetState

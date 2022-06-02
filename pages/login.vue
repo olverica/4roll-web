@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import GoogleSingIn from '~/components/Wip/auth/GoolgeSingIn.vue'
+import GoogleSingIn from 'Components/Wip/auth/GoolgeSingIn.vue'
 import {defineComponent, PropType} from 'vue'
 
 export default defineComponent({

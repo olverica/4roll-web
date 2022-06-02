@@ -1,6 +1,6 @@
-import InteractionInfo from '~/services/Animation/Sheet/Info/InteractionInfo';
-import MovingSpeed from '~/services/Animation/Sheet/Behaviour/MovingSpeed'
-import {StateBase} from '~/services/Animation/Sheet/States/State'
+import InteractionInfo from 'Services/Animation/Sheet/Info/InteractionInfo';
+import MovingSpeed from 'Services/Animation/Sheet/Behaviour/MovingSpeed'
+import {StateBase} from 'Services/Animation/Sheet/States/State'
 
 
 export default class CloseState extends StateBase

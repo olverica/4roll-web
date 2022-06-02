@@ -1,5 +1,5 @@
-import {FingerEvent} from '~/services/Animation/Sheet/Behaviour/Events'
-import MovingSpeed from '~/services/Animation/Sheet/Behaviour/MovingSpeed'
+import {FingerEvent} from 'Services/Animation/Sheet/Behaviour/Events'
+import MovingSpeed from 'Services/Animation/Sheet/Behaviour/MovingSpeed'
 
 
 export enum GestureType

@@ -1,7 +1,7 @@
-import InteractionBoundaries from '~/services/Animation/Sheet/Info/InteractionBoundaries'
-import InteractionBehaviour from '~/services/Animation/Sheet/Info/InteractionBehaviour'
-import SheetState from '~/services/Animation/Sheet/States/State'
-import SheetDTO from '~/services/Animation/Sheet/SheetDTO';
+import InteractionBoundaries from 'Services/Animation/Sheet/Info/InteractionBoundaries'
+import InteractionBehaviour from 'Services/Animation/Sheet/Info/InteractionBehaviour'
+import SheetState from 'Services/Animation/Sheet/States/State'
+import SheetDTO from 'Services/Animation/Sheet/SheetDTO';
 
 
 export default class InteractionInfo

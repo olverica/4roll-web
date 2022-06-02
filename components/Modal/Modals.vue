@@ -7,10 +7,10 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import inject from '~/services/Support/Helpers/Inject';
-import ScrollService from '~/services/Modal/ModalService'
-import SheetContainer from '~/components/Modal/Sheet/SheetContainer.vue'
-import ModalService, {ModalComponent, ModalContainer} from '~/services/Modal/ModalService'
+import inject from 'Services/Support/Helpers/Inject';
+import ScrollService from 'Services/Modal/ModalService'
+import SheetContainer from 'Components/Modal/Sheet/SheetContainer.vue'
+import ModalService, {ModalComponent, ModalContainer} from 'Services/Modal/ModalService'
 
 
 export default defineComponent({

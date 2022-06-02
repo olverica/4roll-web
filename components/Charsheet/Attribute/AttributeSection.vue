@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Attribute from '~/components/Charsheet/Attribute/Attribute.vue'
+import Attribute from 'Components/Charsheet/Attribute/Attribute.vue'
 
 
 export default defineComponent({

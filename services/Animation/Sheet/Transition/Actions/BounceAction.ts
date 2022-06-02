@@ -1,7 +1,7 @@
-import InteractionBehaviour from '~/services/Animation/Sheet/Info/InteractionBehaviour'
-import {ResolveCallback} from '~/services/Animation/Sheet/Transition/Actions/ResolvingAction'
-import EasingAction from '~/services/Animation/Sheet/Transition/Actions/EasingTemplate/EasingAction'
-import MovingSpeed from '~/services/Animation/Sheet/Behaviour/MovingSpeed'
+import InteractionBehaviour from 'Services/Animation/Sheet/Info/InteractionBehaviour'
+import {ResolveCallback} from 'Services/Animation/Sheet/Transition/Actions/ResolvingAction'
+import EasingAction from 'Services/Animation/Sheet/Transition/Actions/EasingTemplate/EasingAction'
+import MovingSpeed from 'Services/Animation/Sheet/Behaviour/MovingSpeed'
 import bezier from 'bezier-easing'
 
 

@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import SavingThrow from '~/components/Charsheet/SavingThrow/SavingThrow.vue'
+import SavingThrow from 'Components/Charsheet/SavingThrow/SavingThrow.vue'
 import VueButton from '~~/components/Core/VueButton.vue';
 
 
