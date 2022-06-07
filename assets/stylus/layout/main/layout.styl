@@ -1,0 +1,90 @@
+body
+  background: #050505
+  font-family: 'Inter', sans-serif
+
+
+.viewport
+  max-width: 450px
+  margin: 0 auto
+    
+
+// OVERLAYS 
+
+.sheet
+  // sizing
+  width: stretch
+  max-width: inherit
+  // position
+  position: fixed
+  z-index: 2
+  bottom: 0
+
+
+// MAIN
+
+.page
+  min-height: stretch
+  // position
+  position: absolute
+  width: stretch
+  max-width: inherit
+  // flex
+  display: flex
+  flex-direction: column
+  // sizing
+  //
+  background: $dark-05
+  // 
+  $paddingX = 40px 
+  $paddingY = 10px 
+
+  .header-sticky
+    margin-top:  ($paddingX / 2)
+    margin-bottom: - $paddingX
+    padding: ($paddingX / 2) $paddingY 30px
+
+  .main
+    flex-grow: 1
+    padding: $paddingX $paddingY ($paddingX / 2)
+
+  .tabbar 
+    padding: $paddingY
+
+// MOZILLA FIX
+
+@-moz-document url-prefix()
+
+  .page
+    min-height: 100%
+
+
+.header-sticky
+  // position
+  position: sticky
+  top: 0
+  z-index: 1
+
+.tabbar
+  // position
+  position: sticky
+  bottom: 0
+  z-index: 1
+
+
+// TEMPORARY
+
+
+.sheet_tempBlock
+  height: 100px
+  background: $dark-18
+  border-radius: 10px
+
+.components
+  gap: 15px
+  display: grid
+  grid-auto-rows: max-content
+  
+.charsheet
+  gap: 20px
+  display: flex
+  flex-direction: column
