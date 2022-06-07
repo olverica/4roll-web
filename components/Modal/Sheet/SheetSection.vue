@@ -1,8 +1,8 @@
 <template>
   <section
     v-if="!!!closed" 
-    class="sheet"
-    :class="{'sheet--hidden': hidden}"
+    class="modal"
+    :class="{'modal-hidden': hidden}"
     :style="{transitionDuration: delay}"
     @click.self="close"
   >
@@ -47,18 +47,3 @@ export default defineComponent({
   }
 });
 </script>
-
-
-<style lang="sass">
-
-.sheet
-  transition: background .4s
-  background: rgba(0,0,0,.6) 
-
-.sheet--hidden
-  background: #00000000
-
-.sheet_body--hidden
-  opacity: 0
-  
-</style>

@@ -1,0 +1,39 @@
+// LAYOUT
+  
+.radiobutton
+  aspect-ratio: 1
+  border-radius: 100%
+  // grid
+  display: grid
+  place-items: center
+  // animation
+  transitions(background, .2s)
+  
+  &::before // dot
+    content: ""
+    height: 0px
+    aspect-ratio: 1
+    border-radius: 100%
+    transitions(height, .2s)
+
+  
+// STYLE
+
+.radiobutton
+  $activeColor = $accent-blue
+
+  // STATE: DEFAULT 
+
+  height: 20px
+  background: $dark-12
+
+  &::before // dot 
+    background: $activeColor
+
+  // STATE: ACTIVE
+
+  &-active
+    background: alpha($activeColor, .2)
+
+  &-active::before
+    height: 10px

@@ -1,0 +1,46 @@
+// LAYOUT
+  
+.switch
+  border-radius: 100px
+  // grid
+  display: grid
+  align-items: center
+  // animation
+  transitions(background, .2s)
+
+  &::before // dot
+    content: ""
+    aspect-ratio: 1
+    border-radius: 100%
+    // position
+    left: 0
+    position: relative
+    // animation
+    transitions(background \, left, .15s)
+
+    
+// SWITCH STYLE
+  
+.switch
+  $activeColor = $accent-green
+
+  // STATE: DEFAULT
+
+  height: 25px
+  padding: 5px
+  width: @height * 2 - @padding
+  background: $dark-12
+
+  &::before // dot 
+    height: @height - @padding * 2 
+    background: $light-50
+
+  // STATE: ACTIVE
+
+  &-active
+    background: alpha($activeColor, .2)
+
+  &-active::before // dot 
+      background: $activeColor
+      // position
+      left: @height - @padding

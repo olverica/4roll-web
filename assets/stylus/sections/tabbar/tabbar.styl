@@ -1,0 +1,24 @@
+// TABBAR LAYOUT
+
+.tabbar
+  overflow: hidden
+  // grid
+  display: grid
+  grid-auto-flow: column
+  grid-auto-columns: 1fr
+
+// TABBAR STYLE
+
+.tabbar
+  gap: 10px
+  height: 60px
+  padding: 10px
+  background: $bg-tabbar
+  backdrop-filter: blur(30px)
+
+// mozilla fix
+
+@-moz-document url-prefix()
+
+  .tabbar 
+    background: $bg-tabbar-alt

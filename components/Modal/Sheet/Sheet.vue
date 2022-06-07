@@ -1,7 +1,7 @@
 <template>
   <div 
-    class="sheet_body"
-    :class="{'sheet_body--hidden': hidden}"
+    class="sheet"
+    :class="{'sheet-hidden': hidden}"
     :style="{top: top}">
 
     <slot/>

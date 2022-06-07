@@ -1,0 +1,36 @@
+// ----------------
+// LIST ITEM LAYOUT
+// ----------------
+
+.listItem
+  // grid
+  display: grid
+  // animation
+  transitions(background, .2s)
+
+
+// ---------------
+// LIST ITEM STYLE
+// ---------------
+
+.listItem
+  min-height: 50px
+  gap: 5px
+  padding: 15px
+  background: $dark-15
+
+  &-active 
+    background $dark-18
+
+  &-closed
+    .listItem_toggle
+      transform: rotate(180deg)
+
+
+// ON SHEET STYLE
+
+.sheet .listItem
+  background: $dark-18
+
+  &-active 
+    background $dark-20

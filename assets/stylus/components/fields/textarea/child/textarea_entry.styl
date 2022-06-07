@@ -1,0 +1,21 @@
+// TEXTAREA CHILD: ENTRY LAYOUT
+
+.textarea_entry
+  cursor: pointer
+  // animation
+  transitions(opacity, .2s)
+
+  &:empty:before // placeholder 
+    content: attr(placeholder)
+    font-size: inherit
+  
+
+// TEXTAREA CHILD: ENTRY STYLE
+
+.textarea_entry
+  color: $light-60
+  text-14()
+  
+  &::before // placeholder
+    color: $light-50
+    

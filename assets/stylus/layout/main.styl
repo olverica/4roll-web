@@ -1,0 +1,62 @@
+// LAYOUT
+
+.layout
+  // position
+  position: absolute
+  z-index: 0
+  // sizing
+  width: stretch
+  max-width: inherit
+  min-height: stretch
+  // flex
+  display: flex
+  flex-direction: column
+  // mozilla height fix
+  @-moz-document url-prefix() 
+    min-height: 100%
+
+.layout 
+  background: $dark-05
+
+
+// HEADER
+
+.layout .header
+  // position
+  position: sticky
+  top: 0
+  z-index: 1
+
+.layout .header 
+  padding: 20px 10px 30px
+  margin-top: 20px 
+  margin-bottom: -20px
+  background: linear-gradient(
+    alpha($dark-05, 1) 0%,
+    alpha($dark-05, 0) 100%
+  )
+
+
+// PAGE
+
+.layout .page 
+  flex-grow: 1
+  // grid
+  display: grid
+  grid-auto-rows: column 
+
+.layout .page 
+  gap: 20px
+  padding: 20px 10px 
+
+
+// TABBAR
+
+.layout .tabbar
+  // position
+  position: sticky
+  bottom: 0
+  z-index: 1
+
+
+

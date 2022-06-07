@@ -1,6 +1,6 @@
 <template>
-  <section class="savingThrows">
-    <vue-button class="button-texted">Saving Throw</vue-button>
+  <section class="section savingThrows">
+    <vue-button icon="chevron-up" texted>Saving Throw</vue-button>
 
     <div class="cells cells-6x">
       <saving-throw

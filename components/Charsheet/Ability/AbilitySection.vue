@@ -1,5 +1,5 @@
 <template>
-  <section class="abilities">
+  <section class="section abilities">
     <core-vue-title>Abilities</core-vue-title>
 
     <div class="cells cells-3x">
