@@ -11,7 +11,7 @@
 import { defineComponent, PropType } from 'vue'
 import ColumnCell from 'Components/Cell/Types/ColumnCell.vue'
 import CellValue from 'Components/Cell/Values/CellValue.vue'
-import Ability from 'Services/Charsheet/Ability'
+import Ability from 'App/Charsheet/Ability'
 
 
 export default defineComponent({

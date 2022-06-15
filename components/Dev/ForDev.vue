@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import {defineComponent, provide} from 'vue'
-import ConsoleService from 'Services/Dev/ConsoleService'
+import ConsoleService from 'App/Dev/ConsoleService'
 import ExposeTransition from 'Components/Dev/Sandbox/ExposeTransition.vue';
 import SandboxButton from 'Components/Dev/Sandbox/SandboxButton.vue';
 import Sandbox from 'Components/Dev/Sandbox/Sandbox.vue';

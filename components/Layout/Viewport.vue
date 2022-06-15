@@ -13,7 +13,8 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import ScrollService from 'Services/Modal/ModalService';
+import inject from 'App/Support/Helpers/Inject';
+import ScrollService from 'App/Modal/ModalService'
 
 
 export default defineComponent({
@@ -21,10 +22,7 @@ export default defineComponent({
 
   computed: {
     scroll(): ScrollService {
-      if (!!!this.$scroll)  
-        throw Error('Dependency not injecteds');
-      
-      return this.$scroll;
+      return inject(this, 'scroll')
     },
 
     locked(): boolean {

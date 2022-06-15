@@ -11,7 +11,7 @@
 import { defineComponent, PropType } from 'vue'
 import CellMarkedValue from 'Components/Cell/Values/CellMarkedValue.vue'
 import ColumnCell from 'Components/Cell/Types/ColumnCell.vue'
-import SavingThrow from 'Services/Charsheet/SavingThrow'
+import SavingThrow from 'App/Charsheet/SavingThrow'
 
 
 export default defineComponent({

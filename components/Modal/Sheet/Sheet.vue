@@ -2,7 +2,7 @@
   <div 
     class="sheet_body"
     :class="{'sheet_body--hidden': hidden}"
-    :style="{top: top}">
+    :style="{'top': top}">
 
     <slot/>
   </div>
@@ -21,7 +21,6 @@ export default defineComponent({
   },
 
   computed: {
-    
     top(): string {
       return this.position > 0 ? this.position + 'px': '0';
     },

@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import {defineComponent, PropType} from 'vue'
-import Form from 'Services/Forms/Form'
+import Form from 'App/Forms/Form'
 import InputEntry from 'Components/Form/Input/InputEntry.vue'
 
 

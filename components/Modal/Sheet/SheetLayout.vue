@@ -1,7 +1,10 @@
 <template>
   <vue-header @close="close">{{ title }}</vue-header>
 
-  <div class="sheet_content">
+  <div 
+    class="sheet_content"
+    :style="{'margin-bottom': innerHeight}"
+  >
     <slot name="content"/>
   </div>
 
@@ -21,6 +24,21 @@ export default defineComponent({
     title: {
       required: true,
       type: String as PropType<string>
+    },
+
+    data: {
+      required: true,
+      type: Object
+    },
+  },
+
+  computed: {
+    innerHeight(): string {
+      return this.position < 0 ? -this.position + 'px' : '0px';
+    },
+
+    position(): number {
+      return this.data.getPosition();
     }
   },
 

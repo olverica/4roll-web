@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import {defineComponent, PropType} from 'vue'
-import sleep from 'Services/Support/Helpers/Sleep'
+import sleep from 'App/Support/Helpers/Sleep'
 
 export default defineComponent({
   props: {

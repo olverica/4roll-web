@@ -4,7 +4,7 @@
     class="sheet"
     :class="{'sheet--hidden': hidden}"
     :style="{transitionDuration: delay}"
-    @click.self="close"
+    @click.self="onClick"
   >
     <slot/>
   </section>
@@ -41,8 +41,8 @@ export default defineComponent({
   },
 
   methods: {
-    close(): void {
-      this.interactionHandler.onClose();
+    onClick(): void {
+      this.$emit('overlay-click');
     }
   }
 });

@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import ModalService from 'Services/Modal/ModalService';
+import ModalService from 'App/Modal/ModalService';
 import DevConsole from 'Components/Dev/Console/DevConsole.vue'
 import VueButton from 'Components/Core/VueButton.vue'
 import VueHeader from 'Components/Core/VueHeader.vue'

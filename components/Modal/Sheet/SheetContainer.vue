@@ -1,31 +1,40 @@
 <template>
-  <sheet-section :data="data">
+  <sheet-section 
+    :data="data" 
+    @overlay-click="close"
+  >
     <sheet ref="sheet" :data="data">
 
       <sheet-thumb
         :interaction-handler="interactionHandler"
       />
 
-      <component :is="body" @close="close">
-        <sheet-extender :data="data"/>
-      </component>
+      <component
+        :is="body"
+        :data="data"
+        @close="close" 
+      />
+      
     </sheet>
   </sheet-section>
 </template>
 
 <script lang="ts">
 import {PropType, defineComponent, DefineComponent} from 'vue'
-import SheetInteractionHandler from 'Services/Animation/Sheet/SheetInteractionHandler'
-import InteractionBoundaries from 'Services/Animation/Sheet/Info/InteractionBoundaries'
-import SheetExtender from 'Components/Modal/Sheet/SheetExtender.vue'
+import SheetInteractionHandler from 'App/Animation/Sheet/SheetInteractionHandler'
+import InteractionBoundaries from 'App/Animation/Sheet/Info/InteractionBoundaries'
 import SheetSection from 'Components/Modal/Sheet/SheetSection.vue'
 import SheetThumb from 'Components/Modal/Sheet/SheetThumb.vue'
-import SheetDTO from 'Services/Animation/Sheet/SheetDTO';
+import SheetDTO from 'App/Animation/Sheet/SheetDTO'
 import Sheet from 'Components/Modal/Sheet/Sheet.vue'
+import inject from 'App/Support/Helpers/Inject';
+import AnimationEngine from 'App/Animation/Engine/AnimationEngine'
 
 
 export default defineComponent({
-  components: { SheetSection, SheetThumb, SheetExtender, Sheet},
+  inject: ['$animations'],
+
+  components: { SheetSection, SheetThumb, Sheet},
 
   props: {
     body: {
@@ -45,6 +54,10 @@ export default defineComponent({
   computed: {
     closed(): boolean {
       return this.data.isClosed();
+    },
+
+    animations(): AnimationEngine {
+      return inject(this, 'animations');
     }
   },
 
@@ -55,21 +68,25 @@ export default defineComponent({
       topBreak: 200,
     });
 
+    
     this.data.changePosition(boundaries.closeAt());
     this.interactionHandler = new SheetInteractionHandler(this.data, boundaries);
+    this.animations.register(this.interactionHandler);
+  },
+
+  unmounted() {
+    this.animations.detach(this.interactionHandler);
   },
 
   watch: {
     closed(value: boolean) {
-      if (value)
-        this.close();
+      if (value) this.$emit('close');
     }
   },
 
   methods: {
     close(): void {
       this.interactionHandler.onClose();
-      this.$emit('close');
     },
 
     offsetTop(): number {

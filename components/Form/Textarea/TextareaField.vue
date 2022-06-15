@@ -25,7 +25,7 @@ import {defineComponent, PropType} from 'vue'
 import TextareaHeading from 'Components/Form/Textarea/TextareaHeading.vue'
 import TextareaEntry from 'Components/Form/Textarea/TextareaEntry.vue'
 import TextareaRoot from 'Components/Form/Textarea/TextareaRoot.vue'
-import Form from 'Services/Forms/Form'
+import Form from 'App/Forms/Form'
 
 
 export default defineComponent({
