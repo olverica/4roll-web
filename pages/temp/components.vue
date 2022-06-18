@@ -7,6 +7,11 @@
       <core-vue-text>Some text</core-vue-text>      
     </div>
 
+    <div class="group">
+      <wip-avatar/>
+      <wip-avatar-uploader/>
+    </div>
+
     <div class="list">
       <wip-list-header/>
       <wip-list-text/>
