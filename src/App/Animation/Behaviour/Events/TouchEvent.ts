@@ -1,19 +1,28 @@
-import FingerEvent from 'App/Animation/Behaviour/Events/FingerEvent'
+import FingerEvent, {RawEvent} from 'App/Animation/Behaviour/Events/FingerEvent'
+import Vector2D from 'App/Animation/Types/Vector2D'
 
 
 export default class TouchEvent implements FingerEvent
 {
-    readonly fingerAt: number;
+    readonly positionDelta: Vector2D;
+
+    readonly fingerAt: Vector2D;
+
+    readonly velocity: Vector2D;
 
     readonly timestamp: number;
 
-    readonly movingSpeed: number;
 
-
-    public constructor(fingerAt: number)
+    public constructor(raw: RawEvent)
     {
-        this.movingSpeed = 0;
-        this.fingerAt = fingerAt;
-        this.timestamp = Date.now();
+        this.timestamp = raw.timeStamp;
+        this.positionDelta = {x: 0,y: 0};
+        this.velocity = {x: 0, y: 0};
+
+        let finger = raw.touches.item(0);
+        this.fingerAt = {
+            x: finger.clientX,
+            y: finger.clientY
+        };
     }
 }

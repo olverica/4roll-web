@@ -1,27 +1,37 @@
-import FingerEvent from 'App/Animation/Behaviour/Events/FingerEvent'
+import FingerEvent, {RawEvent} from 'App/Animation/Behaviour/Events/FingerEvent'
+import Vector2D from 'App/Animation/Types/Vector2D'
 
 
 export default class MoveEvent implements FingerEvent
 {
-    readonly fingerAt: number;
-
+    readonly positionDelta: Vector2D;
+    
+    readonly fingerAt: Vector2D;
+    
+    readonly velocity: Vector2D;
+    
     readonly timestamp: number;
 
-    readonly movingSpeed: number;
 
-
-    public constructor(fingerAt: number, events: FingerEvent[])
+    public constructor(raw: RawEvent , previous: FingerEvent)
     {
-        this.fingerAt = fingerAt;
         this.timestamp = Date.now();
-        this.movingSpeed = this.computeSpeed(events);
-    }
 
-    private computeSpeed(events: FingerEvent[]): number
-    {
-        let previous = events[0];
+        let finger = raw.touches.item(0);
+        this.fingerAt = {
+            x: finger.clientX,
+            y: finger.clientY
+        };
 
-        return (this.fingerAt - previous.fingerAt) / 
-            (this.timestamp - previous.timestamp);
+        this.positionDelta = {
+            x: previous.fingerAt.x - this.fingerAt.x,
+            y: previous.fingerAt.y - this.fingerAt.y,
+        };
+
+        let timeDifference = this.timestamp - previous.timestamp;
+        this.velocity = {
+            x: -this.positionDelta.x / timeDifference,
+            y: -this.positionDelta.y / timeDifference
+        };
     }
 }

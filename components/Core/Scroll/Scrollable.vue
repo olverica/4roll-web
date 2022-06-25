@@ -1,63 +1,98 @@
 <template>
   <div
     ref="viewport"
-    :style="{'overflow': 'hidden'}"
+    class="viewport"
     @touchmove="onTouchMove"
     @touchstart="onTouchStart"
     @touchend="onTouchRelease"
     @touchcancel="onTouchRelease"
   >
     <div 
-      ref="content"
-      :style="{'transform': 'translateY('+top+')'}">
+      ref="boundaries"
+      class="viewport-borders"
+      :style="{'transform': translate}">
         
       <slot/>
     </div>
     
     <scroll-thumb/>
+
+    <scroll-settings :dto="dto" :config="config"/>
+
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import ScrollThumb from 'Components/Core/Scroll/ScrollThumb.vue'
-import ScrollInteractionHandler from 'App/Animation/Scroll/ScrollInteractionHander'
 import AnimationEngine from 'App/Animation/Engine/AnimationEngine'
-import Viewport from 'App/Animation/Scroll/Viewport'
+import ScrollSettings from 'Components/Core/Scroll/SrollSettings.vue'
+import ScrollAgregate from 'App/Scroll/Interaction/ScrollAggregate'
+import ScrollThumb from 'Components/Core/Scroll/ScrollThumb.vue'
+import Builder from 'App/Scroll/Settings/Builder'
 import inject from 'App/Support/Helpers/Inject'
-import BoundingBorders from 'App/Animation/Scroll/BoundingBorders'
 
 
 export default defineComponent({
   inject: ['$animations'],
 
-  components: { ScrollThumb },
+  components: {ScrollSettings, ScrollThumb},
 
   computed: {
     animations(): AnimationEngine {
       return inject(this, 'animations');
     },
 
-    top(): string {
-      return - this.viewport.getPosition() - this.borders.getOverscrolled().x  + 'px';
+    translate(): string {
+      return `translate(${this.left}px, ${this.top}px)`
+    },
+
+    left(): number {
+      return - this.dto.viewport.x - this.dto.borders.right + this.dto.borders.left;
+    },
+
+    top(): number {
+      return - this.dto.viewport.y + this.dto.borders.top - this.dto.borders.bottom;
     }
   },
 
   data() {
     return {
-      scrollHandler: null as ScrollInteractionHandler|null,
-      viewport: null as Viewport,
-      borders: null as BoundingBorders,
+      scrollHandler: null as ScrollAgregate|null,
+
+      dto: {
+        viewport: 0,
+        borders: {
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0
+        }
+      },
+
+      config: {
+        testing: true,
+
+        axis: 'both',
+
+        viewport: {
+          damping: 0.05
+        },
+
+        boundaries: {
+          bounce: 'top. bottom',
+          resistance: 1.5
+        }
+      }
     }
   },
 
   beforeMount() {
-    this.borders = new BoundingBorders();
-    this.viewport = new Viewport(this.borders);
   },
 
   mounted() {
-    this.scrollHandler = new ScrollInteractionHandler(this.viewport);
+    this.config.viewport.el = this.$refs.viewport;
+    this.config.boundaries.el = this.$refs.boundaries;
+    this.scrollHandler = new Builder().make(this.config, this.dto);
     this.animations.register(this.scrollHandler);
   },
 
@@ -67,20 +102,33 @@ export default defineComponent({
 
   methods: {
     onTouchStart(event: TouchEvent): void {
-      this.scrollHandler.onTouchStart(this.computePosition(event));
+      this.scrollHandler.onTouchStart(event);
     },
 
     onTouchMove(event: TouchEvent): void {
-      this.scrollHandler.onTouchMove(this.computePosition(event));
+      this.scrollHandler.onTouchMove(event);
     },
 
-    onTouchRelease(): void {
-      this.scrollHandler.onTouchRelease();
-    },
-
-    computePosition(event: TouchEvent): number {
-      return event.touches[0].clientY;
-    } 
+    onTouchRelease(event: TouchEvent): void {
+      this.scrollHandler.onTouchRelease(event);
+    }
   }
 });
-</script>
+</script> 
+
+<style lang="sass">
+
+.viewwport-borders
+  overflow: hidden
+
+.page
+  background: #0d0d0d
+
+.viewport-borders
+  background: #0d0d0d
+
+.viewport
+  background: aqua
+  max-height: 844px
+
+</style>

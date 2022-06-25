@@ -99,6 +99,6 @@ export default class GestureDetector
 
     private distance(firstEvent: FingerEvent, lastEvent: FingerEvent): number
     {
-        return Math.abs(firstEvent.fingerAt - lastEvent.fingerAt);
+        return Math.abs(firstEvent.fingerAt.y - lastEvent.fingerAt.y);
     }
 }

@@ -20,7 +20,7 @@ import Viewport from 'Components/Layout/Viewport.vue'
 import Tabbar from 'Components/Navigation/Tabbar.vue'
 import Modals from 'Components/Modal/Modals.vue'
 import ForDev from 'Components/Dev/ForDev.vue'
-
+  
 
 export default defineComponent({
   components: { Viewport, Modals, Tabbar, ForDev },

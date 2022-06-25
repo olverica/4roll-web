@@ -12,12 +12,11 @@ export default class EngineService
     public constructor()
     {
         this.updatebles = new UpdatableContainer();
-        this.engine = new AnimationEngine(30, this.updatebles)
+        this.engine = new AnimationEngine(60, this.updatebles)
     }
 
     public register(updatable: Updatable)
     {
-        console.log(updatable);
         this.updatebles.add(updatable);
 
         if (this.updatebles.length() === 1)

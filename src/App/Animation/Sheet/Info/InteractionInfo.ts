@@ -35,7 +35,6 @@ export default class InteractionInfo
     
     public markClosed(): void
     {
-        console.log('closed');
         this.dto.changeClosed(true);
     }
 
