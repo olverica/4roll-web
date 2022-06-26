@@ -1,7 +1,7 @@
 
 export default interface Config
 {
-    testing: boolean,
+    reactive: boolean,
 
     axis: 'vertical'|'horizontal'|'both',
 
@@ -13,6 +13,7 @@ export default interface Config
     boundaries: {
         el: HTMLElement
         bounce: string
+        friction: number
         resistance: number
     }
 }

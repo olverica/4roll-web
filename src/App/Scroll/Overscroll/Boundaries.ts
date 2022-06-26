@@ -1,6 +1,6 @@
-import ViewportDimenssion from 'App/Scroll/Model/ViewportDimenssion'
+import ViewportDimenssion from 'App/Scroll/Models/ViewportDimenssion'
 import ScrollDTO from 'App/Scroll/Interaction/ScrollDTO'
-import Viewport from 'App/Scroll/Model/Viewport'
+import Viewport from 'App/Scroll/Models/Viewport'
 import Border, { LimitType } from 'App/Scroll/Overscroll/Border'
 import Size from 'App/Animation/Types/Size'
 

@@ -1,5 +1,5 @@
-import ViewportDimenssion from 'App/Scroll/Model/ViewportDimenssion'
-        
+import ViewportDimenssion from 'App/Scroll/Models/ViewportDimenssion'
+
 
 // LIMITTING ALL THATN IS GREATHER
 export enum LimitType
@@ -11,8 +11,10 @@ export enum LimitType
 export default interface Boundary
 {
     restrict(viewport: ViewportDimenssion): void;
+    
     limit(point: number, type: LimitType): void;
     breaksAt(point: number): boolean;
+    
     overscrolled(): number;
     update(): void
 }

@@ -1,39 +1,46 @@
-import FingerEvent, {RawEvent} from 'App/Animation/Behaviour/Events/FingerEvent'
-import ReleaseEvent from 'App/Animation/Behaviour/Events/ReleaseEvent'
-import TouchEvent from 'App/Animation/Behaviour/Events/TouchEvent'
-import MoveEvent from 'App/Animation/Behaviour/Events/MoveEvent'
+import AnimationTouchEvent from 'App/Animation/Behaviour/Events/Touch/TouchEvent'
+import FingerRelease from 'App/Animation/Behaviour/Events/Finger/FingerRelease'
+import FingerCapture from 'App/Animation/Behaviour/Events/Finger/FingerCaputre'
+import FingerMove from 'App/Animation/Behaviour/Events/Finger/FingerMove'
+import MouseRelease from 'App/Animation/Behaviour/Events/Mouse/MouseRelease'
+import MouseClick from 'App/Animation/Behaviour/Events/Mouse/MouseClick'
+import MouseMove from 'App/Animation/Behaviour/Events/Mouse/MouseMove'
 
 
 export default class EventHandler
 {
-    private events: FingerEvent[] = [];
+    private events: AnimationTouchEvent[] = [];
 
-
-    public touched(raw: RawEvent): TouchEvent
+    public fingerTouch(raw: TouchEvent): AnimationTouchEvent
     {
-        let event = new TouchEvent(raw);
-        this.events = [event];
+        let event = new FingerCapture(raw);
+        this.events.unshift(event)
 
         return event;
     }
 
-    public moved(raw: RawEvent): MoveEvent
+    public fingerMove(raw: TouchEvent): FingerMove
     {
-        let event = new MoveEvent(raw, this.lastEvent());
-        this.events.unshift(event);
+        let event = new FingerMove(raw, this.lastEvent());
+        this.events.unshift(event)
 
         return event;
     }
 
-    public released(raw: RawEvent): ReleaseEvent
+    public fingerRelease(raw: TouchEvent): FingerRelease
     {
-        let event = new ReleaseEvent(raw, this.lastEvent(), this.events);
+        let event = new FingerRelease(raw, this.lastEvent(), this.events);
         this.events = [];
 
         return event;
     }
 
-    private lastEvent(): FingerEvent
+    public ended(): boolean
+    {
+        return !!!this.events.length;
+    }
+
+    private lastEvent(): AnimationTouchEvent
     {   
         if (this.events.length)
             return this.events[0];

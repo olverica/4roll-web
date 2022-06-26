@@ -1,4 +1,4 @@
-import FingerEvent from 'App/Animation/Behaviour/Events/FingerEvent'
+import TouchEvent from 'App/Animation/Behaviour/Events/Touch/TouchEvent'
 import MovingSpeed from 'App/Animation/Behaviour/MovingSpeed'
 
 
@@ -21,7 +21,7 @@ export default class GestureDetector
     private swipeMinDistance: number = 150;
 
 
-    public proceed(events: FingerEvent[]): Gesture
+    public proceed(events: TouchEvent[]): Gesture
     {
         if (events.length < 2)
             return this.createEmptyGesture();
@@ -35,7 +35,7 @@ export default class GestureDetector
         }
     }
 
-    private cutByTime(events: FingerEvent[]): FingerEvent[]
+    private cutByTime(events: TouchEvent[]): TouchEvent[]
     {
         let cutted = [];
         for (let event of events)
@@ -49,19 +49,19 @@ export default class GestureDetector
         return cutted;
     }
 
-    private computeDiraction(firstEvent: FingerEvent, lastEvent: FingerEvent): GestureType
+    private computeDiraction(firstEvent: TouchEvent, lastEvent: TouchEvent): GestureType
     {
 
         if (this.distance(firstEvent, lastEvent) < this.swipeMinDistance)
             return GestureType.None;
 
-        if (firstEvent.fingerAt < lastEvent.fingerAt)
+        if (firstEvent.touchedAt < lastEvent.touchedAt)
             return GestureType.SwipeDown;
 
         return GestureType.SwipeUp;
     }
 
-    private findFarrestPoints(events: FingerEvent[]): {lastEvent: FingerEvent, firstEvent: FingerEvent}
+    private findFarrestPoints(events: TouchEvent[]): {lastEvent: TouchEvent, firstEvent: TouchEvent}
     {
         let lastEvent = events[0];
         let farrestEvent = lastEvent;
@@ -81,7 +81,7 @@ export default class GestureDetector
         };
     }
 
-    private computeSpeed(firstEvent: FingerEvent, lastEvent: FingerEvent)
+    private computeSpeed(firstEvent: TouchEvent, lastEvent: TouchEvent)
     {
         let distance = this.distance(firstEvent, lastEvent)
         let time = lastEvent.timestamp - firstEvent.timestamp;
@@ -97,8 +97,8 @@ export default class GestureDetector
         }
     }
 
-    private distance(firstEvent: FingerEvent, lastEvent: FingerEvent): number
+    private distance(firstEvent: TouchEvent, lastEvent: TouchEvent): number
     {
-        return Math.abs(firstEvent.fingerAt.y - lastEvent.fingerAt.y);
+        return Math.abs(firstEvent.touchedAt.y - lastEvent.touchedAt.y);
     }
 }

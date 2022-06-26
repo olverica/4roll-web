@@ -1,5 +1,5 @@
 import {LooseVector2D} from 'App/Animation/Types/Vector2D'
-import Viewport from 'App/Scroll/Model/Viewport'
+import Viewport from 'App/Scroll/Models/Viewport'
 
 
 export type Axis = 'x'|'y';

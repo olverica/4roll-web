@@ -1,12 +1,14 @@
+import Setting from 'App/Scroll/Settings/Value/Setting'
+
 
 export default class Resistance
 {
-    private acceleration: number;
+    private acceleration: Setting<number>;
 
     private value: number;
 
 
-    constructor(acceleration: number)
+    constructor(acceleration: Setting<number>)
     {
         this.acceleration = acceleration;
         this.value = 0;
@@ -14,7 +16,7 @@ export default class Resistance
     
     public compute(): number
     {
-        this.value += this.acceleration;
+        this.value += this.acceleration.value();
         return this.value;
     }
 

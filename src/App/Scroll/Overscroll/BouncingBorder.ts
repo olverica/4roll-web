@@ -1,32 +1,34 @@
 import Border, {LimitType} from 'App/Scroll/Overscroll/Border'
-import ViewportDimenssion from 'App/Scroll/Model/ViewportDimenssion'
+import ViewportDimenssion from 'App/Scroll/Models/ViewportDimenssion'
 import Resistance from 'App/Scroll/Overscroll/Resistance'
 import Controls from 'App/Scroll/Behaviour/Controls'
+import Friction from 'App/Scroll/Overscroll/Friction'
 
 
 export default class BouncingBorder implements Border
 {
-    private viewport?: ViewportDimenssion = null;
+    private viewport?: ViewportDimenssion;
     
     private resistance: Resistance;
     
     private limitType: LimitType; 
     
+    private friction: Friction;
+    
     private controls: Controls;
-    
+
     private brekaingPoint: number;
-    
-    private friction: number;
     
     private momentum: number;
 
 
-    public constructor(controls: Controls, resistance: Resistance)
+    public constructor(controls: Controls, resistance: Resistance, friction: Friction)
     {
-        this.controls = controls;
         this.momentum = 0;
-        this.friction = 0.2;
+        this.viewport = null;
         this.brekaingPoint = 0;
+        this.controls = controls;
+        this.friction = friction;
         this.resistance = resistance;
     }
 
@@ -66,7 +68,7 @@ export default class BouncingBorder implements Border
 
         this.momentum += (this.getDistance() * this.getFriction() - this.getDamping());
         this.viewport.chanagePosition(this.brekaingPoint);
-        
+
         if (this.momentum < 0)
             this.release()
     }
@@ -96,6 +98,9 @@ export default class BouncingBorder implements Border
 
     private getFriction(): number
     {
-        return this.controls.captured() ? this.friction: 1
+        if (!!!this.controls.captured())
+            return 1;
+
+        return this.friction.computeFrom(this.momentum);
     }
 }

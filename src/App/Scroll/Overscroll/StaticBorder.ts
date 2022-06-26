@@ -1,4 +1,4 @@
-import ViewportDimenssion from 'App/Scroll/Model/ViewportDimenssion'
+import ViewportDimenssion from 'App/Scroll/Models/ViewportDimenssion'
 import Border, { LimitType } from 'App/Scroll/Overscroll/Border'
 
 

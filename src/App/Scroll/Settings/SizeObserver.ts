@@ -1,5 +1,5 @@
 import Boundaries from 'App/Scroll/Overscroll/Boundaries'
-import Viewport from 'App/Scroll/Model/Viewport'
+import Viewport from 'App/Scroll/Models/Viewport'
 
 
 export interface ViewportDescriptor

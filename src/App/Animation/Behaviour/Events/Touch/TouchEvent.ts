@@ -1,11 +1,9 @@
 import Vector2D from 'App/Animation/Types/Vector2D'
 
 
-export type RawEvent = TouchEvent;
-
-export default interface FingerEvent
+export default interface TouchEvent
 {
-    readonly fingerAt: Vector2D;
+    readonly touchedAt: Vector2D;
     
     readonly velocity: Vector2D;
     

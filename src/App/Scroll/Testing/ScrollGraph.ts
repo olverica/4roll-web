@@ -1,4 +1,6 @@
 import ScrollDTO from 'App/Scroll/Interaction/ScrollDTO'
+import Vector2D from 'App/Animation/Types/Vector2D'
+import Size from 'App/Animation/Types/Size'
 
 
 export interface Log
@@ -12,23 +14,25 @@ export default class ScrollGraph
 {
     private canvas: HTMLCanvasElement;
 
-    private logs: Log[] = [];
-
     private dto: ScrollDTO;
-
-    private height: number = 300;
     
-    private width: number = 300;
+    private size: Size;
+    
+    private logs: Log[];
 
-    private timeModifier: number = 0.1;
+    private timeModifier;
 
 
     public constructor(element: HTMLElement, dto: ScrollDTO)
     {
+        this.size = {height: 300, width: 300};
+        this.timeModifier = 0.2;
+        this.logs = [];
         this.dto = dto;
+
         this.canvas = document.createElement('canvas') as HTMLCanvasElement;
-        this.canvas.width = this.width;
-        this.canvas.height = this.height;
+        this.canvas.width = this.size.width;
+        this.canvas.height = this.size.height;
         element.appendChild(this.canvas);
     }
 
@@ -42,7 +46,7 @@ export default class ScrollGraph
         for (let i = 0, x = 0; i < this.logs.length; i++)
         {
             x += this.logs[i].timeStep * this.timeModifier;
-            if (x < this.width)
+            if (x < this.size.width * 1.1)
                 continue;
 
             this.logs.splice(i, this.logs.length - i);
@@ -59,24 +63,60 @@ export default class ScrollGraph
 
     private draw(): void
     {
-     
+        let path: Vector2D[] = [];
         let {max, min} = this.borders();
+        let x = 0;
+        let y = 0;
+
+        for (let {position, timeStep} of this.logs)
+        {
+            let distance = Math.abs(max - min);
+            y = distance !== 0 ? 
+                this.size.height - (position - min) * this.size.height / distance:
+                this.size.height; 
+
+            path.push({x, y})
+            x += timeStep * this.timeModifier;
+        }
+
+        this.drawGrarient(path);
+        this.drawLine(path);
+    }
+
+    private drawLine(path: Vector2D[]): void
+    {
         let ctx = this.canvas.getContext('2d');
         ctx.beginPath();
         ctx.moveTo(0, 0);
 
-        let x = 0;
-        let y = 0;
-        for (let {position, timeStep} of this.logs) {
-            y = (position - min) * this.height / Math.abs(max - min);
+        for (let {x, y} of path)
+            ctx.lineTo(x, y)
 
-            ctx.lineTo(x, y);
-            x += timeStep * this.timeModifier;
-        }
-
-        ctx.strokeStyle = 'green';
+        ctx.strokeStyle = '#54BAB9';
         ctx.lineWidth = 2.5;
         ctx.stroke();
+    }
+
+    private drawGrarient(path: Vector2D[]): void
+    {
+        let ctx = this.canvas.getContext('2d');
+        let gradient = ctx.createLinearGradient(0 ,0, 0, 300);
+
+        gradient.addColorStop(0, '#54bab9');
+        gradient.addColorStop(0.46, '#bceeee');
+        gradient.addColorStop(1, '#fff');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0 , 0, this.size.width, this.size.height);
+
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        for (let {x, y} of path)
+            ctx.lineTo(x, y)
+
+        ctx.fillStyle = 'white';
+        ctx.lineTo(this.size.width, 0);
+        ctx.lineTo(0, 0);
+        ctx.fill();
     }
 
     private borders(): {min: number, max: number}
@@ -95,11 +135,10 @@ export default class ScrollGraph
         return {min, max};
     }
 
-
     private clear()
     {
         let ctx = this.canvas.getContext("2d");
         ctx.fillStyle = 'white';
-        ctx.fillRect(0, 0, this.width, this.height);
+        ctx.fillRect(0, 0, this.size.width, this.size.height);
     }
 }

@@ -84,7 +84,7 @@ export default defineComponent({
     },
   }
 });
-</script> 
+</script>
 
 
 <style lang="sass">
@@ -96,7 +96,7 @@ export default defineComponent({
   position: fixed
   right: 0
   bottom: 0
-  z-index: 30
+  z-index: 6
   gap: 10px
   background: #1a1a1a
   color: white

@@ -2,6 +2,7 @@
   <div
     ref="viewport"
     class="viewport"
+    @wheel="onWheel"
     @touchmove="onTouchMove"
     @touchstart="onTouchStart"
     @touchend="onTouchRelease"
@@ -70,7 +71,7 @@ export default defineComponent({
       },
 
       config: {
-        testing: true,
+        reactive: true,
 
         axis: 'both',
 
@@ -80,13 +81,11 @@ export default defineComponent({
 
         boundaries: {
           bounce: 'top. bottom',
+          friction: 0.02,
           resistance: 1.5
         }
       }
     }
-  },
-
-  beforeMount() {
   },
 
   mounted() {
@@ -111,6 +110,10 @@ export default defineComponent({
 
     onTouchRelease(event: TouchEvent): void {
       this.scrollHandler.onTouchRelease(event);
+    },
+
+    onWheel(event: WheelEvent): void {
+      this.scrollHandler.onWheelSpin(event);
     }
   }
 });
