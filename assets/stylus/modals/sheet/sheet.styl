@@ -1,0 +1,36 @@
+// SHEET LAYOUT
+
+.sheet
+  overflow: overlay
+  // position 
+  position: absolute
+  bottom: 0
+  // sizing
+  height: max-content
+  max-height: stretch
+  width: stretch  
+  max-width: inherit
+  // grid
+  display: grid
+  grid-auto-rows: max-content
+
+// mozilla fix
+
+@-moz-document url-prefix()
+  .sheet
+    overflow: auto !important
+    max-height: calc(100% - 40px) !important
+      
+
+// SHEET STYLE
+
+.sheet
+  margin-top: 40px
+  background: $dark-10
+  border-radius: 20px 20px 0 0 
+
+  // STATE: HIDDEN
+
+  &-hidden
+    opacity: 0
+

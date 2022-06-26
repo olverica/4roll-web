@@ -1,0 +1,83 @@
+// CELL TYPE: TABLE STYLE
+  
+.cell-table
+  gap: 10px
+  padding: 15px 5px 5px
+
+  // heading
+
+  .cell_heading
+    gap: 5px
+    font-size: 12px
+
+  // table
+
+  .cell_table
+    gap: 3px
+    border-radius: 5px
+
+  .cell_group,
+  .cell_modifier
+    gap: 10px
+    padding: 10px
+    border-radius: 3px
+    background: $dark-12 
+
+  // row 
+
+  .cell_row
+    gap: 10px
+    
+  .cell_data
+    color: $light-70
+    semi-14()
+
+
+  .cell_text
+    color: $light-60
+    med-12()
+
+    
+
+// CELL TYPE: TABLE LAYOUT
+
+.cell-table
+  // flex
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+  // heading
+  
+  .cell_heading
+    justify-content: center
+
+  // table
+
+  .cell_table
+    width: 100%
+    overflow: hidden
+    // flex
+    display: flex
+    flex-direction: column
+
+  .cell_group
+    // flex
+    display: flex
+    flex-direction: column
+
+  .cell_modifier
+    // flex
+    display: flex
+    align-items: center
+
+  // row
+  
+  .cell_row
+    // flex
+    display: flex
+    align-items: center
+
+  .cell_text
+    text-overflow()

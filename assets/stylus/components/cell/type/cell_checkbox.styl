@@ -1,0 +1,42 @@
+// CELL TYPE: DEATH SAVE LAYOUT
+
+.cell-checkbox
+  position: relative
+  // grid
+  display: grid
+  align-items: center
+  grid-template-columns: 1fr repeat(3, max-content)
+
+  // title
+
+  .cell_title
+    text-overflow()
+
+// CLICKABLE
+
+.cell_clickable-left,
+.cell_clickable-right
+  position: absolute
+  top: 0
+  width: 50%
+  height: 100%
+
+.cell_clickable-left
+  left: 0
+
+.cell_clickable-right
+  right: 0
+
+
+// CELL TYPE: DEATH SAVE STYLE
+
+.cell-checkbox
+  height: 50px
+  gap: 10px
+  padding: 15px
+
+  // title
+
+  .cell_title
+    color: $light-70
+    semi-14()

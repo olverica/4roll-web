@@ -1,0 +1,49 @@
+// ----------------------
+// LIST ITEM TABLE LAYOUT
+// ----------------------
+
+.listItem_table
+  // grid
+  display: grid
+
+
+.listItem_row
+  overflow: hidden
+  // grid
+  display: grid
+  grid-auto-flow: column
+  grid-auto-columns: max-content
+  align-items: center
+
+  i // icon
+    icon-4R()
+
+  p // text
+    text-overflow()
+
+
+// ---------------------
+// LIST ITEM TABLE STYLE
+// ---------------------
+
+.listItem_table
+  margin-top: 5px
+  gap: 10px
+
+
+.listItem_row
+  gap: 5px
+  height: 15px
+
+  b // title
+    color: $light-70
+    semi-12()
+
+  i // icon
+    color: $light-60
+    font-size: 14px
+
+  p // text
+    color: $light-60
+    med-12()
+    

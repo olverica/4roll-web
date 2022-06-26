@@ -1,0 +1,48 @@
+// CELL TYPE: COLUMN MIXIN
+
+columnCellStyle(
+  $cellSize = 0,
+  $cellGap = 0,
+
+  $headingSize = 0,
+  $headingGap = 0,
+  $headingIconSize = inherit,
+
+  $valueGap = 0,
+  $valuePrimarySize = 0,
+  $valueSecondarySize = 0,
+)
+  .cell-column
+    if $cellSize 
+      height: $cellSize
+
+    if $cellGap
+      gap: $cellGap
+    
+    // HEADING
+
+    .cell_icon
+      font-size: $headingIconSize
+
+    if $headingSize
+      .cell_heading
+        font-size: $headingSize
+
+    if $headingGap
+      .cell_heading
+        gap: $headingGap
+
+    // VALUE
+    
+    if $valueGap
+      .cell_value
+        gap: $valueGap
+
+    if $valuePrimarySize
+      .cell_value_primary,
+      .cell_input
+        font-size: $valuePrimarySize
+
+    if $valueSecondarySize
+      .cell_value_secondary
+        font-size: $valueSecondarySize

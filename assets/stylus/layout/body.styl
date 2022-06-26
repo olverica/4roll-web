@@ -1,0 +1,61 @@
+// BODY STYLES
+
+body
+  background: #050505
+  font-family: 'Inter', sans-serif
+  
+  // scrollbar
+  &::-webkit-scrollbar
+    width: 5px
+  &::-webkit-scrollbar-track
+    margin-block: 15px
+  &::-webkit-scrollbar-thumb
+    border-radius: 10px 0 0 10px
+    background-color: alpha($dark-10, .8)
+
+
+// VIEWPORT
+
+.viewport
+  max-width: 450px
+  margin: 0 auto
+
+
+// CONTAINERS 
+
+.section
+  gap: 15px 
+  // grid
+  display: grid
+  grid-auto-rows: max-content
+
+
+.group
+  gap: 10px 
+  // grid
+  display: grid
+  grid-auto-rows: max-content
+
+
+.list
+  overflow: hidden
+  // grid
+  display: grid
+  // style
+  gap: 1px
+  border-radius: 10px
+  background: $dark-12
+
+// TEMPORARY
+    
+.sheet_tempBlock
+  height: 100px
+  background: $dark-18
+  border-radius: 10px
+
+
+.components
+  gap: 15px
+  display: grid
+  grid-auto-rows: max-content
+  

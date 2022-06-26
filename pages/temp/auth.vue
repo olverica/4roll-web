@@ -1,10 +1,10 @@
 <template>
 
-  <main class="page auth">
+  <main class="auth">
 
     <header class="auth_header">
       <img class="auth_logo" src="~/assets/images/logoText-light.svg" alt="4ROLL Logo">
-       <core-vue-button class="button-texted">English <i>chevron-down</i></core-vue-button>
+       <core-vue-button icon="chevron-right" texted>English</core-vue-button>
     </header>
 
     <section class="auth_text">
@@ -14,7 +14,7 @@
 
     <footer class="auth_footer">
       <wip-button-google>Continue with Google</wip-button-google>
-      <core-vue-button class="button-texted">Our <b>Terms of Use</b> and <b>Privacy Policy</b></core-vue-button>
+      <core-vue-button texted>Our <b>Terms of Use</b> and <b>Privacy Policy</b></core-vue-button>
     </footer>
 
   </main>

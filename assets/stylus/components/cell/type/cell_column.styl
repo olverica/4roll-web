@@ -1,0 +1,50 @@
+// CELL TYPE: COLUMN LAYOUT
+
+.cell-column
+  // flex
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+
+  // heading
+
+  .cell_heading
+    justify-content: center
+
+  // input
+
+  .cell_input
+    height: 100%
+    width: 100%
+    text-align: center
+
+
+// CELL TYPE: COLUMN STYLE
+
+.cell-column
+  padding: 15px 5px 5px
+
+  // value
+
+  .cell_value
+    margin-bottom: 10px
+
+  // input
+
+  .cell_input
+    border-radius: 5px
+    background: $dark-12
+
+
+columnCellStyle(
+  $cellSize: 70px,
+  $cellGap: 8px,
+
+  $headingSize: 12px,
+  $headingGap: 5px,
+  $headingIconSize: $headingSize,
+
+  $valuePrimarySize: 22px,
+  $valueSecondarySize: 14px,
+)

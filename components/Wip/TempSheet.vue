@@ -2,13 +2,23 @@
   <sheet-layout title="Suuuuus" @close="close">
 
     <template #content>
-      <div class="sheet_tempBlock"></div>
-      <div class="sheet_tempBlock"></div>
-      <div class="sheet_tempBlock"></div>
+      <button class="sheet_tempBlock"></button>
+      <button class="sheet_tempBlock"></button>
+      <button class="sheet_tempBlock"></button>
+      <button class="sheet_tempBlock"></button>
+      <button class="sheet_tempBlock"></button>
+      <button class="sheet_tempBlock"></button>
+      <button class="sheet_tempBlock"></button>
+      <button class="sheet_tempBlock"></button>
+      <button class="sheet_tempBlock"></button>
+      <button class="sheet_tempBlock"></button>
+      <button class="sheet_tempBlock"></button>
+      <button class="sheet_tempBlock"></button>
+      <slot/>
     </template>
 
     <template  #footer>
-      <vue-button class="button-filled" @click="close">button</vue-button>
+      <vue-button @click="close">button</vue-button>
     </template>
 
   </sheet-layout>

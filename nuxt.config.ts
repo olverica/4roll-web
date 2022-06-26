@@ -5,7 +5,7 @@ import { resolve } from 'path'
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
     css: [
-        '~/assets/stylus/index.styl',
+        '~/assets/stylus/style.styl',
     ],
 
     meta: {

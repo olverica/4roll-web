@@ -1,5 +1,5 @@
 <template>
-  <button class="button button-filled button-google">
+  <button class="button button-google">
     <img src="~/assets/icons/google.svg" alt="Google icon">
     <slot/>
   </button>

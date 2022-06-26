@@ -4,9 +4,13 @@
       <for-dev/>
 
       <modals/>
-      <tabbar/>
 
-      <nuxt-page class="page"/>
+      <nuxt-layout class="layout">
+
+        <nuxt-page class="page"/>
+
+      </nuxt-layout>
+
     </viewport>
   </client-only>
 </template>

@@ -1,0 +1,18 @@
+// TYPE: CHECKBOX ROUNDED 
+
+.checkbox-rounded
+  border-radius: 100%
+
+
+// TYPE: CHECKBOX FAILED
+
+.checkbox-failed
+  color: $accent-red
+
+  &::before // icon
+    content: 'cross'
+
+  // ACTIVE STATE 
+
+  &.checkbox-active 
+    background: alpha(@color, .2)

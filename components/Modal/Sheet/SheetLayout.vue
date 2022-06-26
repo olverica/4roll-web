@@ -1,14 +1,18 @@
 <template>
+
   <vue-header @close="close">{{ title }}</vue-header>
 
-  <div 
+  <main 
     class="sheet_content"
     :style="{'margin-bottom': innerHeight}"
   >
     <slot name="content"/>
-  </div>
+  </main>
 
-  <slot name="footer"/>
+  <footer class="sheet_footer">
+    <slot name="footer"/>
+  </footer>
+
 </template>
 
 <script lang="ts">
