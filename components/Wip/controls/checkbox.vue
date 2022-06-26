@@ -3,7 +3,7 @@
     class="checkbox"
     :class="{
       'checkbox-active': checked,
-      'checkbox-failed': failled,
+      'checkbox-failed': failed,
       'checkbox-rounded': round}"
     @click="onClick">
   </button>
@@ -14,7 +14,7 @@ import {defineComponent, PropType} from 'vue'
 
 export default defineComponent({
   props: {
-    failled: {
+    failed: {
       default: false,
       type: Boolean as PropType<boolean>,
     },

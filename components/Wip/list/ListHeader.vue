@@ -1,7 +1,7 @@
 <template>
 
   <button class="listItem listHeader">
-    <h3 class="listItem_title">List header</h3>
+    <h3 class="listItem_title"><slot/></h3>
     <i class="listItem_toggle">chevron-up</i>
   </button>
 
