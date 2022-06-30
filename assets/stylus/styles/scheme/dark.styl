@@ -1,0 +1,81 @@
+// DARK THEME COLOR SCHEME
+
+// element colors
+$dark-05 = 0, 0, 5  // #0d0d0d
+$dark-08 = 0, 0, 8  // #141414
+$dark-10 = 0, 0, 10 // #1A1A1A
+$dark-12 = 0, 0, 12 // #1F1F1F
+$dark-15 = 0, 0, 15 // #262626
+$dark-18 = 0, 0, 18 // #2E2E2E
+$dark-20 = 0, 0, 20 // #333333
+
+// text colors
+$light-80 = 0, 0, 80 // #CCCCCC
+$light-70 = 0, 0, 70 // #B3B3B3
+$light-60 = 0, 0, 60 // #999999
+$light-50 = 0, 0, 50 // #808080
+ 
+// CSS COLOR MAPPING
+
+:root
+  --body-background: hsl($dark-05)
+  --body-foreground: hsl($dark-10)
+
+  // sections
+  --tabbar-background: hsla($dark-08, .8)
+  --header-background: linear-gradient(hsla($dark-05, 1) 0%, hsla($dark-05, 0) 100%)
+  --footer-background: linear-gradient(hsla($dark-05, 0) 0%, hsla($dark-05, 1) 100%)
+
+  // block colors
+  --block-background: hsl($dark-15)
+  --block-foreground: hsl($dark-12)
+  --block-highlight: hsl($dark-18)
+
+  // hint
+  --hint-background: hsl($dark-10)
+  --hint-outline: hsl($dark-15)
+
+  // tag colors
+  --tag-background: hsl($dark-10)
+  --tag-focus: hsl($dark-15)
+  --tag-outline: hsl($dark-15)
+
+  // field colors
+  --field-background: hsl($dark-15)
+  --field-focus: hsl($dark-12)
+  --field-outline: hsl($dark-15)
+
+  // text colors
+  --text-primary: hsl($light-80)
+  --text-secondary: hsl($light-70)
+  --text-paragraph: hsl($light-60)
+  --text-label: hsl($light-50)
+
+// SHEET OVERWRITE
+
+.sheet
+  --body-background: hsl($dark-10)
+  --body-foreground: hsl($dark-12)
+
+  // sections
+  --header-background: linear-gradient(hsla($dark-10, 1) 20%, hsla($dark-10, 0) 100%)
+  --footer-background: linear-gradient(hsla($dark-10, 0) 0%, hsla($dark-10, 1) 100%)
+
+  // block colors
+  --block-background: hsl($dark-18)
+  --block-foreground: hsl($dark-15)
+  --block-highlight: hsl($dark-20)
+
+  // hint
+  --hint-background: hsl($dark-12)
+  --hint-outline: hsl($dark-18)
+
+  // tag colors
+  --tag-background: hsl($dark-12)
+  --tag-focus: hsl($dark-18)
+  --tag-outline: hsl($dark-18)
+
+  // field colors
+  --field-background: hsl($dark-18)
+  --field-focus: hsl($dark-15)
+  --field-outline: hsl($dark-18) 

@@ -7,33 +7,31 @@
   display: grid
   place-items: center
   // animation
-  transitions(background, .2s)
+  Transition(background, .2s)
   
   &::before // dot
     content: ""
     height: 0px
     aspect-ratio: 1
     border-radius: 100%
-    transitions(height, .2s)
+    Transition(height, .2s)
 
   
 // STYLE
 
 .radiobutton
-  $activeColor = $accent-blue
+  $active-color = $accent-blue
 
-  // STATE: DEFAULT 
-
+  //state: default
   height: 20px
-  background: $dark-12
+  background: $block-foreground
 
   &::before // dot 
-    background: $activeColor
+    background: $active-color
 
-  // STATE: ACTIVE
-
+  //state: active
   &-active
-    background: alpha($activeColor, .2)
+    background: alpha($active-color, .2)
 
   &-active::before
     height: 10px

@@ -1,15 +1,15 @@
 // INPUT LAYOUT
   
 .input
+  overflow: hidden
   // flex
   display: flex
   align-items: center
-
-  .input_entry
-    flex-grow: 1
-
   // animation
-  transitions(background, .2s)
+  Transition(background, .2s)
+
+  &_entry
+    flex-grow: 1
 
 
 // INPUT STYLE
@@ -19,13 +19,11 @@
   gap: 15px
   padding: 15px
   border-radius: 10px
-  background: $dark-15
-  box-shadow: $dark-15 0 0 0 1px inset
-  overflow: hidden
+  background: $field-background
+  Outline($field-outline, 1px)
 
-  // input state: focused
-
+  //state: focused
   &-focused
-    background: $dark-12
+    background: $field-focus
 
 

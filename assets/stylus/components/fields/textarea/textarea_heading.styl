@@ -1,0 +1,52 @@
+// TEXTAREA CHILD: HEADING LAYOUT
+ 
+.textarea_heading
+  cursor: pointer
+  // flex
+  display: flex
+  align-items: center
+
+  .textarea_hint
+    flex-grow: 1
+
+
+.textarea_counter
+  opacity: 0
+  Transition(opacity, .2s)
+
+  &-active
+    opacity: 1
+
+
+.textarea_button
+  Icon-Font('4R-icons')
+  // animation
+  Transition(transform, .2s)
+
+
+// TEXTAREA CHILD: HEADING STYLE
+
+.textarea_heading
+  gap: 5px
+  height: 20px
+
+
+.textarea_title
+  color: $text-secondary
+  med-16()
+
+
+.textarea_hint
+  color: $text-label
+  med-12-i()
+
+
+.textarea_counter
+  color: $text-label
+  med-12()
+
+
+.textarea_button
+  margin-left: 10px
+  font-size: 12px
+  color: $text-label

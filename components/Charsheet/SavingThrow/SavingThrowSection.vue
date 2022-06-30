@@ -2,7 +2,7 @@
   <section class="section savingThrows">
     <vue-button icon="chevron-up" texted>Saving Throw</vue-button>
 
-    <div class="cells cells-6x">
+    <div class="grid grid-6x">
       <saving-throw
         v-for="model in savingThrows"
         :model="model"/>

@@ -14,23 +14,41 @@
   display: grid
   grid-auto-rows: max-content
 
-// mozilla fix
+// header
 
-@-moz-document url-prefix()
-  .sheet
-    overflow: auto !important
-    max-height: calc(100% - 40px) !important
-      
+.sheet > .header
+  // position
+  position: sticky
+  top: 0
+  z-index: 1
+
+// footer
+
+.sheet > .footer
+  position: sticky
+  bottom: 0
+  z-index: 1
+
 
 // SHEET STYLE
 
 .sheet
   margin-top: 40px
-  background: $dark-10
+  background: $body-background
   border-radius: 20px 20px 0 0 
 
-  // STATE: HIDDEN
-
+  // state: hidden
   &-hidden
     opacity: 0
 
+// header
+
+.sheet > .header 
+  padding: 40px 15px 20px
+  background: $header-background
+
+// footer
+
+.sheet > .footer 
+  padding: 20px 15px 20px
+  background: $footer-background

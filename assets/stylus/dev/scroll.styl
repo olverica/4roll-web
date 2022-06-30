@@ -1,0 +1,83 @@
+.scrollSettings,
+.scrollMenu
+  height: max-content
+  width: 225px
+  gap: 10px
+  padding: 25px 5px 10px
+  // styling
+  border-radius: 10px
+  backdrop-filter: blur(10px)
+  background: alpha(#141414, .90)
+  // position
+  position: fixed
+  z-index: 100
+  bottom: 15px
+  right: 15px
+  // grid
+  display: grid
+  grid-auto-rows: max-content
+
+  &::before // thumb
+    content: ""
+    width: 60px
+    height: 2px
+    border-radius: 2px
+    background: $dark-18
+    // position
+    position: absolute
+    left: 50%
+    top: 11.5px
+    transform: translate(-50%)
+
+  &_title
+    padding: 0 5px
+    color: $light-70
+    med-12()
+
+  &_list
+    gap: 5px
+    // grid
+    display: grid
+    grid-auto-rows: max-content
+
+  &_group
+    gap: 1px
+    border-radius: 5px
+    background: $dark-15
+    overflow: hidden
+    // grid
+    display: grid
+    grid-auto-rows: max-content
+
+  &_row
+    gap: 1px
+    // grid
+    display: grid
+    grid-template-columns: 1fr 1fr
+
+  .listItem
+    min-height: 25px
+    padding: 2.5px
+    padding-left: 10px
+    background: $dark-18
+    overflow: hidden
+
+    .listItem_title
+      font-size: 10px
+      font-weight: $weight-med
+    
+  .listHeader
+    padding-right: 8px
+
+    .listItem_title
+      font-weight: $weight-semi
+
+.scrollGraph
+  top: 15px
+  bottom: unset
+    
+.scrollGraph_canvas
+  width: 100%
+  aspect-ratio: 1
+  background: $dark-18
+  border-radius: 5px

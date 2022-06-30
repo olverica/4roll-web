@@ -1,0 +1,25 @@
+// SHEET CHILD: THUMB LAYOUT
+
+.sheet_thumb
+  position: sticky 
+  top: 0
+  z-index: 2
+  // grid
+  display: grid
+  place-items: center
+
+  &::before // icon
+    content: ''
+
+
+// SHEET CHILD: THUMB STYLE
+
+.sheet_thumb
+  height: 40px
+  margin-top: -40px
+
+  &::before // icon
+    height: 4px
+    width: 80px
+    border-radius: 100px
+    background: $block-background

@@ -1,0 +1,53 @@
+// CELL TABLE LAYOUT
+
+.cell_table
+  width: stretch
+  overflow: hidden
+  // grid
+  display: grid
+  grid-auto-rows: max-content
+
+  &Group,
+  &Modifier
+    overflow: hidden
+    // grid
+    display: grid
+    align-content: center
+
+  // table row
+  &Row
+    overflow: hidden
+    // flex
+    display: flex
+    align-items: center
+
+  &Text
+    Text-Overflow()
+
+// CELL TABLE STYLE
+  
+.cell_table
+  gap: 2.5px
+  border-radius: 5px
+  
+  &Group,
+  &Modifier
+    gap: 10px
+    padding: 10px
+    border-radius: 2.5px
+    background: $block-foreground
+
+  &Modifier
+    height: 30px
+
+  // table row
+  &Row
+    gap: 10px
+
+  &Data
+    semi-14()
+    color: $text-primary
+
+  &Text
+    med-12()
+    color: $text-paragraph

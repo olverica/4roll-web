@@ -1,75 +1,77 @@
 // PRESETS
 
 @import 'presets/reset'
+@import 'presets/variables'
 @import 'presets/functions'
 @import 'presets/mixins'
 
 // STYLES
 
-@import 'styles/variables'
-@import 'styles/fonts'
-@import 'styles/icons'
 @import 'styles/colors'
+@import 'styles/fonts'
+@import 'styles/text'
+// color scheme mapping
+@import 'styles/scheme/mapping'
 
-// text styles
-@import 'styles/text/header'
-@import 'styles/text/title'
-@import 'styles/text/subtitle'
-@import 'styles/text/text'
 
 // LAYOUT
 
 @import 'layout/body'
-@import 'layout/main'
+@import 'layout/layout'
+
+// CONTAINERS
+
+@import 'containers/list'
+@import 'containers/grid'
 
 // PAGES
 
+@import 'pages/page'
+// auth
 @import 'pages/auth/auth'
-@import 'pages/auth/section/auth_header'
-@import 'pages/auth/section/auth_text'
-@import 'pages/auth/section/auth_footer'
+@import 'pages/auth/auth_header'
+@import 'pages/auth/auth_text'
+@import 'pages/auth/auth_footer'
 
-@import 'pages/charsheet/charsheet'
-@import 'pages/charsheet/section/senses'
-@import 'pages/charsheet/section/savingThrows'
-@import 'pages/charsheet/section/skills'
+// charsheet
+@import 'pages/charsheet/senses'
+@import 'pages/charsheet/savingThrows'
+@import 'pages/charsheet/skills'
 
 // COMPONENTS
 
-// text components
-@import 'components/text/header/header'
-@import 'components/text/header/child/header_text'
-@import 'components/text/header/child/header_button'
-
+// text
 @import 'components/text/title'
 @import 'components/text/paragraph'
 @import 'components/text/label'
 
 // controls
 @import 'components/controls/button/button'
-@import 'components/controls/button/type/button_filled'
-@import 'components/controls/button/type/button_texted'
-@import 'components/controls/button/type/button_google'
+@import 'components/controls/button/button_filled'
+@import 'components/controls/button/button_texted'
+@import 'components/controls/button/button_google'
 
 @import 'components/controls/checkbox/checkbox'
 @import 'components/controls/checkbox/checkbox_types'
 
 @import 'components/controls/counter/counter'
-@import 'components/controls/counter/child/counter_input'
-@import 'components/controls/counter/child/counter_button'
+@import 'components/controls/counter/counter_input'
+@import 'components/controls/counter/counter_button'
 
 @import 'components/controls/radiobutton/radiobutton'
 
 @import 'components/controls/switch/switch'
 
+@import 'components/controls/toggler/toggler'
+
 
 // fields
 @import 'components/fields/input/input'
-@import 'components/fields/input/input_child'
+@import 'components/fields/input/input_elements'
 
 @import 'components/fields/textarea/textarea'
-@import 'components/fields/textarea/child/textarea_entry'
-@import 'components/fields/textarea/child/textarea_heading'
+@import 'components/fields/textarea/textarea_entry'
+@import 'components/fields/textarea/textarea_heading'
 
 // list components
 
@@ -77,63 +79,64 @@
 
 @import 'components/listItem/heading/listItem_heading'
 @import 'components/listItem/heading/listItem_title'
-@import 'components/listItem/heading/listItem_subtitle'
-@import 'components/listItem/heading/listItem_toggle'
-@import 'components/listItem/heading/listItem_icon'
 @import 'components/listItem/heading/listItem_hint'
 
 @import 'components/listItem/content/listItem_paragraph'
 @import 'components/listItem/content/listItem_table'
 
-@import 'components/listItem/type/listHeader'
+@import 'components/listItem/listHeader'
 
 // cards
 @import 'components/card/card'
 
-@import 'components/card/child/card_text'
-@import 'components/card/child/card_picture'
+@import 'components/card/elements/card_text'
+@import 'components/card/elements/card_picture'
 
-@import 'components/card/size/card_huge'
-@import 'components/card/size/card_large'
-@import 'components/card/size/card_medium'
+@import 'components/card/types/card_huge'
+@import 'components/card/types/card_large'
+@import 'components/card/types/card_medium'
 
 // cells
 @import 'components/cell/cell'
-@import 'components/cell/cell_mixin'
 
-@import 'components/cell/child/cell_heading'
-@import 'components/cell/child/cell_value'
+@import 'components/cell/elements/cell_heading'
+@import 'components/cell/elements/cell_values'
+@import 'components/cell/elements/cell_mark'
+@import 'components/cell/elements/cell_input'
+@import 'components/cell/elements/cell_table'
 
-@import 'components/cell/type/cell_row'
-@import 'components/cell/type/cell_column'
-@import 'components/cell/type/cell_table'
-@import 'components/cell/type/cell_checkbox'
+@import 'components/cell/types/cell_row'
+@import 'components/cell/types/cell_input'
+@import 'components/cell/types/cell_table'
+@import 'components/cell/types/cell_column'
+@import 'components/cell/types/cell_checkbox'
 
 // SECTIONS
 
+@import 'sections/header/header'
+@import 'sections/header/header_button'
+
 @import 'sections/tabbar/tabbar'
-@import 'sections/tabbar/child/tabbar_button'
+@import 'sections/tabbar/tabbar_button'
 
 @import 'sections/avatar/avatar'
-@import 'sections/avatar/child/avatar_text'
-@import 'sections/avatar/child/avatar_picture'
+@import 'sections/avatar/avatar_text'
+@import 'sections/avatar/avatar_picture'
 
 @import 'sections/experience/experience'
 @import 'sections/experience/experience_progress'
 @import 'sections/experience/experience_values'
 
-@import 'sections/cells/cells'
 
 // MODALS
 
 @import 'modals/modal'
 
+// sheet
 @import 'modals/sheet/sheet'
-@import 'modals/sheet/child/sheet_thumb'
-@import 'modals/sheet/child/sheet_header'
-@import 'modals/sheet/child/sheet_content'
-@import 'modals/sheet/child/sheet_footer'
+@import 'modals/sheet/sheet_thumb'
+@import 'modals/sheet/sheet_content'
 
 // DEV
 
-@import 'dev/scroll/scroll'
+@import 'dev/scroll'

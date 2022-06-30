@@ -2,7 +2,7 @@
   <section class="section attributes">
     <core-vue-title>Attributes</core-vue-title>
 
-    <div class="cells cells-3x">
+    <div class="grid grid-3x">
       <attribute v-for="model in attributes"
         :model="model"/>
     </div>

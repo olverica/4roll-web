@@ -2,7 +2,7 @@
   <section class="section abilities">
     <core-vue-title>Abilities</core-vue-title>
 
-    <div class="cells cells-3x">
+    <div class="grid grid-3x">
       <ability v-for="model in abilities"
         :model="model"/>
     </div>

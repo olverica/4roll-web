@@ -1,7 +1,7 @@
 // BODY STYLES
 
 body
-  background: #050505
+  background: hsb(0, 0, 2)
   font-family: 'Inter', sans-serif
   
   // scrollbar
@@ -11,7 +11,7 @@ body
     margin-block: 15px
   &::-webkit-scrollbar-thumb
     border-radius: 10px 0 0 10px
-    background-color: alpha($dark-10, .8)
+    background-color: $block-background
 
 
 // VIEWPORT
@@ -29,28 +29,11 @@ body
   display: grid
   grid-auto-rows: max-content
 
-
-.group
-  gap: 10px 
-  // grid
-  display: grid
-  grid-auto-rows: max-content
-
-
-.list
-  overflow: hidden
-  // grid
-  display: grid
-  // style
-  gap: 1px
-  border-radius: 10px
-  background: $dark-12
-
 // TEMPORARY
     
 .sheet_tempBlock
   height: 100px
-  background: $dark-18
+  background: $block-background
   border-radius: 10px
 
 
@@ -59,3 +42,12 @@ body
   display: grid
   grid-auto-rows: max-content
   
+
+button
+  -webkit-tap-highlight-color: transparent
+  // animation
+  Transition(transform \, background, 100ms, linear)
+  
+  // action: click
+  &:active
+    transform: scale(.97)

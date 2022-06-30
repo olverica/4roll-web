@@ -1,6 +1,35 @@
+// OUTLINE
+
+Outline($color, $size)
+  outline: $size $color solid
+  outline-offset: - $size
+
+// TRANSITION
+
+Transition(
+  $property,
+  $duration = .2s, 
+  $function = ease-in-out,
+  $delay = 0s,
+)
+  transition-property: $property
+  transition-delay: $delay
+  transition-duration: $duration
+  transition-timing-function: $function
+  
+// ICON FONT
+
+Icon-Font($font-family)
+  font-family: $font-family
+  line-height: 1
+  font-style: normal
+  font-weight: normal
+  white-space: nowrap
+  user-select: none
+  
 // TEXT OVERFLOW
   
-text-overflow($lines = 1)
+Text-Overflow($lines = 0)
   overflow: hidden
   white-space: nowrap
   text-overflow: ellipsis
@@ -11,16 +40,5 @@ text-overflow($lines = 1)
     -webkit-box-orient: vertical
     -webkit-line-clamp: $lines
  
-// TRANSITION
 
-transitions(
-  $property,
-  $duration = .2s, 
-  $function = ease-in-out,
-  $delay = 0s,
-)
-  transition-property: $property
-  transition-delay: $delay
-  transition-duration: $duration
-  transition-timing-function: $function
 

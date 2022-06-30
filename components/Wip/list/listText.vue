@@ -2,7 +2,7 @@
 
   <div class="listItem listText">
     <wip-listItem-heading>
-      <i class="listItem_toggle">chevron-up</i>
+      <wip-controls-toggler/>
     </wip-listItem-heading>
     <div class="listItem_content">
       <p class="listItem_paragraph">

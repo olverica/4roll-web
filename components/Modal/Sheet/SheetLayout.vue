@@ -6,7 +6,7 @@
     <slot name="content"/>
   </main>
 
-  <footer class="sheet_footer">
+  <footer class="footer">
     <slot name="footer"/>
   </footer>
 

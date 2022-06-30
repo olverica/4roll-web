@@ -1,68 +1,6 @@
 <template>
   <main class="components">
     
-    <section class="scrollMenu scrollGraph">
-      <canvas class="scrollGraph_canvas"></canvas>
-      <div class="scrollSettings_list">
-        <h2 class="scrollSettings_title">Graph settings</h2>  
-        <div class="scrollSettings_group">
-          <wip-list-control/>  
-        </div>
-      </div>
-    </section>
-    <section class="scrollMenu scrollSettings">
-      <div class="scrollSettings_list">
-        <h2 class="scrollSettings_title">Scroll options</h2>  
-        <div class="scrollSettings_group">
-          <wip-list-header>
-            Scroll axes
-          </wip-list-header>
-          <div class="scrollSettings_row">
-            <wip-list-control/>
-            <wip-list-control/>
-          </div>      
-        </div>
-        <div class="scrollSettings_group">
-          <wip-list-header>
-            boundaries
-          </wip-list-header>
-          <div class="scrollSettings_row">
-            <wip-list-control/>
-            <wip-list-control/>
-          </div>
-          <div class="scrollSettings_row">
-            <wip-list-control/>
-            <wip-list-control/>
-          </div>       
-        </div>
-      </div>
-      <div class="scrollSettings_list">
-        <h2 class="scrollSettings_title">Scroll values</h2>  
-        <div class="scrollSettings_group">
-          <wip-list-header>
-            Viewport
-          </wip-list-header>
-          <wip-list-control/>  
-        </div>
-        <div class="scrollSettings_group">
-          <wip-list-header>
-            Boundaries
-          </wip-list-header>
-          <wip-list-control/>
-          <wip-list-control/>    
-        </div>
-        <div class="scrollSettings_group">
-          <wip-list-header>
-            Controls
-          </wip-list-header>
-          <wip-list-control/>
-          <wip-list-control/>    
-        </div>
-      </div>
-    </section>
-
-
-
 
     <div class="group">
       <core-vue-title button="placeholder">Vue Title</core-vue-title>
@@ -124,12 +62,12 @@
       <wip-card-medium-card>Medium card</wip-card-medium-card>
     </div>
 
-    <div class="cells cells-2x">
+    <div class="grid grid-2x">
       <cell-types-checkbox-cell/>
       <cell-types-checkbox-cell/>
     </div>
 
-    <div class="cells cells-2x">
+    <div class="grid grid-2x">
 
       <div class="cell cell-table">
         <div class="cell_heading">
@@ -137,29 +75,31 @@
           <i class="cell_icon">placeholder</i>
         </div>
         <div class="cell_table">
-          <div class="cell_group">
-            <div class="cell_row">
-              <b class="cell_data">00</b>
-              <p class="cell_text">label</p>
+          <div class="cell_tableGroup">
+            <div class="cell_tableRow">
+              <b class="cell_tableData">00</b>
+              <p class="cell_tableText">label</p>
             </div>
-            <div class="cell_row">
-              <b class="cell_data">00</b>
-              <p class="cell_text">label</p>
+            <div class="cell_tableRow">
+              <b class="cell_tableData">00</b>
+              <p class="cell_tableText">label</p>
             </div>
           </div>
-          <div class="cell_modifier">
-            <b class="cell_data">00</b>
-            <p class="cell_text">label</p>
+          <div class="cell_tableModifier">
+            <div class="cell_tableRow">
+              <b class="cell_tableData">00</b>
+              <p class="cell_tableText">label</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <button class="cell cell-column">
+      <button class="cell cell-input">
         <div class="cell_heading">
           <h3 class="cell_title">Title</h3>
           <i class="cell_icon">placeholder</i>
         </div>
-        <input class="cell_input" placeholder="–" type="number">
+        <input class="cell_input" placeholder="–" type="number" >
       </button>
 
     </div>

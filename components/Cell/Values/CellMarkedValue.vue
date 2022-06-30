@@ -1,6 +1,6 @@
 <template>
-  <div class="cell_value cell_value-marked">
-    <span class="cell_value_primary">{{ primary }}</span>
+  <div class="cell_values cell_values-marked">
+    <span class="cell_value-primary">{{ primary }}</span>
     <i class="cell_mark"></i>
   </div>
 </template>
