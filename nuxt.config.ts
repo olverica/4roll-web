@@ -16,6 +16,13 @@ export default defineNuxtConfig({
 
     alias: {
         'Components': resolve(__dirname, './components'),
-        'Services': resolve(__dirname, './services'),
+        'Domain': resolve(__dirname, './src/Domain'),
+        'App': resolve(__dirname, './src/App'),
+    },
+
+    vite: {
+        server: {
+            hmr: false
+        }
     }
 })

@@ -21,7 +21,6 @@ export default defineComponent({
   },
 
   computed: {
-    
     top(): string {
       return this.position > 0 ? this.position + 'px': '0';
     },

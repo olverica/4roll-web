@@ -8,7 +8,7 @@
 import { defineComponent, PropType } from 'vue'
 import CellMarkedValue from 'Components/Cell/Values/CellMarkedValue.vue'
 import RowCell from 'Components/Cell/Types/RowCell.vue'
-import Skill from 'Services/Charsheet/Skill';
+import Skill from 'App/Charsheet/Skill';
 
 
 export default defineComponent({

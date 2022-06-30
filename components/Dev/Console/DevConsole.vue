@@ -11,8 +11,8 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import DevConsoleMessage from 'Components/Dev/Console/DevConsoleMessage.vue'
-import ConsoleService, {ConsoleMessage} from 'Services/Dev/ConsoleService'
-import inject from 'Services/Support/Helpers/Inject';
+import ConsoleService, {ConsoleMessage} from 'App/Dev/ConsoleService'
+import inject from 'App/Support/Helpers/Inject';
 
 
 export default defineComponent({
