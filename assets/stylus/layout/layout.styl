@@ -1,0 +1,48 @@
+// LAYOUT
+
+.layout
+  // position
+  position: absolute
+  z-index: 0
+  // sizing
+  width: stretch
+  max-width: inherit
+  min-height: stretch
+  // flex
+  display: flex
+  flex-direction: column
+  // mozilla height fix
+  @-moz-document url-prefix() 
+    min-height: 100%
+
+// header
+
+.layout > .header
+  // position
+  position: sticky
+  top: 0
+  z-index: 1
+
+// tabbar 
+
+.layout > .tabbar 
+  // position
+  position: sticky
+  bottom: 0
+  z-index: 1
+  
+
+// STYLE
+
+.layout 
+  background: $body-background
+
+// header
+
+.layout > .header 
+  padding: 20px 10px 30px
+  margin-top: 20px 
+  margin-bottom: -20px
+  background: $header-background
+
+

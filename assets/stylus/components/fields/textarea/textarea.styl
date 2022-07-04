@@ -6,8 +6,9 @@
   display: grid
   grid-auto-rows: max-content
   // animation
-  transitions(background \, height, .2s)
+  Transition(background \, height, .2s)
 
+  // state: closed
   &-closed
 
     .textarea_entry
@@ -16,23 +17,19 @@
     .textarea_button
       transform: rotate(180deg)
 
-
 // TEXTAREA STYLE
   
 .textarea
   gap: 5px
   padding: 15px
   border-radius: 10px
-  background: $dark-15
-  box-shadow: $dark-15 0 0 0 1px inset 
-  overflow: hidden
+  background: $field-background
+  Outline($field-outline, 1px)
 
-  // STATE: FOCUSED
-
+  // state: focused
   &-focused
-    background: $dark-12
+    background: $field-focus
 
-  // STATE: CLOSED
-
+  // state: closed
   &-closed
     height: 50px

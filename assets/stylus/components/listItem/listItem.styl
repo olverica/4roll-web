@@ -6,7 +6,7 @@
   // grid
   display: grid
   // animation
-  transitions(background, .2s)
+  Transition(background, .2s)
 
 
 // ---------------
@@ -17,20 +17,18 @@
   min-height: 50px
   gap: 5px
   padding: 15px
-  background: $dark-15
+  background: $block-background
 
+  // action: click
+  &:active
+    background $block-highlight
+  
+  // state: active
   &-active 
-    background $dark-18
+    background $block-highlight
 
+  // state: closed
   &-closed
     .listItem_toggle
       transform: rotate(180deg)
 
-
-// ON SHEET STYLE
-
-.sheet .listItem
-  background: $dark-18
-
-  &-active 
-    background $dark-20

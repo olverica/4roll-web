@@ -6,14 +6,14 @@
   display: grid
   place-items: center
   // animation
-  transitions(background, .2s)
+  Transition(background, .2s)
 
   &::before // icon
     font-size: 0
     font-family: "4R-icons"
     color: inherit
     // animation
-    transitions(font-size \, color, .2s)
+    Transition(font-size \, color, .2s)
 
 
 // STYLE
@@ -21,14 +21,13 @@
 .checkbox
   height: 20px
   border-radius: 5px
-  background: $dark-12
+  background: $block-foreground
   color: $accent-green
 
   &::before // icon
     content: 'check'
 
-  // STATE: ACTIVE 
-
+  // state: active
   &-active 
     background: alpha(@color, .2)
     

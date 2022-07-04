@@ -1,7 +1,7 @@
 <template>
-  <div class="cell_value">
-    <span class="cell_value_primary">{{ primary }}</span>
-    <span class="cell_value_secondary">{{ secondary }}</span>
+  <div class="cell_values">
+    <span class="cell_value-primary">{{ primary }}</span>
+    <span class="cell_value-secondary">{{ secondary }}</span>
   </div>
 </template>
 

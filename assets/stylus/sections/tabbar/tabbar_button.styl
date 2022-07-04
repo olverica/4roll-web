@@ -1,0 +1,54 @@
+// TABBAR BUTTON LAYOUT
+
+.tabbar_button,
+.tabbar_counter
+  // grid
+  display: grid
+  justify-items: center
+
+  i // icon
+    // grid
+    display: grid
+    place-items: center
+
+
+.tabbar_button
+  i
+    aspect-ratio: 1/1
+    Icon-Font('4R-icons')
+
+  
+.tabbar_counter
+  i
+    aspect-ratio: 1.5/1
+
+  
+// TABBAR BUTTON STYLE
+
+.tabbar_button,
+.tabbar_counter
+  gap: 5px
+
+  p // text
+    color: $text-primary
+    semi-10()
+
+  i // icon
+    height: 25px
+    border-radius: 25px
+    background: $text-primary
+    color: black
+    mix-blend-mode: screen
+
+
+.tabbar_button
+  // static
+  opacity: .4
+  // active
+  &-active
+    opacity: 1
+
+
+.tabbar_counter
+  i
+    semi-12()

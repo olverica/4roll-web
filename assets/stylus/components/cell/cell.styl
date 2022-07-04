@@ -2,13 +2,17 @@
 
 .cell
   overflow: hidden
-  // flex
+  // display
   display: flex
-
 
 // CELL STYLE
   
 .cell 
+  gap: 10px
   border-radius: 10px
-  background: $dark-15
+  background: $block-background
 
+
+button.cell // click action
+  &:active
+    background: $block-highlight

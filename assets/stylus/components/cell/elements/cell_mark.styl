@@ -1,0 +1,30 @@
+// CELL MARK LAYOUT
+
+.cell_values-marked
+  align-items: center
+
+
+.cell_mark
+  Icon-Font('4R-icons')
+  &::before
+    Transition(color, 2s)
+
+
+// CELL MARK STYLE
+
+.cell_values-marked
+  gap: 5px  
+
+
+.cell_mark
+  font-size: 10px
+  color: $block-foreground
+
+  &::before
+    content: "star-alt"
+
+  &-proficiency
+    color: $text-primary
+
+  &-expertise::before
+    content: "crown"

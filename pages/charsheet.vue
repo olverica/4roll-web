@@ -4,6 +4,23 @@
     <avatar/>
 
     <attribute-section/>
+
+    <section class="section senses">
+
+      <core-vue-button icon="chevron-up" texted>Senses</core-vue-button>
+
+      <div class="grid grid-3x">
+        <cell-types-column-cell title="Pass. Perception">
+          <cell-value primary="00" secondary=""/>
+        </cell-types-column-cell>
+        <cell-types-column-cell title="Pass. Insight">
+          <cell-value primary="00" secondary=""/>
+        </cell-types-column-cell>
+        <cell-types-column-cell title="Pass. Investigation">
+          <cell-value primary="00" secondary=""/>
+        </cell-types-column-cell>
+      </div>
+    </section>
     
     <ability-section/>
 
