@@ -12,9 +12,10 @@ export default class Damping
         this.setting = setting;
     }
 
-    public getValue(): Vector2D
+    public compute(time: number): Vector2D
     {
-        let damping = 1 - this.setting.value();
+        let damping = 1 - time * this.setting.value();
+
         return {
             x: damping,
             y: damping

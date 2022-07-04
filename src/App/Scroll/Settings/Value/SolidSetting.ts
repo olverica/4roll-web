@@ -1,7 +1,7 @@
 import Setting from 'App/Scroll/Settings/Value/Setting'
 
 
-export default class SavedSetting<T = number> implements Setting<T>
+export default class SolidSetting<T = number> implements Setting<T>
 {
     private saved: T;
 

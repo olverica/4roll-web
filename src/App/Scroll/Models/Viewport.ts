@@ -25,23 +25,23 @@ export default class Viewport
     private damping: Damping;
 
 
-    constructor(controls: Controls, damping: Damping)
+    public constructor(controls: Controls, damping: Damping)
     {
         this.controls = controls;
         this.damping = damping;
     }
 
-    public update(): void
+    public update(deltaTime: number): void
     {
-        let damping = this.controls.captured() ? {x: 0, y: 0} : this.damping.getValue();
+        let damping = this.controls.pointer().forwarding() ? {x: 0, y: 0} : this.damping.compute(deltaTime);
 
         let nextMomentum = multiply(this.momentum, damping);
         let stepMomentum = difference(this.momentum, nextMomentum); 
 
         this.position = add(this.position, stepMomentum);
         this.momentum = nextMomentum;   
-        
-        if (Math.abs(this.momentum.x) < 0.1)
+
+        if (Math.abs(this.momentum.x) < 1)
             this.momentum.x = 0;
 
         if (Math.abs(stepMomentum.y) < 1)
@@ -61,6 +61,11 @@ export default class Viewport
     public addMomentum(addition: LooseVector2D): void
     {
         this.momentum = add(this.momentum, addition);
+    }
+
+    public getMomentum(): Vector2D
+    {
+        return this.momentum;
     }
 
     public getPosition(): Vector2D

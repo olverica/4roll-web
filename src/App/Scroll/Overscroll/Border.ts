@@ -13,8 +13,9 @@ export default interface Boundary
     restrict(viewport: ViewportDimenssion): void;
     
     limit(point: number, type: LimitType): void;
+    getLimit(): {point: number, type: LimitType};
     breaksAt(point: number): boolean;
     
+    update(deltaTime: number): void
     overscrolled(): number;
-    update(): void
 }

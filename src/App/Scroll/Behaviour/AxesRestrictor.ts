@@ -1,15 +1,16 @@
 import {LooseVector2D} from 'App/Animation/Types/Vector2D'
 import Vector2D from 'App/Animation/Types/Vector2D'
+import Setting from 'App/Scroll/Settings/Value/Setting'
 
 
 export default class AxesRestrictor
 {
-    private horizontal: boolean;
+    private horizontal: Setting<boolean>;
 
-    private vertical: boolean;
+    private vertical: Setting<boolean>;
 
 
-    public constructor(horizontal: boolean = false, vertical: boolean = false)
+    public constructor(horizontal: Setting<boolean>, vertical: Setting<boolean>)
     {
         this.horizontal = horizontal;
         this.vertical = vertical;
@@ -18,8 +19,8 @@ export default class AxesRestrictor
     public restrict(vector: Vector2D): LooseVector2D
     {
         return {
-            x: this.horizontal ? vector.x : null,
-            y: this.vertical ? vector.y : null,
+            x: this.horizontal.value() ? vector.x : null,
+            y: this.vertical.value() ? vector.y : null,
         }
     }
 }

@@ -17,7 +17,6 @@ export default class Scroll
     
     private axes: AxesRestrictor;
 
-
     public constructor(controls: Controls, viewport: Viewport, boundaries: Boundaries, axes: AxesRestrictor)
     {
         this.boundaries = boundaries;
@@ -28,7 +27,7 @@ export default class Scroll
 
     public touch(): void
     {
-        this.controls.forward();
+        this.controls.pointer().capture();
 
         let restricted = this.axes.restrict({x: 0, y: 0});
         this.viewport.changeMomentum(restricted);
@@ -45,28 +44,29 @@ export default class Scroll
         let momentum = this.controls.momentumFromRelease(event.velocity);
         let restricted = this.axes.restrict(momentum);
 
-        this.controls.drop();
-        this.viewport.changeMomentum(restricted);
+        this.controls.pointer().drop();
+        this.viewport.addMomentum(restricted);
     }
 
     public wheelSpin(event: WheelEvent): void
     {
         let delta = {x: event.deltaX, y: event.deltaY};
         let momentum = this.controls.momentumFromSpin(delta);
+        let restricted = this.axes.restrict(momentum);
 
-        this.viewport.addMomentum(momentum);
+        this.viewport.addMomentum(restricted);
     }
 
     public update(deltaTime: number): void
     {
-        this.viewport.update();
+        this.viewport.update(deltaTime);
         this.boundaries.restrict(this.viewport);
-        this.boundaries.update();
+        this.boundaries.update(deltaTime);
     }
 
     public render(dto: ScrollDTO)
     {
-        this.viewport.render(dto);
         this.boundaries.render(dto);
+        this.viewport.render(dto);
     }
 }

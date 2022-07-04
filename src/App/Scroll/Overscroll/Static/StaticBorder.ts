@@ -23,6 +23,14 @@ export default class StaticBorder implements Border
             point > this.brekaingPoint
     }
 
+    public getLimit(): { point: number; type: LimitType; }
+    {
+        return {
+            point: this.brekaingPoint,
+            type: this.limitType
+        }
+    }
+
     public limit(point: number, type: LimitType): void
     {
         this.brekaingPoint = point;

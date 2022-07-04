@@ -48,6 +48,8 @@ export default class SizeObserver
             width: this.boundaries.el.offsetWidth,
         };
 
+        console.log(viewprot.height, boundaries.height);
+
         this.viewport.model.resize(viewprot);
         this.boundaries.model.resize(boundaries, this.viewport.model);
     }

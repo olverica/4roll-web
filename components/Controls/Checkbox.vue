@@ -5,12 +5,15 @@
       'checkbox-active': checked,
       'checkbox-failed': failed,
       'checkbox-rounded': round}"
-    @click="onClick">
+      @click.stop="onClick">
   </button>
 </template>
 
+
 <script lang="ts">
 import {defineComponent, PropType} from 'vue'
+import Field from 'App/Fields/Field'
+
 
 export default defineComponent({
   props: {
@@ -23,17 +26,22 @@ export default defineComponent({
       default: false,
       type: Boolean as PropType<boolean>,
     },
+
+    field: {
+      required: true,
+      type: Object as PropType<Field<boolean>>
+    }
   },
 
-  data() {
-    return {
-      checked: false
+  computed: {
+    checked(): boolean {
+      return this.field.getValue();
     }
   },
 
   methods: {
     onClick() {
-      this.checked = !!!this.checked;
+      this.field.change(!!!this.checked);
     }
   }
 });

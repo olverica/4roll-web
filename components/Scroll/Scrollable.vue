@@ -6,45 +6,41 @@
     @touchmove="onTouchMove"
     @touchstart="onTouchStart"
     @touchend="onTouchRelease"
-    @touchcancel="onTouchRelease"
+    @touchcancel=""
   >
     <div 
       ref="boundaries"
       class="viewport-borders"
-      :style="{'transform': translate}">
+      :style="{'margin': margin}">
         
       <slot/>
     </div>
     
     <scroll-thumb/>
-
-    <scroll-settings :dto="dto" :config="config"/>
-
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import AnimationEngine from 'App/Animation/Engine/AnimationEngine'
-import ScrollSettings from 'Components/Core/Scroll/SrollSettings.vue'
 import ScrollAgregate from 'App/Scroll/Interaction/ScrollAggregate'
-import ScrollThumb from 'Components/Core/Scroll/ScrollThumb.vue'
-import Builder from 'App/Scroll/Settings/Builder'
+import ScrollThumb from 'Components/Scroll/ScrollThumb.vue'
+import Factory from 'App/Scroll/Settings/Construction/Factory'
 import inject from 'App/Support/Helpers/Inject'
 
 
 export default defineComponent({
   inject: ['$animations'],
 
-  components: {ScrollSettings, ScrollThumb},
+  components: {ScrollThumb},
 
   computed: {
     animations(): AnimationEngine {
       return inject(this, 'animations');
     },
 
-    translate(): string {
-      return `translate(${this.left}px, ${this.top}px)`
+    margin(): string {
+      return `${this.top}px 0 0 ${this.left}px`
     },
 
     left(): number {
@@ -73,17 +69,36 @@ export default defineComponent({
       config: {
         reactive: true,
 
-        axis: 'both',
+        graph: {
+          timeSkip: 0.1
+        },
+
+        axis:{
+          horizontal: false,
+          vertical: true
+        },
 
         viewport: {
-          damping: 0.05
+          damping: 0.003
         },
 
         boundaries: {
-          bounce: 'top. bottom',
+          bounce: {
+            bottom: true,
+            right: false,
+            left: false,
+            top: true,
+          },
+
           friction: 0.02,
-          resistance: 1.5
-        }
+          resistance: 0.09
+        },
+
+        controls: {
+          releaseModifier: 500,
+          spinModifier: 5,
+          maxVelocity: 1250,
+        }   
       }
     }
   },
@@ -91,8 +106,10 @@ export default defineComponent({
   mounted() {
     this.config.viewport.el = this.$refs.viewport;
     this.config.boundaries.el = this.$refs.boundaries;
-    this.scrollHandler = new Builder().make(this.config, this.dto);
+    this.scrollHandler = new Factory().make(this.config, this.dto);
     this.animations.register(this.scrollHandler);
+
+    console.log(this.dto);
   },
 
   unmounted() {
@@ -105,7 +122,7 @@ export default defineComponent({
     },
 
     onTouchMove(event: TouchEvent): void {
-      this.scrollHandler.onTouchMove(event);
+     this.scrollHandler.onTouchMove(event);
     },
 
     onTouchRelease(event: TouchEvent): void {
@@ -119,19 +136,14 @@ export default defineComponent({
 });
 </script> 
 
-<style lang="sass">
-
-.viewwport-borders
-  overflow: hidden
-
-.page
-  background: #0d0d0d
-
+<style lang="sass" scoped>
+  
 .viewport-borders
   background: #0d0d0d
 
 .viewport
   background: aqua
   max-height: 844px
+  margin: 0 0
 
 </style>

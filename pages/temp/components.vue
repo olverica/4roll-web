@@ -99,9 +99,9 @@
     </div>
 
     <div class="group">
-      <wip-controls-checkbox/>
+      <!-- <wip-controls-checkbox/>
       <wip-controls-checkbox round/>
-      <wip-controls-checkbox round failled/>
+      <wip-controls-checkbox round failled/> -->
       <wip-controls-radiobutton/>
       <wip-controls-switch/>
       <wip-controls-counter/>
@@ -175,7 +175,6 @@ import TextareaField from 'Components/Form/Textarea/TextareaField.vue'
 
 
 export default defineComponent({
-  components: {EntryForm, InputField, TextareaField},
-
+  components: {EntryForm, InputField, TextareaField}
 });
 </script>

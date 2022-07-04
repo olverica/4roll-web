@@ -1,53 +1,74 @@
 import Vector2D from 'App/Animation/Types/Vector2D'
+import Setting from 'App/Scroll/Settings/Value/Setting'
 
 
-export default class Controls
+class Pointer
 {
-    private releasModifier: number = -500;
-
-    private spinModifier: number = 2;
-
-    private velocityLimit: number = 4;
-
-    private forwarding: boolean = false;
+    private captured: boolean = false;
 
 
-    public captured(): boolean
+    public forwarding(): boolean
     {
-        return this.forwarding 
+        return this.captured;
     }
-    
-    public forward(): void
+
+    public capture(): void
     {
-        this.forwarding = true;
+        this.captured = true;
     }
 
     public drop(): void
     {
-        this.forwarding = false;
+        this.captured = false;
+    }
+}
+
+export default class Controls
+{
+    private releasModifier: Setting<number>;
+
+    private velocityLimit: Setting<number>;
+    
+    private spinModifier: Setting<number>;
+
+    private pointerHandler: Pointer;
+
+
+    public constructor(releasModifier: Setting<number>, spinModifier: Setting<number>, velocityLimit: Setting<number>)
+    {
+        this.releasModifier = releasModifier;
+        this.velocityLimit = velocityLimit;
+        this.spinModifier = spinModifier;
+        this.pointerHandler = new Pointer();
+    }
+
+    public pointer(): Pointer
+    {
+        return this.pointerHandler 
     }
 
     public momentumFromSpin(delta: Vector2D)
     {
         return {
-            x: delta.x * this.spinModifier,
-            y: delta.y * this.spinModifier
+            x: this.limit(delta.x * this.spinModifier.value()),
+            y: this.limit(delta.y * this.spinModifier.value())
         };
     }
 
     public momentumFromRelease(velocity: Vector2D): Vector2D
     {
         return {
-            y: this.limit(velocity.y) * this.releasModifier,
-            x: this.limit(velocity.x) * this.releasModifier
+            y: this.limit(-velocity.y * this.releasModifier.value()),
+            x: this.limit(-velocity.x * this.releasModifier.value())
         }
     }
 
     private limit(value: number): number
     {
-        if (Math.abs(value) <= this.velocityLimit)
+        if (Math.abs(value) <= this.velocityLimit.value())
             return value;
 
-        return value < 0 ? -this.velocityLimit : this.velocityLimit;
+        return value < 0 ? -this.velocityLimit.value() 
+            : this.velocityLimit.value();
     }
 }

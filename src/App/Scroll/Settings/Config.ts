@@ -3,7 +3,14 @@ export default interface Config
 {
     reactive: boolean,
 
-    axis: 'vertical'|'horizontal'|'both',
+    graph?: {
+        timeskip: number
+    },
+
+    axis: {
+        horizontal: boolean
+        vertical: boolean
+    }
 
     viewport: {
         el: HTMLElement
@@ -12,8 +19,20 @@ export default interface Config
 
     boundaries: {
         el: HTMLElement
-        bounce: string
         friction: number
         resistance: number
+
+        bounce: {
+            bottom: boolean
+            right: boolean
+            left: boolean
+            top: boolean
+        }
+    },
+
+    controls: {
+        releaseModifier: number
+        spinModifier: number
+        maxVelocity: number
     }
 }

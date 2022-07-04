@@ -1,6 +1,8 @@
 import ScrollDTO from 'App/Scroll/Interaction/ScrollDTO'
 import Vector2D from 'App/Animation/Types/Vector2D'
+import Setting from 'App/Scroll/Settings/Value/Setting'
 import Size from 'App/Animation/Types/Size'
+import { createNuxtApp } from 'nuxt3/dist/app/nuxt'
 
 
 export interface Log
@@ -9,31 +11,46 @@ export interface Log
     timeStep: number;
 }
 
+export interface GraphColors
+{
+    stroke: string;
+    background: string;
+    gradient: string;
+}
 
 export default class ScrollGraph
 {
     private canvas: HTMLCanvasElement;
 
+    private timeSkip: Setting<number>;
+    
+    private colors: GraphColors;
+    
     private dto: ScrollDTO;
     
     private size: Size;
     
     private logs: Log[];
 
-    private timeModifier;
 
+    private path: any[] = [];
 
-    public constructor(element: HTMLElement, dto: ScrollDTO)
+    public constructor(element: HTMLCanvasElement, dto: ScrollDTO, colors: GraphColors, timeSkip: Setting<number>)
     {
         this.size = {height: 300, width: 300};
-        this.timeModifier = 0.2;
+        this.timeSkip = timeSkip;
+        this.colors = colors;
         this.logs = [];
         this.dto = dto;
 
-        this.canvas = document.createElement('canvas') as HTMLCanvasElement;
+        this.canvas = element;
         this.canvas.width = this.size.width;
         this.canvas.height = this.size.height;
-        element.appendChild(this.canvas);
+
+        let canvas = (document.querySelector('#asd') as any);
+
+        canvas.height = 500;
+        canvas.width = 500;
     }
 
     public push(time: number)
@@ -45,7 +62,7 @@ export default class ScrollGraph
 
         for (let i = 0, x = 0; i < this.logs.length; i++)
         {
-            x += this.logs[i].timeStep * this.timeModifier;
+            x += this.logs[i].timeStep * this.timeSkip.value();
             if (x < this.size.width * 1.1)
                 continue;
 
@@ -56,6 +73,43 @@ export default class ScrollGraph
 
     public update(time: number)
     {
+        if (window['viewport']) 
+        {
+            window['path'].push({position: window['viewport'].position, momentum: window['viewport'].momentum })
+            let some = (document.querySelector('#asd') as any);
+
+            let ctx = some.getContext('2d')
+            let width = 500;
+            let height = 500;
+
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, width, height);
+
+            ctx.beginPath();
+            let i = 0;
+            ctx.moveTo(i, height- window['path'][0].momentum/ 3);
+            for (let {momentum, position} of window['path']) {
+                i++;
+                ctx.lineTo(i, height-  momentum / 3);
+            }
+
+
+            ctx.strokeStyle = 'green';
+            ctx.stroke();
+
+            ctx.beginPath();
+            i = 0;
+            ctx.moveTo(i, height- window['path'][0].position/ 3);
+            for (let {momentum, position} of window['path']) {
+                i++;
+                ctx.lineTo(i, height-  position / 3);
+                }
+
+
+            ctx.strokeStyle = 'blue';
+            ctx.stroke();
+        }
+
         this.clear();
         this.push(time);
         this.draw();
@@ -76,7 +130,7 @@ export default class ScrollGraph
                 this.size.height; 
 
             path.push({x, y})
-            x += timeStep * this.timeModifier;
+            x += timeStep * this.timeSkip.value();
         }
 
         this.drawGrarient(path);
@@ -85,15 +139,18 @@ export default class ScrollGraph
 
     private drawLine(path: Vector2D[]): void
     {
+        if (!!!path.length)
+            return;
+
         let ctx = this.canvas.getContext('2d');
         ctx.beginPath();
-        ctx.moveTo(0, 0);
+        ctx.moveTo(path[0].x, path[0].y);
 
-        for (let {x, y} of path)
+        for (let {x, y} of path.slice(1))
             ctx.lineTo(x, y)
 
-        ctx.strokeStyle = '#54BAB9';
-        ctx.lineWidth = 2.5;
+        ctx.strokeStyle =this.colors.stroke;
+        ctx.lineWidth = 2;
         ctx.stroke();
     }
 
@@ -102,9 +159,9 @@ export default class ScrollGraph
         let ctx = this.canvas.getContext('2d');
         let gradient = ctx.createLinearGradient(0 ,0, 0, 300);
 
-        gradient.addColorStop(0, '#54bab9');
-        gradient.addColorStop(0.46, '#bceeee');
-        gradient.addColorStop(1, '#fff');
+        gradient.addColorStop(0, this.colors.gradient);
+        gradient.addColorStop(1, this.colors.background);
+
         ctx.fillStyle = gradient;
         ctx.fillRect(0 , 0, this.size.width, this.size.height);
 
@@ -113,7 +170,8 @@ export default class ScrollGraph
         for (let {x, y} of path)
             ctx.lineTo(x, y)
 
-        ctx.fillStyle = 'white';
+        ctx.fillStyle = this.colors.background;
+
         ctx.lineTo(this.size.width, 0);
         ctx.lineTo(0, 0);
         ctx.fill();
@@ -138,7 +196,7 @@ export default class ScrollGraph
     private clear()
     {
         let ctx = this.canvas.getContext("2d");
-        ctx.fillStyle = 'white';
+        ctx.fillStyle = this.colors.background;
         ctx.fillRect(0, 0, this.size.width, this.size.height);
     }
 }

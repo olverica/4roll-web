@@ -33,12 +33,15 @@ export default class ViewportDimenssion
         this.viewport.addMomentum(vector);
     }
 
-    public releaseMomentum(): void
+    public releaseMomentum(): number
     {
         let vector: LooseVector2D = {};
         vector[this.axis] = 0;
         
+        let released = this.viewport.getMomentum()[this.axis];
         this.viewport.changeMomentum(vector);
+
+        return released;
     }
 
     public getPosition(): number
