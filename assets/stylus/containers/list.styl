@@ -2,7 +2,8 @@
 
 .list,
 .list_group,
-.list_stack
+.list_stack,
+.list_dropdown
   overflow: hidden
   // grid
   display: grid
@@ -13,23 +14,22 @@
 
 .list
   gap: 10px
-
-  > .listItem
+  // childs border radius
+  > .listItem,
+  > .list_stack,
+  > .list_dropdown
     border-radius: 10px
 
-
+  
 .list_group
   gap: 5px
-  border-radius: 10px
-
-  > .list_stack
+  // childs border radius
+  > .list_stack,
+  > .list_dropdown
     border-radius: 5px
 
-  > .listItem
-    border-radius: 10px
 
-
-.list_stack
+.list_stack,
+.list_dropdown
   gap: 1px
-  border-radius: 10px
-
+  background: $block-foreground

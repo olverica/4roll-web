@@ -1,13 +1,11 @@
 <template>
-  <section class="scrollMenu scrollGraph">
-    <canvas ref="graph" class="scrollGraph_canvas"></canvas>
+  <section class="scrollSettings scrollSettings-graph">
+    <canvas ref="graph" class="scrollSettings_canvas"></canvas>
     
-    <div class="scrollSettings_list">
-      <h2 class="scrollSettings_title">Graph settings</h2>  
+    <div class="list">
+      <h2 class="title">Graph settings</h2>  
 
-      <div class="scrollSettings_group">
-        <setting name="Time skip" :field="timeSkip"/> 
-      </div>
+      <setting name="Time skip" :field="timeSkip"/> 
     </div>
   </section>
 </template>
@@ -50,7 +48,7 @@ export default defineComponent({
     return {
       colors: {
         stroke: '#6699FF',
-        background: '#2E2E2E',
+        background: '#262626',
         gradient: '#364462'
       },
 

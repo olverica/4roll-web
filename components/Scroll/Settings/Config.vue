@@ -1,44 +1,44 @@
 <template>
-  <section class="scrollMenu scrollSettings">
-    <div class="scrollSettings_list">
-      <h2 class="scrollSettings_title">Scroll options</h2>  
+  <section class="scrollSettings">
+    <div class="list">
+      <h2 class="title">Scroll options</h2>  
       
-      <list-group title="scroll axes">
-        <div class="scrollSettings_row">
+      <list-dropdown title="scroll axes">
+        <div class="row">
           <setting name="horizontal" :field="horizontal"/>
           <setting name="vertical" :field="vertical"/>
         </div>  
-      </list-group>
+      </list-dropdown>
 
-      <list-group title="bounce">
-        <div class="scrollSettings_row">
+      <list-dropdown title="bounce">
+        <div class="row">
           <setting name="top" :field="top"/>
           <setting name="bottom" :field="bottom"/> 
         </div>
-        <div class="scrollSettings_row">
+        <div class="row">
           <setting name="left" :field="left"/>
           <setting name="right" :field="right"/>
         </div>
-      </list-group>
+      </list-dropdown>
     </div>
 
-    <div class="scrollSettings_list">
-      <h2 class="scrollSettings_title">Scroll values</h2>  
+    <div class="list">
+      <h2 class="title">Scroll values</h2>  
 
-      <list-group title="viewport">
+      <list-dropdown title="viewport">
         <setting name="damping" :field="damping"/> 
-      </list-group>
+      </list-dropdown>
 
-      <list-group title="boundaries">
+      <list-dropdown title="boundaries">
         <setting name="friction" :field="friction"/> 
         <setting name="resistance" :field="resistance"/> 
-      </list-group>
+      </list-dropdown>
 
-      <list-group title="controls">
+      <list-dropdown title="controls">
         <setting name="release modifier" :field="releaseModifier"/> 
         <setting name="spin modifier" :field="spinModifier"/> 
         <setting name="max velocity" :field="maxVelocity"/> 
-      </list-group>
+      </list-dropdown>
     </div>
   </section>
 </template>
@@ -47,14 +47,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Setting from 'Components/Scroll/Settings/Setting.vue'
-import ListGroup from 'Components/List/ListGroup.vue'
+import ListDropdown from 'Components/List/ListDropdown.vue'
 import AxisSetting from 'App/Scroll/Settings/Fields/AxisSetting'
 import RangeSetting from 'App/Scroll/Settings/Fields/RangeSetting'
 import BounceSetting from 'App/Scroll/Settings/Fields/BounceSetting'
 
 
 export default defineComponent({
-  components: {Setting, ListGroup}, 
+  components: {Setting, ListDropdown}, 
 
   props: {
     dto: {

@@ -1,12 +1,12 @@
 <template>
-  <div class="scrollSettings_group">
+  <div class="list_dropdown">
     
     <button class="listItem listHeader" @click="onClick">
       <h3 class="listItem_title">{{ capitalized }}</h3>
-      <i class="listItem_toggle">chevron-up</i>
+      <wip-controls-toggler/>
     </button>
 
-    <shrinkable :opened="opened">
+    <shrinkable inner-class="list_stack" :opened="opened">
       <slot/>
     </shrinkable>
   </div>

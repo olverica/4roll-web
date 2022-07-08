@@ -5,7 +5,9 @@
     :class="{'shrinkable-closed': !!!opened}"
     :style="{'transition': transition}">
 
-    <div ref="content">
+    <div 
+      ref="content"
+      :class="innerClass">
       <slot/>
     </div>
   </div>
@@ -29,6 +31,11 @@ export default defineComponent({
     duration: {
       default: 200,
       type: Number
+    },
+  
+    innerClass: {
+      default: '',
+      type: String
     }
   },
 

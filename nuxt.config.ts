@@ -20,9 +20,9 @@ export default defineNuxtConfig({
         'App': resolve(__dirname, './src/App'),
     },
 
-    vite: {
-        server: {
-            hmr: false
-        }
-    }
+    // vite: {
+    //     server: {
+    //         hmr: false
+    //     }
+    // }
 })
